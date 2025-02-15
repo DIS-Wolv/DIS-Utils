@@ -41,11 +41,6 @@ class CfgVehicles
 			class Units;				// Selection of units on which the module is applied
 		};
 
-		// Description base classes (for more information see below):
-		class ModuleDescription
-		{
-			class AnyBrain;
-		};
 	};
 
 	class WOLV_Garage_Init : Module_F
