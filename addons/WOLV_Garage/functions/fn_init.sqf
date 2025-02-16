@@ -7,15 +7,15 @@
 *
 */
 
-params [["_logic", objNull]];
+params [["_logic", objNull], ["_link", []]];
 
 
 if(isNil "_logic") exitWith {systemChat "Erreur de création du garage"};
 
-private _objName = _logic getVariable ["Name", ""];
+// private _objName = _logic getVariable ["Name", ""];
 
 // get the info object
-private _obj = missionNamespace getVariable _objName;
+private _obj = _link select 0;
 // if the info object exists
 if (!isNil "_obj") then {
 
