@@ -34,10 +34,10 @@ if (_index != -1) then {
 		_plate pushBack (toUpper ((((groupid (group player)) splitString "") select [0,3]) joinString ''));
 		_vl setPlateNumber ( _plate joinString "");
 		
-
-		[_vl, 30] call ace_cargo_fnc_setSpace; //force la taille du cargo a 30
-
 		if (WolvGarage_var_AceEnable) then {
+
+			[_vl, 30] call ace_cargo_fnc_setSpace; //force la taille du cargo a 30
+
 			["ACE_medicalSupplyCrate_advanced", _vl, 1] call ace_cargo_fnc_addCargoItem;
 			// Ajoute une caisse medicale ACE dans l'inventaire ACE du véhicule
 
