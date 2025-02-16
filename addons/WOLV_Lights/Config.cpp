@@ -42,6 +42,11 @@ class CfgVehicles
 			class Units;				// Selection of units on which the module is applied
 		};
 
+		// Description base classes (for more information see below):
+		class ModuleDescription
+		{
+			class AnyStaticObject;
+		};
 	};
 
 	class WOLV_Lights_Init : Module_F
@@ -68,16 +73,6 @@ class CfgVehicles
 		// Module attributes (uses https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes#Entity_Specific):
 		class Attributes : AttributesBase
 		{
-			class Name : Edit
-			{
-				displayName = "Name of Informational Panels";
-				tooltip = "Name of the panels where the information will be displayed";
-				property = "WolvLights_Module_Init_Object";
-				// Default text for the input box:
-				defaultValue = """"""; // Because this is an expression, one must have a string within a string to return a string
-				typeName = "STRING"; // Value type, can be "NUMBER", "STRING" or "BOOL"
-			};
-
 			// Module-specific arguments:
 			class Force : Combo
 			{
@@ -119,7 +114,7 @@ class CfgVehicles
 		// Module description (must inherit from base class, otherwise pre-defined entities won't be available)
 		class ModuleDescription : ModuleDescription
 		{
-			description = "Initialisation of the light script";	// Short description, will be formatted as structured text
+			description = "Initialisation of the light script, to select display object, sync to the module";	// Short description, will be formatted as structured text
 
 		};
 	};

@@ -5,7 +5,7 @@
  *	Argument : 0/
  */
 
-params [["_logic", objNull, [objNull]]];
+params [["_logic", objNull, [objNull]], ["_link",[]]];
 
 // default lang vars
 private _infoOn = "Display Generator";
@@ -188,15 +188,21 @@ if (!isNull _logic) then {
 		// get the vallues
 		private _infoForce = _logic getVariable ["Force", 1];
 		
-		// add the actions
-		private _onDisplay = _Info addAction [_infoOn,{params ["_t", "_c", "_i", "_arguments"];[_arguments select 0] call WolvLights_fnc_mapgen;},[_infoForce],1.5,True,True,"","True",5];
-		private _offDisplay = _Info addAction [_infoOff,{[0] call WolvLights_fnc_mapgen;},[],1.5,True,True,"","True",5];
-
-		// set the variables on the object
-		_Info setVariable ["WolvLights_var_onDisplay", _onDisplay, True];
-		_Info setVariable ["WolvLights_var_offDisplay", _offDisplay, True];
 	};
 };
+
+// get the vallues
+private _infoForce = _logic getVariable ["Force", 1];
+{
+
+	// add the actions
+	private _onDisplay = _x addAction [_infoOn,{params ["_t", "_c", "_i", "_arguments"];[_arguments select 0] call WolvLights_fnc_mapgen;},[_infoForce],1.5,True,True,"","True",5];
+	private _offDisplay = _x addAction [_infoOff,{[0] call WolvLights_fnc_mapgen;},[],1.5,True,True,"","True",5];
+
+	// set the variables on the object
+	_x setVariable ["WolvLights_var_onDisplay", _onDisplay, True];
+	_x setVariable ["WolvLights_var_offDisplay", _offDisplay, True];
+} forEach _link;
 
 // sleep 5;
 systemchat _initMessage;
