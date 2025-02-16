@@ -1,7 +1,7 @@
 class WOLV_Lights {
 	tag = "WolvLights";
 
-	class Initialize {
+	class Lights {
 		file = "WOLV_Lights\functions";
 
 		class init {};
