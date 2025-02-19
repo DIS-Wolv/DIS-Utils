@@ -53,7 +53,7 @@ class CfgVehicles
 	{
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
-		displayName = "Init Halo Jump";				// Name displayed in the menu
+		displayName = "Init HALO Jump";				// Name displayed in the menu
 		icon = "common\data\halo.paa";	// Map icon. Delete this entry to use the default icon.
 		category = "DIS";
 		author = "Wolv";
@@ -89,7 +89,7 @@ class CfgVehicles
 	{
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
-		displayName = "Init Reco Drone";				// Name displayed in the menu
+		displayName = "Init reco drone";				// Name displayed in the menu
 		icon = "common\data\drone.paa";					// Map icon. Delete this entry to use the default icon.
 		category = "DIS";
 		author = "Wolv";
@@ -160,7 +160,7 @@ class CfgVehicles
 	{
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
-		displayName = "Attach Marker to Object";		// Name displayed in the menu
+		displayName = "Attach marker to object";		// Name displayed in the menu
 		icon = "\A3\ui_f\data\map\markers\handdrawn\objective_CA.paa";					// Map icon. Delete this entry to use the default icon.
 		category = "DIS";
 		author = "Wolv";
@@ -211,7 +211,7 @@ class CfgVehicles
 	{
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
-		displayName = "DIS Location";					// Name displayed in the menu
+		displayName = "Location preset DIS";					// Name displayed in the menu
 		icon = "common\data\loc.paa";							// Map icon. Delete this entry to use the default icon.
 		category = "DIS";
 		author = "Wolv";
@@ -313,7 +313,7 @@ class CfgVehicles
 	{
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
-		displayName = "Boat Spawner";				// Name displayed in the menu
+		displayName = "Boat spaw point";				// Name displayed in the menu
 		icon = "common\data\boat.paa";							// Map icon. Delete this entry to use the default icon.
 		category = "DIS";
 		author = "Wolv";
