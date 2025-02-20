@@ -115,7 +115,7 @@ class CfgVehicles
 				displayName = "Enable Ace";
 				tooltip = "Define if you are using Ace";
 				typeName = "BOOL";
-				defaultValue = "False";
+				defaultValue = "isClass(configFile >> ""CfgPatches"" >> ""ace_interaction"")";
 			};
 
 			class AceItem : Edit
