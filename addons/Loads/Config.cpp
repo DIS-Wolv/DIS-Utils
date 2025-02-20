@@ -7,7 +7,7 @@ class CfgPatches
 {
 	class DISLoad
 	{
-		units[] = {"DISLoad_Module"};
+		units[] = {"DISLoad_ArsenalAce", "DISLoad_CustomLoad"};
 		weapons[] = {};
 		requiredVersion = 1.0;
 		requiredAddons[] = {"A3_Modules_F"};
@@ -46,7 +46,7 @@ class CfgVehicles
 		};
 	};
 
-	class ArsenalAce : Module_F
+	class DISLoad_ArsenalAce : Module_F
 	{
 		scope = 2;
 		displayName = "DIS Ace Arsenal";
