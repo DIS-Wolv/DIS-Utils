@@ -3,7 +3,6 @@ class DIS_Common {
 	class Initialize {
 		file = "common\functions";
 
-		class CutBushes {};
 		class PosFob {};
 		class configRadio {};
 		class arsenal{};
@@ -41,5 +40,7 @@ class DIS_Common {
 		class addCustomLocation {};
 		class fastTravel {};
 		class fastTravelInit {};
+		class CutBushes {};
+		class CutBushesInit {};
 	}
 };

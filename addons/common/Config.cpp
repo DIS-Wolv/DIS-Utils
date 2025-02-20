@@ -142,7 +142,7 @@ class CfgVehicles
 				displayName = "Is Armed";
 				tooltip = "Define if the drone is armed";
 				typeName = "BOOL";
-				defaultValue = "False";
+				defaultValue = "FALSE";
 			};
 
 			class ModuleDescription : ModuleDescription {}; // Module description should be shown last
@@ -394,4 +394,47 @@ class CfgVehicles
 			position = 1;	// Position is taken into effect
 		};
 	};
+
+	class DISCommon_CutBushes : Module_F
+	{
+		// Standard object definitions:
+		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
+		displayName = "Cut bushes option";						// Name displayed in the menu
+		icon = "common\data\bush.paa";					// Map icon. Delete this entry to use the default icon.
+		category = "DIS";
+		author = "Wolv";
+
+		function = "DISCOMMON_fnc_CutBushesInit";
+		functionPriority = 1;
+		isGlobal = 1;
+		isTriggerActivated = 0;
+		isDisposable = 0;
+		is3DEN = 0;
+		curatorCanAttach = 0;
+
+		// 3DEN Attributes Menu Options
+		canSetArea = 0;
+
+		class Attributes : AttributesBase
+		{
+			class Timer : Edit
+			{
+				property = "DISCommon_Module_CutBushes_Timer";
+				displayName = "Timer";
+				tooltip = "Time needed to cut the bushes";
+				typeName = "NUMBER";
+				defaultValue = "2";
+			};
+			// Module-specific arguments:
+			class ModuleDescription : ModuleDescription {}; // Module description should be shown last
+		};
+
+		// Module description (must inherit from base class, otherwise pre-defined entities won't be available)
+		class ModuleDescription : ModuleDescription
+		{
+			description = "Add a action to cut bushes near the player, NEED ACE INTERACTION";	// Short description, will be formatted as structured text
+			position = 1;	// Position is taken into effect
+		};
+	};
+
 };

@@ -14,7 +14,7 @@
 * DISCommon_var_DestroyedObject
 */
 
-params [["_p", nil], ["_reset", False]];
+params [["_p", nil], ["_reset", False], ["_timeMult", 2]];
 
 if (isNil "DISCommon_var_DestroyedObject") then {
 	[{
@@ -46,7 +46,7 @@ if (_reset) then {
 	private _args = [position _p, ["BUSH"], _distance];
 	// Select only bushes that are not already destroyed
 	private _objs = (nearestTerrainObjects _args) select {!(_x in DISCommon_var_HiddenObject)};;
-	private _temps = 2 * (count _objs);
+	private _temps = _timeMult * (count _objs);
 	[
 		_temps,
 		[_objs],
