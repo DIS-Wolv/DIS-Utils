@@ -23,9 +23,6 @@ private _name = _module getVariable ["Name","Name"];
 private _type = _module getVariable ["LocType", "NameLocal"];
 private _size = _module getVariable ["objectarea", "NameLocal"];
 
-systemChat format["%1", _name];
-systemChat format["%1", _type];
-systemChat format["%1", _size];
 
 private _customLoc = createLocation [_type, _pos, (_size select 0), (_size select 1)];
 _customLoc setText _name;
