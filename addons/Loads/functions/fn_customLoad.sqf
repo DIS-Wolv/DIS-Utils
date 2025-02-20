@@ -1,0 +1,37 @@
+/*
+* Auteur : Wolv
+* Ajoute des loads custom
+*
+* Arguments :
+* 0: module
+* 1: link
+* 
+*/
+params ["_module","_link"];
+
+
+private _loadName = _module getVariable ["LoadName", "CustomLoad"];
+private _load = _module getVariable ["Load", [[["arifle_MXC_F","","","optic_Aco",["30Rnd_65x39_caseless_mag",30],[],""],[],["hgun_Pistol_heavy_01_F","","","optic_MRD",["11Rnd_45ACP_Mag",15],[],""],["U_B_CombatUniform_mcam",[["FirstAidKit",1],["30Rnd_65x39_caseless_mag",2,30],["Chemlight_green",1,1]]],["V_BandollierB_rgr",[["30Rnd_65x39_caseless_mag",1,30],["11Rnd_45ACP_Mag",2,15],["SmokeShell",1,1],["SmokeShellGreen",1,1],["Chemlight_green",1,1]]],[],"H_MilCap_mcamo","",[],["ItemMap","B_UavTerminal","ItemRadio","ItemCompass","ItemWatch",""]],[]]];
+if (typeName _load == "STRING") then {
+	_load = parseSimpleArray _load;
+};
+private _addInArsenal = _module getVariable ["AddInArsenal", false];
+
+missionNamespace setVariable [("DISLoad_Var_CustomLoad_" + _loadName), _load];
+
+if (isClass(configFile >> "CfgPatches" >> "ace_arsenal") and _addInArsenal) then {
+	//ajout du load dans l'arsenal
+	[_loadName, _load, true] call ace_arsenal_fnc_addDefaultLoadout;
+};
+
+if (_addInArsenal) then {
+	if (isNil "DISLoad_var_AllLoad") then {
+		DISLoad_var_AllLoad = [];
+	};
+	DISLoad_var_AllLoad pushBack _load;
+};
+
+{
+	[_load, _x] call DISLoad_fnc_SetLoad;
+} forEach _link;
+
