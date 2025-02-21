@@ -433,7 +433,7 @@ class CfgVehicles
 		class ModuleDescription : ModuleDescription
 		{
 			description = "Add a action to cut bushes near the player, NEED ACE INTERACTION";	// Short description, will be formatted as structured text
-			position = 1;	// Position is taken into effect
+			position = 0;	// Position is taken into effect
 		};
 	};
 
