@@ -1,7 +1,7 @@
 class DIS_Common {
 	tag = "DISCommon";
 	class Initialize {
-		file = "common\functions";
+		file = "z\DISUtils\addons\Common\functions";
 
 		class PosFob {};
 		class configRadio {};
@@ -9,7 +9,7 @@ class DIS_Common {
 	};
 
 	class Halo {
-		file = "common\functions\halo";
+		file = "z\DISUtils\addons\Common\functions\halo";
 		
 		class initHalo {};
 		class haloJump {};
@@ -17,7 +17,7 @@ class DIS_Common {
 	}
 
 	class RecoDrone {
-		file = "common\functions\RecoDrone";
+		file = "z\DISUtils\addons\Common\functions\RecoDrone";
 
 		class initRecoDrone {};
 		class recoDrone{};
@@ -25,7 +25,7 @@ class DIS_Common {
 	}
 
 	class Boat {
-		file = "common\functions\boat";
+		file = "z\DISUtils\addons\Common\functions\boat";
 
 		class initBoat {};
 		class createBoat {};
@@ -33,7 +33,7 @@ class DIS_Common {
 	}
 
 	class utils {
-		file = "common\functions\utils";
+		file = "z\DISUtils\addons\Common\functions\utils";
 
 		class markers {};
 		class customLocations {};

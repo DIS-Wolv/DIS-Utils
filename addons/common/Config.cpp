@@ -54,7 +54,7 @@ class CfgVehicles
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Init HALO Jump";				// Name displayed in the menu
-		icon = "common\data\halo.paa";	// Map icon. Delete this entry to use the default icon.
+		icon = "z\DISUtils\addons\Common\data\halo.paa";	// Map icon. Delete this entry to use the default icon.
 		category = "DIS";
 		author = "Wolv";
 
@@ -90,7 +90,7 @@ class CfgVehicles
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Init reco drone";				// Name displayed in the menu
-		icon = "common\data\drone.paa";					// Map icon. Delete this entry to use the default icon.
+		icon = "z\DISUtils\addons\Common\data\drone.paa";					// Map icon. Delete this entry to use the default icon.
 		category = "DIS";
 		author = "Wolv";
 
@@ -212,7 +212,7 @@ class CfgVehicles
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Location preset DIS";					// Name displayed in the menu
-		icon = "common\data\loc.paa";							// Map icon. Delete this entry to use the default icon.
+		icon = "z\DISUtils\addons\Common\data\loc.paa";							// Map icon. Delete this entry to use the default icon.
 		category = "DIS";
 		author = "Wolv";
 
@@ -244,7 +244,7 @@ class CfgVehicles
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Location custom";				// Name displayed in the menu
-		icon = "common\data\loc.paa";							// Map icon. Delete this entry to use the default icon.
+		icon = "z\DISUtils\addons\Common\data\loc.paa";							// Map icon. Delete this entry to use the default icon.
 		category = "DIS";
 		author = "Wolv";
 
@@ -314,7 +314,7 @@ class CfgVehicles
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Boat spaw point";				// Name displayed in the menu
-		icon = "common\data\boat.paa";							// Map icon. Delete this entry to use the default icon.
+		icon = "z\DISUtils\addons\Common\data\boat.paa";							// Map icon. Delete this entry to use the default icon.
 		category = "DIS";
 		author = "Wolv";
 
@@ -357,7 +357,7 @@ class CfgVehicles
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Teleporter";						// Name displayed in the menu
-		icon = "common\data\teleport.paa";					// Map icon. Delete this entry to use the default icon.
+		icon = "z\DISUtils\addons\Common\data\teleport.paa";					// Map icon. Delete this entry to use the default icon.
 		category = "DIS";
 		author = "Wolv";
 
@@ -400,7 +400,7 @@ class CfgVehicles
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Cut bushes option";						// Name displayed in the menu
-		icon = "common\data\bush.paa";					// Map icon. Delete this entry to use the default icon.
+		icon = "z\DISUtils\addons\Common\data\bush.paa";					// Map icon. Delete this entry to use the default icon.
 		category = "DIS";
 		author = "Wolv";
 
