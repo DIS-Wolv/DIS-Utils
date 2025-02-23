@@ -2,14 +2,14 @@ class WOLV_Garage {
 	tag = "WolvGarage";
 
 	class Initialize {
-		file = "WOLV_Garage\functions\initialize";
+		file = "z\DISUtils\addons\Garage\functions\initialize";
 
 		class init {};
 		class switchDisplay {};
 	};
 
 	class garage {
-		file = "WOLV_Garage\functions\garage";
+		file = "z\DISUtils\addons\Garage\functions\garage";
 
 		class garCreate {};
 		class garVlProx {};
@@ -20,7 +20,7 @@ class WOLV_Garage {
 	};
 	
 	class Inventaire {
-		file = "WOLV_Garage\functions\inventaire";
+		file = "z\DISUtils\addons\Garage\functions\inventaire";
 
 		class invCreate {};
 		class invUpdate {};
@@ -29,7 +29,7 @@ class WOLV_Garage {
 	};
 
 	class InvetaireAce {
-		file = "WOLV_Garage\functions\inventaireAce";
+		file = "z\DISUtils\addons\Garage\functions\inventaireAce";
 
 		class aceInvCreate {};
 		class aceInvUpdate {};
