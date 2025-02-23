@@ -1,4 +1,4 @@
-/*	Document : Wolv_Lights\fn_lamps.sqf
+/*	Document : z\DISUtils\addons\Lights\fn_lamps.sqf
  *	Fonction : execute les action sur les lamps
  *	Auteur : Wolv (discord : Wolv#2393) et Number42
  *	Argument : 

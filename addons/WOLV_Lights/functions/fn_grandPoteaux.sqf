@@ -1,4 +1,4 @@
-/*	Document : Wolv_Lights\fn_grandPoteaux.sqf
+/*	Document : z\DISUtils\addons\Lights\fn_grandPoteaux.sqf
  *	Fonction : execute les action sur les grands Poteaux
  *	Auteur : Wolv (discord : Wolv#2393)
  *	Argument : 

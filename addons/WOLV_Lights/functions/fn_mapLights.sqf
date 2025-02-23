@@ -1,4 +1,4 @@
-/*	Document : Wolv_Lights\fn_mapGen.sqf
+/*	Document : z\DISUtils\addons\Lights\fn_mapGen.sqf
  *	Fonction : permet d'indiqué sur carte les générateur
  *	Auteur : Wolv (discord : Wolv#2393)
  *	Argument : 

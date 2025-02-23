@@ -1,4 +1,4 @@
-/*	Document : Wolv_Lights\fn_petitPoteaux.sqf
+/*	Document : z\DISUtils\addons\Lights\fn_petitPoteaux.sqf
  *	Fonction : execute les action sur les petits Poteaux
  *	Auteur : Wolv (discord : Wolv#2393)
  *	Argument : 

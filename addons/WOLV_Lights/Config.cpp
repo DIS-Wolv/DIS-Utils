@@ -54,7 +54,7 @@ class CfgVehicles
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Init lights";				// Name displayed in the menu
-		icon = "WOLV_Lights\data\icon.paa";	// Map icon. Delete this entry to use the default icon.
+		icon = "z\DISUtils\addons\Lights\data\icon.paa";	// Map icon. Delete this entry to use the default icon.
 		category = "DIS";
 		author = "Wolv";
 

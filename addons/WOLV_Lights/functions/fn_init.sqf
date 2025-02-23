@@ -1,4 +1,4 @@
-/*	Document : Wolv_Lights\fn_init.sqf
+/*	Document : z\DISUtils\addons\Lights\fn_init.sqf
  *	Fonction : initialise le scripts de lumière
  *	Auteur : Wolv (discord : Wolv#2393)
  *	Appellé : "[] spawn WolvLights_fnc_init;"
@@ -164,7 +164,7 @@ private _LightHouse = nearestObjects [_center, WolvLights_var_lightHouseType, wo
 	_x addAction ["Turn ON",{
 		params ["_target"]; 
 		[_target, True] remoteExecCall["BIS_fnc_switchLamp"];
-		playSound3D ["WOLV_Lights\data\Toggle.wav", (position _target) , False, (position _target), 2];
+		playSound3D ["z\DISUtils\addons\Lights\data\Toggle.wav", (position _target) , False, (position _target), 2];
 	},nil,1.5,True,True,"","(_this distance2D _target) <= 2",50]; // turn ON
 	_x setVariable ["WolvLights_var_onAction", _onAction, True];
 	
@@ -172,7 +172,7 @@ private _LightHouse = nearestObjects [_center, WolvLights_var_lightHouseType, wo
 	_x addAction ["Turn OFF",{
 		params ["_target"]; 
 		[_target, False] remoteExecCall["BIS_fnc_switchLamp"]; 
-		playSound3D ["WOLV_Lights\data\Toggle.wav", (position _target) , False, (position _target), 2];
+		playSound3D ["z\DISUtils\addons\Lights\data\Toggle.wav", (position _target) , False, (position _target), 2];
 	},nil,1.5,True,True,"","(_this distance2D _target) <= 2",50]; // turn OFF
 	_x setVariable ["WolvLights_var_offAction", _offAction, True];
 

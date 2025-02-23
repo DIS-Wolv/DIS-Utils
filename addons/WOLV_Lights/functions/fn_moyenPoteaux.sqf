@@ -1,4 +1,4 @@
-/*	Document : Wolv_Lights\fn_moyenPoteaux.sqf
+/*	Document : z\DISUtils\addons\Lights\fn_moyenPoteaux.sqf
  *	Fonction : execute les action sur les moyens Poteaux
  *	Auteur : Wolv (discord : Wolv#2393)
  *	Argument : 

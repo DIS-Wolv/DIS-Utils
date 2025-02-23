@@ -2,7 +2,7 @@ class WOLV_Lights {
 	tag = "WolvLights";
 
 	class Lights {
-		file = "WOLV_Lights\functions";
+		file = "z\DISUtils\addons\Lights\functions";
 
 		class init {};
 		class generators {};
