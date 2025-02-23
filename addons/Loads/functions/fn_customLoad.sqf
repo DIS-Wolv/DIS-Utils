@@ -32,6 +32,10 @@ if (_addInArsenal) then {
 };
 
 {
-	[_load, _x] call DISLoad_fnc_SetLoad;
+	if (_x isKindOf "Man") then {
+		[_load, _x] call DISLoad_fnc_SetLoad;
+	} else {
+		 _x addAction [Format["%1", _loadName],{params ["_t", "_c", "_i", "_arguments"]; [(_arguments select 0), player] call DISLoad_fnc_SetLoad;}, [_load], 1.5,True,True,"","",5];
+	};
 } forEach _link;
 
