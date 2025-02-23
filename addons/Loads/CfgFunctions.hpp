@@ -10,7 +10,7 @@ class DIS_Loads {
 		class ArsenalAce {};
 		class customLoad {};
 		class Equip {};
-
+		class disLoad {};
 	};
 };
 class DIS_Loads_Crate {
