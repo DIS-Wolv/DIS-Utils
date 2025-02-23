@@ -50,7 +50,7 @@ class CfgVehicles
 	{
 		scope = 2;
 		displayName = "DIS Ace Arsenal";
-		icon = "Loads\data\Box.paa";
+		icon = "z\DISUtils\addons\Loads\data\Box.paa";
 		category = "DIS";
 
 		function = "DISLoad_fnc_ArsenalAce";
@@ -106,7 +106,7 @@ class CfgVehicles
 	{
 		scope = 2;
 		displayName = "Custom Loads";
-		icon = "Loads\data\Helmet.paa";
+		icon = "z\DISUtils\addons\Loads\data\Helmet.paa";
 		category = "DIS";
 
 		function = "DISLoad_fnc_customLoad";
@@ -163,7 +163,7 @@ class CfgVehicles
 	{
 		scope = 2;
 		displayName = "DIS Loads";
-		icon = "Loads\data\Helmet.paa";
+		icon = "z\DISUtils\addons\Loads\data\Helmet.paa";
 		category = "DIS";
 
 		function = "DISLoad_fnc_disLoad";

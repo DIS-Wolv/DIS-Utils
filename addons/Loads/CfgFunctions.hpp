@@ -2,7 +2,7 @@ class DIS_Loads {
 	tag = "DISLoad";
 
 	class Loads {
-		file = "Loads\functions";
+		file = "z\DISUtils\addons\Loads\functions";
 
 		class varLoads {};
 		class setLoad {};
@@ -17,7 +17,7 @@ class DIS_Loads_Crate {
 	tag = "DISLoadCrate";
 
 	class CrateFunctions {
-		file = "Loads\functions\crate";
+		file = "z\DISUtils\addons\Loads\functions\crate";
 		
 		class armes {};
 		class dump {};
