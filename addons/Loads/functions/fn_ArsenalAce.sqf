@@ -19,10 +19,48 @@ if (!(isClass(configFile >> "CfgPatches" >> "ace_arsenal"))) exitWith {systemCha
 private _loadDIS = _Module getVariable ["LoadDIS", false];
 if (isNil "DISLoad_var_piloteAvions" and _loadDIS) then {
     [] call DISLoad_fnc_Varloads;
+
+    if (isClass(configFile >> "CfgPatches" >> "ace_arsenal")) then {
+        //ajout de tout les loads dans l'arsenal
+        ["Pilote Helico", DISLoad_var_piloteHelo, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["Pilote Avions", DISLoad_var_piloteAvions, true] call ace_arsenal_fnc_addDefaultLoadout;
+
+        ["MC CDB", DISLoadMc_var_CDBR, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC CDB(inf)", DISLoadMc_var_CDBR, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC Equipier", DISLoadMc_var_Equipier, true] call ace_arsenal_fnc_addDefaultLoadout;
+
+        ["MC CdS", DISLoadMc_var_CdS, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC CdG", DISLoadMc_var_CdG, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC CdG Médecin", DISLoadMc_var_CdGM, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC Medecin", DISLoadMc_var_Medecin, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC CdE", DISLoadMc_var_CDB, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC EOD", DISLoadMc_var_EOD, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC EOD Light", DISLoadMc_var_EOD_Light, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC Grenadier", DISLoadMc_var_Grenadier, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC GvBck", DISLoadMc_var_GvBck, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC GV", DISLoadMc_var_GV, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC Minimi5", DISLoadMc_var_Minimi5, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC Minimi7", DISLoadMc_var_Minimi7, true] call ace_arsenal_fnc_addDefaultLoadout;
+
+        ["MC TP", DISLoadMc_var_TP, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC TE", DISLoadMC_var_TE, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC Spotter", DISLoadMC_var_Spotter, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["MC Zeus", DISLoadMc_var_Zeus, true] call ace_arsenal_fnc_addDefaultLoadout;
+
+        ["PL CDG", DISLoadPL_var_CDG, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["PL CDE", DISLoadPL_var_CDE, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["PL Medecin", DISLoadPL_var_Medecin, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["PL GV", DISLoadPL_var_GV, true] call ace_arsenal_fnc_addDefaultLoadout;
+        ["PL Minimi5", DISLoadPL_var_Minimi5, true] call ace_arsenal_fnc_addDefaultLoadout;
+    };
 };
 
 if (isNil "DISLoad_var_AllLoad") then {
 	DISLoad_var_AllLoad = [];
+};
+
+if (isNil "DISLoad_var_AllCrate") then {
+	DISLoad_var_AllCrate = [];
 };
 
 private _customItem = _Module getVariable ["CustomItem", []];
@@ -86,6 +124,11 @@ private _allItemArray = [];
 {
     _allItemArray pushBack _x;
 } forEach DISLoad_var_AllLoad;
+
+// récup tout les items des caisses
+{
+    _allItemArray pushBack _x;
+} forEach DISLoad_var_AllCrate;
 
 // en prend 1 seul de chaque
 private _items = flatten (_allItemArray + _customItem + _caisseItems);

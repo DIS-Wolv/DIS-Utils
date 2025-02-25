@@ -72,39 +72,4 @@ if (isNil "DISLoad_var_AllLoad") then {
 };
 DISLoad_var_AllLoad = DISLoad_var_AllLoad + [DISLoadMc_var_CdG, DISLoadMc_var_Medecin, DISLoadMc_var_CdGM, DISLoadMc_var_CdE, DISLoadMc_var_EOD, DISLoadMc_var_EOD_Light, DISLoadMc_var_Grenadier, DISLoadMc_var_GvBck, DISLoadMc_var_GV, DISLoadMc_var_Minimi5, DISLoadMc_var_Minimi7, DISLoadMc_var_TP, DISLoadMC_var_TE, DISLoadMC_var_Spotter, DISLoadMc_var_Zeus, DISLoadPL_var_CDG, DISLoadPL_var_CDE, DISLoadPL_var_GV, DISLoadPL_var_Medecin, DISLoadPL_var_Minimi5];
 
-// isClass(configFile >> "CfgPatches" >> "ace_arsenal")
-if (isClass(configFile >> "CfgPatches" >> "ace_arsenal")) then {
-
-	//ajout de tout les loads dans l'arsenal
-	["Pilote Helico", DISLoad_var_piloteHelo, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["Pilote Avions", DISLoad_var_piloteAvions, true] call ace_arsenal_fnc_addDefaultLoadout;
-
-	["MC CDB", DISLoadMc_var_CDBR, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC CDB(inf)", DISLoadMc_var_CDBR, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC Equipier", DISLoadMc_var_Equipier, true] call ace_arsenal_fnc_addDefaultLoadout;
-
-	["MC CdS", DISLoadMc_var_CdS, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC CdG", DISLoadMc_var_CdG, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC CdG Médecin", DISLoadMc_var_CdGM, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC Medecin", DISLoadMc_var_Medecin, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC CdE", DISLoadMc_var_CDB, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC EOD", DISLoadMc_var_EOD, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC EOD Light", DISLoadMc_var_EOD_Light, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC Grenadier", DISLoadMc_var_Grenadier, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC GvBck", DISLoadMc_var_GvBck, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC GV", DISLoadMc_var_GV, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC Minimi5", DISLoadMc_var_Minimi5, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC Minimi7", DISLoadMc_var_Minimi7, true] call ace_arsenal_fnc_addDefaultLoadout;
-
-	["MC TP", DISLoadMc_var_TP, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC TE", DISLoadMC_var_TE, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC Spotter", DISLoadMC_var_Spotter, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["MC Zeus", DISLoadMc_var_Zeus, true] call ace_arsenal_fnc_addDefaultLoadout;
-
-	["PL CDG", DISLoadPL_var_CDG, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["PL CDE", DISLoadPL_var_CDE, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["PL Medecin", DISLoadPL_var_Medecin, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["PL GV", DISLoadPL_var_GV, true] call ace_arsenal_fnc_addDefaultLoadout;
-	["PL Minimi5", DISLoadPL_var_Minimi5, true] call ace_arsenal_fnc_addDefaultLoadout;
-};
 
