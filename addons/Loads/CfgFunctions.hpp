@@ -14,7 +14,7 @@ class DIS_Loads {
 	};
 };
 class DIS_Loads_Crate {
-	tag = "DISLoadCrate";
+	tag = "DISLoad";
 
 	class CrateFunctions {
 		file = "z\DISUtils\addons\Loads\functions\crate";
@@ -27,6 +27,10 @@ class DIS_Loads_Crate {
 		class lanceurs {};
 		class medical {};
 		class para {};
+
+		class setCrate {};
+		class customCrate {};
+		class DisCrate {};
 
 	};
 };
