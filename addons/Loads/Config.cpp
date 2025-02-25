@@ -229,4 +229,113 @@ class CfgVehicles
 		};
 	};
 
+	class DISLoad_CustomCrate : Module_F
+	{
+		scope = 2;
+		displayName = "Custom Crate";
+		icon = "z\DISUtils\addons\Loads\data\box.paa";
+		category = "DIS";
+
+		function = "DISLoad_fnc_customCrate";
+		functionPriority = 1;
+		isGlobal = 1;
+		isTriggerActivated = 0;
+		isDisposable = 0;
+		is3DEN = 0;
+		curatorCanAttach = 0;
+
+		canSetArea = 0;
+
+		class Attributes : AttributesBase
+		{
+
+			class CrateName : Edit
+			{
+				property = "DISLoad_Module_CustomCrate_LoadName";
+				displayName = "Crate Name";
+				tooltip = "Define the name of the crate";
+				typeName = "STRING";
+				defaultValue = """Custom Crate""";
+			};
+
+			class Load : Edit
+			{
+				property = "DISLoad_Module_CustomCrate_Load";
+				displayName = "Crate";
+				tooltip = "Define the load of the crate";
+				typeName = "STRING";
+				defaultValue = "[[""SmokeShell"",25],[""B_Parachute"",5]]";
+			};
+
+			class AddInArsenal : Checkbox
+			{
+				property = "DISLoad_Module_CustomCrate_AddInArsenal";
+				displayName = "Ace Arsenal";
+				tooltip = "Define if the load is available in the ACE Arsenal";
+				typeName = "BOOL";
+				defaultValue = "isClass(configFile >> ""CfgPatches"" >> ""ace_arsenal"")";
+			};
+
+			// Attributes definition
+			class ModuleDescription : ModuleDescription {}; // Module description should be shown last
+		};
+
+		class ModuleDescription: ModuleDescription
+		{
+			description= "This module will initialise the crate on sync object and share the object in the arsenal if available.";
+		};
+	};
+
+	class DISLoad_DisCrate : Module_F
+	{
+		scope = 2;
+		displayName = "DIS Crates";
+		icon = "z\DISUtils\addons\Loads\data\box.paa";
+		category = "DIS";
+
+		function = "DISLoad_fnc_DISCrate";
+		functionPriority = 1;
+		isGlobal = 1;
+		isTriggerActivated = 0;
+		isDisposable = 0;
+		is3DEN = 0;
+		curatorCanAttach = 0;
+
+		canSetArea = 0;
+
+		class Attributes : AttributesBase
+		{
+			class CrateName : Combo
+			{
+				property = "DISLoad_Module_DisCrate_CrateName";
+				displayName = "Crate";
+				tooltip = "The crate to setup";
+				typeName = "STRING";
+				defaultValue = """dump""";
+
+				// Listbox items
+				class Values
+				{
+					class 1		{ value = "dump";		name = "Poubelle"; };
+					class 2		{ value = "arme";		name = "Armes"; };
+					class 3		{ value = "items";		name = "Items"; };
+					class 4		{ value = "itemsCe";	name = "Items CE"; };
+					class 5		{ value = "itemsDa";	name = "Items DA"; };
+					class 6		{ value = "lanceurs";	name = "Lanceurs"; };
+					class 7		{ value = "medical";	name = "Médical"; };
+					class 8		{ value = "para";		name = "Parachute"; };
+				};
+			};
+
+			// Attributes definition
+			class ModuleDescription : ModuleDescription {}; // Module description should be shown last
+		};
+
+		class ModuleDescription: ModuleDescription
+		{
+			description= "This module will initialise the crate on sync object and share the object in the arsenal.";
+		};
+	};
+
+	
 };
