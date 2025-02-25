@@ -19,12 +19,12 @@ if (_indexVL != -1) then {
 	_vl = WolvGarage_var_ListVL select _indexVL;	
 	// Récupère le véhicule 
 
-	_indexObj = lbCurSel WolvGarage_var_IdcListAresnal;	
+	_indexObj = lbCurSel WolvGarage_var_IdcListArsenal;	
 	// Récupère l'index de l'objet
 
 	// Si un objet est séléctioné 
 	if (_indexObj != -1) then {
-		_isBackpack = lbData [WolvGarage_var_IdcListAresnal, _indexObj];
+		_isBackpack = lbData [WolvGarage_var_IdcListArsenal, _indexObj];
 
 		// Si c'est un sac à dos
 		if (_isBackpack != "") then {

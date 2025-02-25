@@ -2,7 +2,7 @@
 
 
 WolvGarage_var_IdcListInvAce = 1500;
-WolvGarage_var_IdcListAresnalAce = 1501;
+WolvGarage_var_IdcListArsenalAce = 1501;
 WolvGarage_var_IdcChoixVl = 2100;
 WolvGarage_var_BarreInvAce = 1900;
 WolvGarage_var_AceInvSize = 1101;
@@ -22,7 +22,7 @@ if (_isCreate) then {
 	} forEach WolvGarage_var_ListVL;
 
 	{
-		lbAdd [WolvGarage_var_IdcListAresnalAce, getText (configFile >> "CfgVehicles" >> _x >> "displayName")];
+		lbAdd [WolvGarage_var_IdcListArsenalAce, getText (configFile >> "CfgVehicles" >> _x >> "displayName")];
 	} forEach WolvGarage_var_ItemAce;
 };
 
@@ -30,5 +30,5 @@ if (_isCreate) then {
 // Double clic pour créer le véhicule
 
 ((findDisplay WolvGarage_var_IddDisplayInvAce) displayCtrl WolvGarage_var_IdcListInvAce) ctrlAddEventHandler ["LBDblClick", "[1] call WolvGarage_fnc_aceInvRemoveItem"];
-((findDisplay WolvGarage_var_IddDisplayInvAce) displayCtrl WolvGarage_var_IdcListAresnalAce) ctrlAddEventHandler ["LBDblClick", "[1] call WolvGarage_fnc_aceInvAddItem"];
+((findDisplay WolvGarage_var_IddDisplayInvAce) displayCtrl WolvGarage_var_IdcListArsenalAce) ctrlAddEventHandler ["LBDblClick", "[1] call WolvGarage_fnc_aceInvAddItem"];
 

@@ -13,7 +13,7 @@ _index = lbCurSel WolvGarage_var_IdcChoixVl;						// Récupère l'index du véhi
 if ((_index != -1) and (count(WolvGarage_var_ListSpawn) > 0)) then {  	// Si un élément est séléctioné
 	_vl = WolvGarage_var_ListSpawn select _index;
 
-	_indexObj = lbCurSel WolvGarage_var_IdcListAresnalAce;	
+	_indexObj = lbCurSel WolvGarage_var_IdcListArsenalAce;	
 	// Récupère l'index de l'objet
 
 	if (_indexObj != -1) then {
