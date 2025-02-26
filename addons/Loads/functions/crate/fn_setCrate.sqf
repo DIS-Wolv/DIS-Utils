@@ -11,7 +11,7 @@
 * Variable publique :
 */
 
-params [["_crate", objnull], ["_CrateLoad", []]];
+params [["_crate", objNull], ["_CrateLoad", []]];
 
 clearMagazineCargoGlobal _crate;
 clearWeaponCargoGlobal _crate;
@@ -46,5 +46,4 @@ clearBackpackCargoGlobal _crate;
 			}
 		};
 	};
-
 } forEach _CrateLoad;
