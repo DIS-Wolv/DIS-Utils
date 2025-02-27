@@ -15,6 +15,7 @@ class CfgPatches
 			"DISAsset_PInf_CE","DISAsset_PInf_DA",
 			"DISAsset_PCav","DISAsset_PPil",
 			"DISAsset_PRens","DISAsset_PDiv",
+			"DISAsset_PDIS",
 			"DISAsset_Rules"};
 		weapons[] = {};
 		requiredVersion = 1.0;
@@ -38,6 +39,16 @@ class CfgEditorCategories
 	class DISAssets: NO_CATEGORY
 	{
 		displayName = "DIS Assets";
+
+	};
+};
+
+class CfgEditorSubCategories
+{
+	class NO_CATEGORY;
+	class DISSign: NO_CATEGORY
+	{
+		displayName = "Panneaux";
 
 	};
 };
@@ -205,6 +216,7 @@ class CfgVehicles
 		editorPreview = "z\DISUtils\addons\Assets\data\DISMoto.jpg";
 		category = "DISAssets";
 		editorCategory = "DISAssets";
+		editorSubcategory = "DISSign";
 
 		class EventHandlers
 		{
@@ -219,6 +231,7 @@ class CfgVehicles
 		displayName = "Panneaux Infantrie CE";
 		editorPreview = "z\DISUtils\addons\Assets\data\ce.jpg";
 		editorCategory = "DISAssets";
+		editorSubcategory = "DISSign";
 
 		class EventHandlers
 		{
@@ -231,6 +244,7 @@ class CfgVehicles
 		displayName = "Panneaux Infantrie DA";
 		editorPreview = "z\DISUtils\addons\Assets\data\da.jpg";
 		editorCategory = "DISAssets";
+		editorSubcategory = "DISSign";
 
 		class EventHandlers
 		{
@@ -243,6 +257,7 @@ class CfgVehicles
 		displayName = "Panneaux Cavalerie";
 		editorPreview = "z\DISUtils\addons\Assets\data\cav.jpg";
 		editorCategory = "DISAssets";
+		editorSubcategory = "DISSign";
 
 		class EventHandlers
 		{
@@ -255,6 +270,7 @@ class CfgVehicles
 		displayName = "Panneaux Pilote";
 		editorPreview = "z\DISUtils\addons\Assets\data\pilot.jpg";
 		editorCategory = "DISAssets";
+		editorSubcategory = "DISSign";
 
 		class EventHandlers
 		{
@@ -267,6 +283,7 @@ class CfgVehicles
 		displayName = "Panneaux Renseignement";
 		editorPreview = "z\DISUtils\addons\Assets\data\Rens.jpg";
 		editorCategory = "DISAssets";
+		editorSubcategory = "DISSign";
 
 		class EventHandlers
 		{
@@ -279,10 +296,24 @@ class CfgVehicles
 		displayName = "Panneaux Plongeur";
 		editorPreview = "z\DISUtils\addons\Assets\data\divers.jpg";
 		editorCategory = "DISAssets";
+		editorSubcategory = "DISSign";
 
 		class EventHandlers
 		{
 			init = "(_this select 0) setObjectTextureGlobal [0, 'z\DISUtils\addons\Assets\data\divers.jpg'];";
+		};
+	};
+	class DISAsset_PDIS : SignAd_Sponsor_F
+	{
+		author = "Wolv";
+		displayName = "Panneaux DIS";
+		editorPreview = "z\DISUtils\addons\Assets\data\DISMoto.jpg";
+		editorCategory = "DISAssets";
+		editorSubcategory = "DISSign";
+
+		class EventHandlers
+		{
+			init = "(_this select 0) setObjectTextureGlobal [0, 'z\DISUtils\addons\Assets\data\DISMoto.jpg'];";
 		};
 	};
 
@@ -293,6 +324,7 @@ class CfgVehicles
 		displayName = "Panneaux Règles";
 		editorPreview = "z\DISUtils\addons\Assets\data\tip.jpg";
 		editorCategory = "DISAssets";
+		editorSubcategory = "DISSign";
 
 		class EventHandlers
 		{
