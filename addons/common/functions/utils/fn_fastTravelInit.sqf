@@ -15,5 +15,5 @@ private _pos = getPosATL _module;
 private _name = _module getVariable ["Name","Name"];
 
 {
-    _x addAction [Format["%1", _name],{params ["_t", "_c", "_i", "_arguments"]; _arguments call DISCommon_fnc_fastTravel;}, [_pos], 1.5,True,True,"","",5];
-} foreach _link;
+    _x addAction [format["%1", _name],{params ["_t", "_c", "_i", "_arguments"]; _arguments call DISCommon_fnc_fastTravel;}, [_pos], 1.5,True,True,"","",5];
+} forEach _link;

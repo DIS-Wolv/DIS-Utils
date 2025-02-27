@@ -84,5 +84,5 @@ if (_indexVL != -1) then {
 	};
 };
 
-[] remoteexec ["WolvGarage_fnc_invUpdate", 0];
+[] remoteExec ["WolvGarage_fnc_invUpdate", 0];
 // Met à jour la liste des inventaires

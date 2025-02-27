@@ -205,5 +205,5 @@ private _infoForce = _logic getVariable ["Force", 1];
 } forEach _link;
 
 // sleep 5;
-systemchat _initMessage;
+systemChat _initMessage;
 

@@ -24,7 +24,7 @@ if ((_index != -1) and (count(WolvGarage_var_ListSpawn) > 0)) then {  	// Si un 
 			_weight = _weight + getNumber (configFile >> "CfgVehicles" >> _x >> "ace_cargo_size");
 		}
 		else {
-			_weight = _weight + getNumber (configFile >> "CfgVehicles" >> (typeof _x) >> "ace_cargo_size");
+			_weight = _weight + getNumber (configFile >> "CfgVehicles" >> (typeOf _x) >> "ace_cargo_size");
 		};
 	} forEach _inv;
 

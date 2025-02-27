@@ -23,7 +23,7 @@ if (_index != -1) then {
 			else {
 				_coordZ = [0,0, _alt];
 				_dropTime = parseNumber (_markerHalo select 2);
-			}
+			};
 		};
 	}forEach allMapMarkers;
 
@@ -60,8 +60,8 @@ if (_index != -1) then {
 			};
 
 			_posChute = [position _vl select 0, position _vl select 1, (position _vl select 2) + 2];
-			_chute = createvehicle ["i_parachute_02_f", position _vl,[],0,"can_collide"];
-			_vl attachto [_chute,[0,0,1.5]];
+			_chute = createVehicle ["i_parachute_02_f", position _vl,[],0,"can_collide"];
+			_vl attachTo [_chute,[0,0,1.5]];
 
 			waitUntil{
 				sleep 1; 
@@ -69,7 +69,7 @@ if (_index != -1) then {
 			};
 
 			_smoke = "SmokeShellGreen" createVehicle _posChute;
-			_smoke attachto [_vl,[1,1,0]];
+			_smoke attachTo [_vl,[1,1,0]];
 		};
 	};
 };

@@ -27,4 +27,4 @@ if ((_index != -1) and (count(WolvGarage_var_ListSpawn) > 0)) then {  	// Si un 
 	};
 };
 
-[] remoteexec ["WolvGarage_fnc_aceInvUpdate", 0];
+[] remoteExec ["WolvGarage_fnc_aceInvUpdate", 0];

@@ -16,6 +16,6 @@ params [["_module", objNull], ["_link", [], [[]]]];
 
 {
     _x addAction ["Saut",{[player] call DISCommon_fnc_haloJump},[],1.5,True,True,"","",5];
-}foreach _link;
+}forEach _link;
 
 

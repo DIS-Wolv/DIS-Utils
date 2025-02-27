@@ -24,7 +24,7 @@ if ((_index != -1) and (count(WolvGarage_var_ListSpawn) > 0)) then {  	// Si un 
 			lbAdd [WolvGarage_var_IdcListInvAce, getText (configFile >> "CfgVehicles" >> _x >> "displayName")];
 		}
 		else {
-			lbAdd [WolvGarage_var_IdcListInvAce, getText (configFile >> "CfgVehicles" >> (typeof _x) >> "displayName")];
+			lbAdd [WolvGarage_var_IdcListInvAce, getText (configFile >> "CfgVehicles" >> (typeOf _x) >> "displayName")];
 		};
 	} forEach _inv;
 

@@ -18,7 +18,7 @@ WolvGarage_var_ListSpawn = call WolvGarage_fnc_garVlProx;
 if (_isCreate) then {
 	{
 		lbAdd [WolvGarage_var_IdcChoixVl, getText (configFile >> "CfgVehicles" >> (typeOf _x) >> "displayName")];
-		lbSetPicture [WolvGarage_var_IdcChoixVl, _foreachindex, getText (configFile >> "CfgVehicles" >> (typeOf _x) >> "picture")]
+		lbSetPicture [WolvGarage_var_IdcChoixVl, _forEachindex, getText (configFile >> "CfgVehicles" >> (typeOf _x) >> "picture")]
 	} forEach WolvGarage_var_ListVL;
 
 	{

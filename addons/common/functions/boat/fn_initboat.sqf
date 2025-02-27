@@ -17,6 +17,6 @@ private _defaultBoatType = _module getVariable ["BoatName", "B_Boat_Transport_01
 {
     _x addAction ["Spawn Boat",{params ["_t", "_c", "_i", "_arguments"]; _arguments call DISCommon_fnc_createBoat;},[_pos, _defaultBoatType],1.5,True,True,"","",5];
     _x addAction ["Delete Boat",{params ["_t", "_c", "_i", "_arguments"]; _arguments call DISCommon_fnc_deleteBoats;},[_pos, _defaultBoatType],1.5,True,True,"","",5];
-} foreach _link;
+} forEach _link;
 
 

@@ -21,7 +21,7 @@ if ((_index != -1) and (count(WolvGarage_var_ListSpawn) > 0)) then {  // Si un �
 	_ListInvWeap = getWeaponCargo _vl;
 	{
 		lbAdd [WolvGarage_var_IdcListInv, 
-			Format ["%1 × %2", str ((_ListInvWeap select 1) select _forEachIndex), getText (configFile >> "CfgWeapons" >> _x >> "displayName")
+			format ["%1 × %2", str ((_ListInvWeap select 1) select _forEachIndex), getText (configFile >> "CfgWeapons" >> _x >> "displayName")
 		]];
 	} forEach (_ListInvWeap select 0);
 	// Récupère les armes dans l'inventaire du véhicule et les met dans la liste
@@ -29,7 +29,7 @@ if ((_index != -1) and (count(WolvGarage_var_ListSpawn) > 0)) then {  // Si un �
 	_ListInvMag = getMagazineCargo _vl;
 	{
 		lbAdd [WolvGarage_var_IdcListInv, 
-			Format ["%1 × %2", str ((_ListInvMag select 1) select _forEachIndex), getText (configFile >> "CfgMagazines" >> _x >> "displayName")
+			format ["%1 × %2", str ((_ListInvMag select 1) select _forEachIndex), getText (configFile >> "CfgMagazines" >> _x >> "displayName")
 		]];
 	} forEach (_ListInvMag select 0);
 	// Récupère les chargeurs l'inventaire du véhicule et les met dans la liste
@@ -37,7 +37,7 @@ if ((_index != -1) and (count(WolvGarage_var_ListSpawn) > 0)) then {  // Si un �
 	_ListInvItems = getItemCargo _vl;
 	{
 		lbAdd [WolvGarage_var_IdcListInv, 
-			Format ["%1 × %2", str ((_ListInvItems select 1) select _forEachIndex), getText (configFile >> "CfgWeapons" >> _x >> "displayName")
+			format ["%1 × %2", str ((_ListInvItems select 1) select _forEachIndex), getText (configFile >> "CfgWeapons" >> _x >> "displayName")
 		]];
 	} forEach (_ListInvItems select 0);
 	// Récupère les items l'inventaire du véhicule et les met dans la liste
@@ -45,7 +45,7 @@ if ((_index != -1) and (count(WolvGarage_var_ListSpawn) > 0)) then {  // Si un �
 	_ListInvBackpack = getBackpackCargo _vl;
 	{
 		lbAdd [WolvGarage_var_IdcListInv, 
-			Format ["%1 × %2", str ((_ListInvBackpack select 1) select _forEachIndex), getText (configFile >> "CfgVehicles" >> _x >> "displayName")
+			format ["%1 × %2", str ((_ListInvBackpack select 1) select _forEachIndex), getText (configFile >> "CfgVehicles" >> _x >> "displayName")
 		]];
 	} forEach (_ListInvBackpack select 0);
 

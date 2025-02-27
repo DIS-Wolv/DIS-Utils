@@ -30,5 +30,5 @@ if (_index != -1) then {
 };
 sleep 0.5;
 
-[] remoteexec ["WolvGarage_fnc_garUpdateVlProx", 0];
+[] remoteExec ["WolvGarage_fnc_garUpdateVlProx", 0];
 

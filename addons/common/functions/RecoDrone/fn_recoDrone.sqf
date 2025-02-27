@@ -77,7 +77,7 @@ private _fnc_groupName = {
 
 	private _fauconGroup = [];
 	{
-		private _groupName = groupID _x;
+		private _groupName = groupId _x;
 		if (_groupName find "Faucon-" == 0) then {
 			_fauconGroup pushBack _x;
 		};
@@ -123,7 +123,7 @@ if (count _markerDrone == 0) exitWith {systemChat "Aucun marqueur de drone de re
 	private _spawnPos = [_posBase select 0, _posBase select 1, (_altitude + (10 * _forEachIndex))];
 
 	//spawn du drone
-	private _result = [_spawnPos, (_spawnPos getdir _pos), _droneType, blufor] call BIS_fnc_spawnVehicle;
+	private _result = [_spawnPos, (_spawnPos getDir _pos), _droneType, blufor] call BIS_fnc_spawnVehicle;
 	private _vh = _result select 0;
 	private _ThisDrone = _result select 2;
 

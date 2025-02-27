@@ -58,13 +58,13 @@ if (_reset) then {
 					[_x, 1] remoteExec ["setDamage", 2];
 					DISCommon_var_DestroyedObject pushBack _x;
 				} forEach (_objs select 0);
-				publicvariable "DISCommon_var_DestroyedObject";
+				publicVariable "DISCommon_var_DestroyedObject";
 				sleep 3;
 				{
 					[_x, True] remoteExec ["hideObjectGlobal", 2];
 					DISCommon_var_HiddenObject pushBack _x;
 				} forEach (_objs select 0);
-				publicvariable "DISCommon_var_HiddenObject";
+				publicVariable "DISCommon_var_HiddenObject";
 			};
 		},
 		{}

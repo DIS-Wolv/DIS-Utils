@@ -1,6 +1,6 @@
 
 
-WolvGarage_var_pos = getpos WolvGarage_var_OBJ;
+WolvGarage_var_pos = getPos WolvGarage_var_OBJ;
 WolvGarage_var_IdcListVlProx = 1500;
 WolvGarage_var_IdcListVlUsine = 1501;
 WolvGarage_var_IdcButtonSpawn = 1603;
@@ -16,7 +16,7 @@ if (_isCreate) then {
 		lbAdd [WolvGarage_var_IdcListVlUsine, getText (configFile >> "CfgVehicles" >> _x >> "displayName")];
 		if (getText (configFile >> "CfgVehicles" >> _x >> "picture") != "pictureThing") then 
 		{
-			lbSetPicture [WolvGarage_var_IdcListVlUsine, _foreachindex, getText (configFile >> "CfgVehicles" >> _x >> "picture")];
+			lbSetPicture [WolvGarage_var_IdcListVlUsine, _forEachindex, getText (configFile >> "CfgVehicles" >> _x >> "picture")];
 		}
 	} forEach WolvGarage_var_ListUsine;
 

@@ -85,8 +85,8 @@ if (!isNil "_obj") then {
     _garTrigger setTriggerArea [_radGar, _radGar, 0, false];        //definie la taille
     _garTrigger setTriggerActivation ["VEHICLE", "PRESENT", true];  //activation a la présence d'un vl
     _garTrigger setTriggerStatements ["this", 
-        "[] remoteexec ['WolvGarage_fnc_garUpdateVlProx', 0];",
-        "[] remoteexec ['WolvGarage_fnc_garUpdateVlProx', 0];"];
+        "[] remoteExec ['WolvGarage_fnc_garUpdateVlProx', 0];",
+        "[] remoteExec ['WolvGarage_fnc_garUpdateVlProx', 0];"];
 
     WolvGarage_var_OBJ setVariable ["_var_updateTrigger", _garTrigger, True];
 

@@ -31,4 +31,4 @@ private _markerGP = [];
 		};
 	};
 	
-}foreach _lamps
+}forEach _lamps

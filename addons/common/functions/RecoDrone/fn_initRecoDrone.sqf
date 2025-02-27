@@ -25,4 +25,4 @@ private _isArmed = _module getVariable ["IsArmed", false];
 
 {
     _x addAction ["Reco Drone",{params ["_t", "_c", "_i", "_arguments"];_arguments call DISCommon_fnc_recoDrone;},[_defaultDroneType, _defaultRange, _defaultAltitude, _defaultPos, _isArmed],1.5,True,True,"","",5];
-}foreach _link;
+}forEach _link;

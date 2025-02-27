@@ -19,8 +19,8 @@ if (isNil "_marker") then {
 	_marker = "DIS_mrk_FOB_0";
 };
 
-private _pos = MarkerPos _marker;
-private _dir = MarkerDir _marker;
+private _pos = markerPos _marker;
+private _dir = markerDir _marker;
 private _dh = 0.5;
 
 private _man = getPos fob nearEntities ["Man", 100];
@@ -52,7 +52,7 @@ lanceursFob setPos _posLanc;
 lanceursFob setDir (_dir + 330);
 
 {
-	if (side _x == WEST) then {
+	if (side _x == west) then {
 		[fob, _x] call DISCommon_fnc_fastTravel;
 	};
 } forEach _man;

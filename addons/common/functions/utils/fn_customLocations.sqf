@@ -144,7 +144,7 @@ switch (worldName) do {
 		_lavit setText "Lavit";
 
 		private _omb1 = createLocation ["NameLocal", [5868.18,10758.9], 180, 180];
-		_omb1 setText "Old Military Base West";
+		_omb1 setText "Old Military Base west";
 
 		private _omb2 = createLocation ["NameLocal", [6244.24,10700.4], 250, 250];
 		_omb2 setText "Old Military Base Est";

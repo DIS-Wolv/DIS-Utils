@@ -7,7 +7,7 @@ if (_index != -1) then {
 
 	if ((count _pos) != 0) then {
 		// Crée le véhicule
-		_vl = _vlType createvehicle _pos;
+		_vl = _vlType createVehicle _pos;
 
 		// Ajoute le véhicule à la liste des véhicules
 		(owner player) publicVariableClient "WolvGarage_var_AllVl";
@@ -31,7 +31,7 @@ if (_index != -1) then {
 			_plate pushBack (floor random 10);
 		};
 		_plate pushBack "-";
-		_plate pushBack (toUpper ((((groupid (group player)) splitString "") select [0,3]) joinString ''));
+		_plate pushBack (toUpper ((((groupId (group player)) splitString "") select [0,3]) joinString ''));
 		_vl setPlateNumber ( _plate joinString "");
 		
 		if (WolvGarage_var_AceEnable) then {
@@ -57,5 +57,5 @@ if (_index != -1) then {
 	};
 };
 
-[] remoteexec ["WolvGarage_fnc_garUpdateVlProx", 0];
+[] remoteExec ["WolvGarage_fnc_garUpdateVlProx", 0];
 
