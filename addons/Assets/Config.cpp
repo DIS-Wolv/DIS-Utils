@@ -212,7 +212,7 @@ class CfgVehicles
 	class DISAsset_BillboardDIS : Land_Billboard_F
 	{
 		author = "Wolv";
-		displayName = "Billboard (DIS)";
+		displayName = "Grand Panneaux DIS";
 		editorPreview = "z\DISUtils\addons\Assets\data\DISMoto.jpg";
 		category = "DISAssets";
 		editorCategory = "DISAssets";
