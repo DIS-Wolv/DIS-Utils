@@ -56,7 +56,7 @@ if (_index != -1) then {
 			
 			waitUntil{
 				sleep 1; 
-				(((position _vl) select 2) <= 150)
+				(((getPosATL _vl) select 2) <= 150)
 			};
 
 			_posChute = [position _vl select 0, position _vl select 1, (position _vl select 2) + 2];
@@ -65,7 +65,7 @@ if (_index != -1) then {
 
 			waitUntil{
 				sleep 1; 
-				(((position _vl) select 2) <= 10)
+				(((getPosATL _vl) select 2) <= 10)
 			};
 
 			_smoke = "SmokeShellGreen" createVehicle _posChute;
