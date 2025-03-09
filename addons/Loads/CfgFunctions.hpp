@@ -9,6 +9,7 @@ class DIS_Loads {
 		class StandardScope {};
 		class ArsenalAce {};
 		class customLoad {};
+		class EquipInit {};
 		class Equip {};
 		class disLoad {};
 	};

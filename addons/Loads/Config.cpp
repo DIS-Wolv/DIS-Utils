@@ -102,6 +102,143 @@ class CfgVehicles
 
 	};
 
+	class DISLoad_Equip : Module_F
+	{
+		scope = 2;
+		displayName = "DIS Equip";
+		icon = "z\DISUtils\addons\Loads\data\Helmet.paa";
+		category = "DIS";
+
+		function = "DISLoad_fnc_EquipInit";
+		functionPriority = 1;
+		isGlobal = 1;
+		isTriggerActivated = 0;
+		isDisposable = 0;
+		is3DEN = 0;
+		curatorCanAttach = 0;
+
+		canSetArea = 0;
+
+		class Attributes : AttributesBase 
+		{
+			class IsZeus : Edit
+			{
+				property = "DISLoad_Module_Equip_Zeus";
+				displayName = "Zeus";
+				tooltip = "Define the class of the unit to equip as Zeus";
+				typeName = "STRING";
+				defaultValue = "[""god"",""god1""]";
+			};
+
+			class IsCdS : Edit
+			{
+				property = "DISLoad_Module_Equip_CdS";
+				displayName = "Chef de Section";
+				tooltip = "Define the class of the unit to equip as CdS";
+				typeName = "STRING";
+				defaultValue = "[""coyCds""]";
+			};
+
+			class IsCdG : Edit
+			{
+				property = "DISLoad_Module_Equip_CdG";
+				displayName = "Chef de Groupe";
+				tooltip = "Define the class of the unit to equip as CdG";
+				typeName = "STRING";
+				defaultValue = "[""grCdg"",""trCdg"",""sgCdg""]";
+			};
+			
+			class IsMedic : Edit
+			{
+				property = "DISLoad_Module_Equip_Medic";
+				displayName = "Medic";
+				tooltip = "Define the class of the unit to equip as Medic";
+				typeName = "STRING";
+				defaultValue = "[""coyMed"",""grMed"",""trMed"",""sgMed""]";
+			};
+			
+			class IsCdE : Edit
+			{
+				property = "DISLoad_Module_Equip_CdE";
+				displayName = "Chef d'Equipe";
+				tooltip = "Define the class of the unit to equip as CdE";
+				typeName = "STRING";
+				defaultValue = "[""coyCde"",""sgBlCde"",""sgGrCde"",""trBlCde"",""trGrCde"",""grBlCde"",""grGrCde""]";
+			};
+			
+			class IsGv : Edit
+			{
+				property = "DISLoad_Module_Equip_Gv";
+				displayName = "Gv";
+				tooltip = "Define the class of the unit to equip as Gv";
+				typeName = "STRING";
+				defaultValue = "[""coyGvIng"",""sgGvIng"",""sgBlGv1"",""sgBlGv2"",""sgGrGv1"",""sgGrGv2"",""trGvIng"",""trBlGv1"",""trBlGv2"",""trGrGv1"",""trGrGv2"",""grGvIng"",""grBlGv1"",""grBlGv2"",""grGrGv1"",""grGrGv2""]";
+			};
+			
+			class IsCdBr : Edit
+			{
+				property = "DISLoad_Module_Equip_CdBr";
+				displayName = "Chef de Bord (rouge)";
+				tooltip = "Define the class of the unit to equip as CdBr";
+				typeName = "STRING";
+				defaultValue = "[""sgCdb"",""trCdb"",""grCdb""]";
+			};
+			
+			class IsCdB : Edit
+			{
+				property = "DISLoad_Module_Equip_CdB";
+				displayName = "Chef de Bord";
+				tooltip = "Define the class of the unit to equip as CdB";
+				typeName = "STRING";
+				defaultValue = "[""crCdb"",""trCdb"",""alCdb""]";
+			};
+			
+			class IsEquipier : Edit
+			{
+				property = "DISLoad_Module_Equip_Equipier";
+				displayName = "Equipier";
+				tooltip = "Define the class of the unit to equip as Equipier";
+				typeName = "STRING";
+				defaultValue = "[""sgEq"",""grEq"",""trEq"",""crEq1"",""crEq2"",""alEq1"",""alEq2""]";
+			};
+			
+			class IsPiloteHelo : Edit
+			{
+				property = "DISLoad_Module_Equip_PiloteHelo";
+				displayName = "Pilote Helico";
+				tooltip = "Define the class of the unit to equip as PiloteHelo";
+				typeName = "STRING";
+				defaultValue = "[""haP1"",""haP2"",""haP3"",""haP4""]";
+			};
+			
+			class IsPiloteAvions : Edit
+			{
+				property = "DISLoad_Module_Equip_PiloteAvions";
+				displayName = "Pilote Avions";
+				tooltip = "Define the class of the unit to equip as PiloteAvions";
+				typeName = "STRING";
+				defaultValue = "[""albP1"",""albP2""]";
+			};
+
+			class DefaultGV : Checkbox
+			{
+				property = "DISLoad_Module_Equip_PiloteAvions";
+				displayName = "GV pour les autres";
+				tooltip = "Define if the Gv is the default load for the other units";
+				typeName = "BOOL";
+				defaultValue = "TRUE";
+			};
+
+			// Attributes definition
+			class ModuleDescription : ModuleDescription {}; // Module description should be shown last
+		};
+
+		class ModuleDescription: ModuleDescription
+		{
+			description = "This module will initialise the load on given units.";
+		};
+	};
+
 	class DISLoad_CustomLoad : Module_F
 	{
 		scope = 2;
