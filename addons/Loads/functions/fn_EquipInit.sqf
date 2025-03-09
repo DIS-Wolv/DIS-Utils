@@ -46,4 +46,4 @@ DISLoad_var_IsPiloteAvion = _isPiloteAvion;
 
 {
     [_x] call DISLoad_fnc_Equip;
-} forEach allUnits;
+} forEach allPlayers;
