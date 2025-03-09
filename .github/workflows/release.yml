@@ -1,0 +1,64 @@
+---
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: mcoffin/armake2:2e66c92
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Write secret file to disk
+        env:
+          DIS_BIPRIVATEKEY_B64: ${{ secrets.DIS_BIPRIVATEKEY_B64 }}
+        run: |
+          echo "$DIS_BIPRIVATEKEY_B64" | base64 -d > /tmp/dis.biprivatekey
+
+      - name: Build the mod folder
+        run: ./build_mod.sh /tmp/dis.biprivatekey
+
+      - name: Upload mod as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: "@DIS-Utils"
+          path: "@DIS-Utils/"
+          retention-days: 7
+
+  release:
+    runs-on: ubuntu-latest
+    container: steamcmd/steamcmd:alpine-3
+    needs: build
+    steps:
+      - name: Download built mod artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: "@DIS-Utils"
+          path: "@DIS-Utils"
+      - name: Create VDF file
+        env:
+          WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
+        run: |
+          cat <<EOF > update.vdf
+          "workshopitem"
+          {
+          "appid" "107410"
+          "publishedfileid" "${WORKSHOP_ID}"
+          "contentfolder" "$(pwd)/@DIS-Utils"
+          }
+          EOF
+      - name: Debug
+        run: |
+          cat update.vdf
+          find .
+      - name: Upload to Steam
+        env:
+          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
+        run: >
+          steamcmd
+          "+login ${STEAM_USERNAME} ${STEAM_PASSWORD}"
+          "+workshop_build_item $(pwd)/update.vdf"
+          "+exit"
