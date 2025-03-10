@@ -49,13 +49,17 @@ class CfgEditorSubCategories
 	class DISSign: NO_CATEGORY
 	{
 		displayName = "Panneaux";
-
+	};
+	class DISCrates: NO_CATEGORY
+	{
+		displayName = "DIS Crates";
 	};
 };
 
 
 class CfgVehicles
 {
+// Drapeaux
 	class Flag_NATO_F;
 	// Flag Blanc
 	class DISAsset_FlagDISMoto : Flag_NATO_F
@@ -208,6 +212,7 @@ class CfgVehicles
 		};
 	};
 
+// Panneaux
 	class Land_Billboard_F;
 	class DISAsset_BillboardDIS : Land_Billboard_F
 	{
@@ -331,4 +336,76 @@ class CfgVehicles
 			init = "(_this select 0) setObjectTextureGlobal [0, 'z\DISUtils\addons\Assets\data\tip.jpg'];";
 		};
 	};
+// Caisses
+	class Box_NATO_Equip_F;
+	class DISAsset_Box_Para : Box_NATO_Equip_F
+	{
+		author = "Wolv";
+		displayName = "Caisse Parachutiste";
+		editorCategory = "DISAssets";
+		editorSubcategory = "DISCrates";
+
+		class TransportItems {};
+		class EventHandlers
+		{
+			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; [(_this select 0), DISCrate_var_Para] call DISLoad_fnc_SetCrate; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_Para], 1.5, True, True, """", """", 5];";
+		};
+	};
+	class DISAsset_Box_Items : Box_NATO_Equip_F
+	{
+		author = "Wolv";
+		displayName = "Caisse Items";
+		editorCategory = "DISAssets";
+		editorSubcategory = "DISCrates";
+
+		class TransportItems {};
+		class EventHandlers
+		{
+			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; [(_this select 0), DISCrate_var_Items] call DISLoad_fnc_SetCrate; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_Items], 1.5, True, True, """", """", 5];";
+		};
+	};
+
+	class Box_NATO_Wps_F;
+	class DISAsset_Box_Wpn : Box_NATO_Wps_F
+	{
+		author = "Wolv";
+		displayName = "Caisse Armes";
+		editorCategory = "DISAssets";
+		editorSubcategory = "DISCrates";
+
+		class EventHandlers
+		{
+			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; [(_this select 0), DISCrate_var_Armes] call DISLoad_fnc_SetCrate; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_Armes], 1.5, True, True, """", """", 5];";
+		};
+	};
+	
+	class Box_NATO_WpsLaunch_F;
+	class DISAsset_Box_Launcher : Box_NATO_WpsLaunch_F
+	{
+		author = "Wolv";
+		displayName = "Caisse Lanceur";
+		editorCategory = "DISAssets";
+		editorSubcategory = "DISCrates";
+
+		class EventHandlers
+		{
+			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; [(_this select 0), DISCrate_var_Lanceurs] call DISLoad_fnc_SetCrate; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_Lanceurs], 1.5, True, True, """", """", 5];";
+		};
+	};
+
+	class CargoNet_01_box_F;
+	class DISAsset_Box_Dump : CargoNet_01_box_F
+	{
+		author = "Wolv";
+		displayName = "Dump";
+		editorCategory = "DISAssets";
+		editorSubcategory = "DISCrates";
+
+		class EventHandlers
+		{
+			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; [(_this select 0), DISCrate_var_dump] call DISLoad_fnc_SetCrate; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_dump], 1.5, True, True, """", """", 5];";
+		};
+	};
 };
+
+
