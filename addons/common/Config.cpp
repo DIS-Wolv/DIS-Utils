@@ -211,7 +211,7 @@ class CfgVehicles
 	{
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
-		displayName = "Location preset DIS";					// Name displayed in the menu
+		displayName = "Location DIS";					// Name displayed in the menu
 		icon = "z\DISUtils\addons\Common\data\loc.paa";							// Map icon. Delete this entry to use the default icon.
 		category = "DIS_Public";
 		author = "Wolv";
