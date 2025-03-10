@@ -19,9 +19,9 @@ class CfgPatches
 class CfgFactionClasses
 {
 	class NO_CATEGORY;
-	class DIS: NO_CATEGORY
+	class DIS_Public: NO_CATEGORY
 	{
-		displayName = "DIS Modules";
+		displayName = "DIS Public Modules";
 	};
 };
 
@@ -54,7 +54,7 @@ class CfgVehicles
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Init garage";				// Name displayed in the menu
 		icon = "z\DISUtils\addons\Garage\data\icon.paa";	// Map icon. Delete this entry to use the default icon.
-		category = "DIS";
+		category = "DIS_Public";
 		author = "Wolv";
 
 		function = "WolvGarage_fnc_init";	// Name of function triggered once conditions are met

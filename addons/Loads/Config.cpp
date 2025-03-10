@@ -17,11 +17,16 @@ class CfgPatches
 class CfgFactionClasses
 {
 	class NO_CATEGORY;
-	class DIS: NO_CATEGORY
+	class DIS_Public: NO_CATEGORY
 	{
-		displayName = "DIS Modules";
+		displayName = "DIS Public Modules";
+	};
+	class DIS_Preset: NO_CATEGORY
+	{
+		displayName = "DIS Preset Modules";
 	};
 };
+
 
 class CfgVehicles
 {
@@ -51,7 +56,7 @@ class CfgVehicles
 		scope = 2;
 		displayName = "DIS Ace Arsenal";
 		icon = "z\DISUtils\addons\Loads\data\Box.paa";
-		category = "DIS";
+		category = "DIS_Preset";
 
 		function = "DISLoad_fnc_ArsenalAce";
 		functionPriority = 2;
@@ -105,9 +110,9 @@ class CfgVehicles
 	class DISLoad_Equip : Module_F
 	{
 		scope = 2;
-		displayName = "DIS Equip";
+		displayName = "Equip";
 		icon = "z\DISUtils\addons\Loads\data\Helmet.paa";
-		category = "DIS";
+		category = "DIS_Preset";
 
 		function = "DISLoad_fnc_EquipInit";
 		functionPriority = 1;
@@ -244,7 +249,7 @@ class CfgVehicles
 		scope = 2;
 		displayName = "Custom Loads";
 		icon = "z\DISUtils\addons\Loads\data\Helmet.paa";
-		category = "DIS";
+		category = "DIS_Public";
 
 		function = "DISLoad_fnc_customLoad";
 		functionPriority = 1;
@@ -299,9 +304,9 @@ class CfgVehicles
 	class DISLoad_DISLoad : Module_F
 	{
 		scope = 2;
-		displayName = "DIS Loads";
+		displayName = "Loads";
 		icon = "z\DISUtils\addons\Loads\data\Helmet.paa";
-		category = "DIS";
+		category = "DIS_Preset";
 
 		function = "DISLoad_fnc_disLoad";
 		functionPriority = 1;
@@ -371,7 +376,7 @@ class CfgVehicles
 		scope = 2;
 		displayName = "Custom Crate";
 		icon = "z\DISUtils\addons\Loads\data\box.paa";
-		category = "DIS";
+		category = "DIS_Public";
 
 		function = "DISLoad_fnc_customCrate";
 		functionPriority = 1;
@@ -428,7 +433,7 @@ class CfgVehicles
 		scope = 2;
 		displayName = "DIS Crates";
 		icon = "z\DISUtils\addons\Loads\data\box.paa";
-		category = "DIS";
+		category = "DIS_Preset";
 
 		function = "DISLoad_fnc_DISCrate";
 		functionPriority = 1;

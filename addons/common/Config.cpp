@@ -19,9 +19,9 @@ class CfgPatches
 class CfgFactionClasses
 {
 	class NO_CATEGORY;
-	class DIS: NO_CATEGORY
+	class DIS_Public: NO_CATEGORY
 	{
-		displayName = "DIS Modules";
+		displayName = "DIS Public Modules";
 	};
 };
 
@@ -55,7 +55,7 @@ class CfgVehicles
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Init HALO Jump";				// Name displayed in the menu
 		icon = "z\DISUtils\addons\Common\data\halo.paa";	// Map icon. Delete this entry to use the default icon.
-		category = "DIS";
+		category = "DIS_Public";
 		author = "Wolv";
 
 		function = "DISCommon_fnc_initHalo";// Name of function triggered once conditions are met
@@ -91,7 +91,7 @@ class CfgVehicles
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Init reco drone";				// Name displayed in the menu
 		icon = "z\DISUtils\addons\Common\data\drone.paa";					// Map icon. Delete this entry to use the default icon.
-		category = "DIS";
+		category = "DIS_Public";
 		author = "Wolv";
 
 		function = "DISCommon_fnc_initRecoDrone";
@@ -162,7 +162,7 @@ class CfgVehicles
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Attach marker to object";		// Name displayed in the menu
 		icon = "\A3\ui_f\data\map\markers\handdrawn\objective_CA.paa";					// Map icon. Delete this entry to use the default icon.
-		category = "DIS";
+		category = "DIS_Public";
 		author = "Wolv";
 
 		function = "DISCommon_fnc_markers";
@@ -213,7 +213,7 @@ class CfgVehicles
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Location preset DIS";					// Name displayed in the menu
 		icon = "z\DISUtils\addons\Common\data\loc.paa";							// Map icon. Delete this entry to use the default icon.
-		category = "DIS";
+		category = "DIS_Public";
 		author = "Wolv";
 
 		function = "DISCommon_fnc_customLocations";
@@ -245,7 +245,7 @@ class CfgVehicles
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Location custom";				// Name displayed in the menu
 		icon = "z\DISUtils\addons\Common\data\loc.paa";							// Map icon. Delete this entry to use the default icon.
-		category = "DIS";
+		category = "DIS_Public";
 		author = "Wolv";
 
 		function = "DISCOMMON_fnc_addCustomLocation";
@@ -315,7 +315,7 @@ class CfgVehicles
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Boat spaw point";				// Name displayed in the menu
 		icon = "z\DISUtils\addons\Common\data\boat.paa";							// Map icon. Delete this entry to use the default icon.
-		category = "DIS";
+		category = "DIS_Public";
 		author = "Wolv";
 
 		function = "DISCOMMON_fnc_initboat";
@@ -358,7 +358,7 @@ class CfgVehicles
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Teleporter";						// Name displayed in the menu
 		icon = "z\DISUtils\addons\Common\data\teleport.paa";					// Map icon. Delete this entry to use the default icon.
-		category = "DIS";
+		category = "DIS_Public";
 		author = "Wolv";
 
 		function = "DISCOMMON_fnc_fastTravelInit";
@@ -401,7 +401,7 @@ class CfgVehicles
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
 		displayName = "Cut bushes option";						// Name displayed in the menu
 		icon = "z\DISUtils\addons\Common\data\bush.paa";					// Map icon. Delete this entry to use the default icon.
-		category = "DIS";
+		category = "DIS_Public";
 		author = "Wolv";
 
 		function = "DISCOMMON_fnc_CutBushesInit";
