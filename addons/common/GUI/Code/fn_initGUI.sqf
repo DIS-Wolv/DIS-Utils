@@ -19,10 +19,9 @@ private _cible = _links select 0;
 private _titre = _module getVariable ["CodeTitre", "Code"];
 private _reference = _module getVariable ["Reference", "-1"];
 
-private _action = ["", "", ""];
-_action set [0, _module getVariable ["ActionGood", "systemChat 'Code Bon';"]];
-_action set [1, _module getVariable ["ActionErreur", "systemChat 'Code Mauvais';"]];
-_action set [2, _module getVariable ["_action", "systemChat 'Fermeture';"]];
+private _actionGood = _module getVariable ["ActionGood", "systemChat 'Code Bon';"];
+private _actionErreur = _module getVariable ["ActionErreur", "systemChat 'Code Mauvais';"];
+private _actionClose = _module getVariable ["ActionFermeture", "systemChat 'Fermeture';"];
 
 private _code = [0,0,0,0];
 _code set [0, _module getVariable ["CodeD1", 0]];
@@ -66,9 +65,9 @@ _cible setVariable ["DISGUI_code_var_Title", False, True];
 _cible setVariable ["DISGUI_code_var_reference", _reference, True];
 _cible setVariable ["DISGUI_code_var_CodeOuvert", False, True];
 _cible setVariable ["DISGUI_code_var_CurrentCode", [-1,-1,-1,-1], True];
-_cible setVariable ["DISGUI_code_var_ActionGood", (_action select 0), True];
-_cible setVariable ["DISGUI_code_var_ActionErr", (_action select 1), True];
-_cible setVariable ["DISGUI_code_var_ActionLock", (_action select 2), True];
+_cible setVariable ["DISGUI_code_var_ActionGood", _actionGood, True];
+_cible setVariable ["DISGUI_code_var_ActionErr", _actionErreur, True];
+_cible setVariable ["DISGUI_code_var_ActionLock", _actionClose, True];
 
 
 
