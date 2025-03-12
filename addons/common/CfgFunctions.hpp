@@ -54,8 +54,6 @@ class DIS_GUI_Code {
 		class openGUI {};
 		class update {};
 		class PressButton {};
-		class CancelButton {};
-		class ValidateButton {};
 	};
 };
 
