@@ -1,3 +1,4 @@
+#include "GUI\IncludeMaster.hpp"
 
 class CfgFunctions
 {
@@ -24,7 +25,6 @@ class CfgFactionClasses
 		displayName = "DIS Public Modules";
 	};
 };
-
 
 class CfgVehicles
 {
@@ -435,6 +435,115 @@ class CfgVehicles
 			description = "Add a action to cut bushes near the player, NEED ACE INTERACTION";	// Short description, will be formatted as structured text
 			position = 0;	// Position is taken into effect
 		};
+	};
+
+////////
+	class DISGui_Code : Module_F
+	{
+		scope = 2;
+		displayName = "Code Interface";
+		icon = "z\DISUtils\addons\common\data\digicode.paa";
+		category = "DIS_Public";
+		author = "Wolv";
+
+		function = "DISGUICode_fnc_initGUI";
+		functionPriority = 1;
+		isGlobal = 1;
+		isTriggerActivated = 0;
+		isDisposable = 0;
+		is3DEN = 0;
+		curatorCanAttach = 0;
+
+		canSetArea = 0;
+
+		class Attributes : AttributesBase
+		{
+			class CodeTitre : Edit
+			{
+				property = "DISGui_Module_Code_Titre";
+				displayName = "Titre";
+				tooltip = "Name of the code interface";
+				typeName = "STRING";
+				defaultValue = """Code""";
+			};
+
+			class ActionGood : Edit
+			{
+				property = "DISGui_Module_Code_ActionGood";
+				displayName = "Action Good";
+				tooltip = "Action to do when the code is good";
+				typeName = "STRING";
+				defaultValue = """systemChat 'Code Bon';""";
+			};
+			class ActionErreur : Edit
+			{
+				property = "DISGui_Module_Code_ActionErreur";
+				displayName = "Action Erreur";
+				tooltip = "Action to do when the code is bad";
+				typeName = "STRING";
+				defaultValue = """systemChat 'Code Mauvais';""";
+			};
+			class ActionFermeture : Edit
+			{
+				property = "DISGui_Module_Code_ActionFermeture";
+				displayName = "Action fermeture";
+				tooltip = "Action to do when the fermeture button is pressed";
+				typeName = "STRING";
+				defaultValue = """systemChat 'Fermeture';""";
+			};
+
+			class CodeD1 : Edit
+			{
+				property = "DISGui_Module_Code_CodeD1";
+				displayName = "Code Digit 1";
+				tooltip = "First digit of the code";
+				typeName = "Number";
+				defaultValue = "0";
+			};
+			class CodeD2 : Edit
+			{
+				property = "DISGui_Module_Code_CodeD2";
+				displayName = "Code Digit 2";
+				tooltip = "Second digit of the code";
+				typeName = "Number";
+				defaultValue = "0";
+			};
+			class CodeD3 : Edit
+			{
+				property = "DISGui_Module_Code_CodeD3";
+				displayName = "Code Digit 3";
+				tooltip = "Third digit of the code";
+				typeName = "Number";
+				defaultValue = "0";
+			};
+			class CodeD4 : Edit
+			{
+				property = "DISGui_Module_Code_CodeD4";
+				displayName = "Code Digit 4";
+				tooltip = "Last digit of the code";
+				typeName = "Number";
+				defaultValue = "0";
+			};
+
+			class Reference : Edit
+			{
+				property = "DISGui_Module_Code_Reference";
+				displayName = "Reference";
+				tooltip = "Name of the code for message to Zeus";
+				typeName = "STRING";
+				defaultValue = """Code""";
+			};
+			// Module-specific arguments:
+			class ModuleDescription : ModuleDescription {}; // Module description should be shown last
+		};
+
+		// Module description (must inherit from base class, otherwise pre-defined entities won't be available)
+		class ModuleDescription : ModuleDescription
+		{
+			description = "Add action to open ";
+			position = 0;
+		};
+
 	};
 
 };

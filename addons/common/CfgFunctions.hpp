@@ -14,7 +14,7 @@ class DIS_Common {
 		class initHalo {};
 		class haloJump {};
 		class haloJumpinfo {};
-	}
+	};
 
 	class RecoDrone {
 		file = "z\DISUtils\addons\Common\functions\RecoDrone";
@@ -22,7 +22,7 @@ class DIS_Common {
 		class initRecoDrone {};
 		class recoDrone{};
 		class recoDroneInfo{};
-	}
+	};
 
 	class Boat {
 		file = "z\DISUtils\addons\Common\functions\boat";
@@ -30,7 +30,7 @@ class DIS_Common {
 		class initBoat {};
 		class createBoat {};
 		class deleteBoats {};
-	}
+	};
 
 	class utils {
 		file = "z\DISUtils\addons\Common\functions\utils";
@@ -42,5 +42,20 @@ class DIS_Common {
 		class fastTravelInit {};
 		class CutBushes {};
 		class CutBushesInit {};
-	}
+	};
 };
+
+class DIS_GUI_Code {
+	tag = "DISGUICode";
+	class CodeInterface {
+		file = "z\DISUtils\addons\common\GUI\Code";
+
+		class initGUI {};
+		class openGUI {};
+		class update {};
+		class PressButton {};
+		class CancelButton {};
+		class ValidateButton {};
+	};
+};
+
