@@ -6,7 +6,7 @@ class GUIgarage_Garage
 	
 	class controlsBackground
 	{
-		class GUI_Garage_Background: RscText_WolvGUIgarage
+		class GUI_Garage_Background: RscText
 		{
 			idc = 1000;
 			x = 0.2 * safezoneW + safezoneX;
@@ -15,7 +15,7 @@ class GUIgarage_Garage
 			h = 0.68 * safezoneH;
 			colorBackground[] = {0.16,0.196,0.098,0.9};
 		};
-		class GUI_Garage_Title: RscStructuredText_WolvGUIgarage
+		class GUI_Garage_Title: RscStructuredText
 		{
 			idc = 1100;
 			text = "<t size='3' align='center'>Garage DIS<t/>"; //--- ToDo: Localize;
@@ -28,7 +28,7 @@ class GUIgarage_Garage
 
 	class controls 
 	{
-		class GUI_Garage_ButtonNavGarage: RscButton_WolvGUIgarage
+		class GUI_Garage_ButtonNavGarage: RscButton
 		{
 			idc = 1600;
 			text = "Garage"; //--- ToDo: Localize;
@@ -39,7 +39,7 @@ class GUIgarage_Garage
 			//action = "[1] spawn WolvGarage_fnc_switchDisplay;";
 			colorBackground[] = {0,0,0,1};
 		};
-		class GUI_Garage_ButtonNavInv: RscButton_WolvGUIgarage
+		class GUI_Garage_ButtonNavInv: RscButton
 		{
 			idc = 1601;
 			text = "Inventaire"; //--- ToDo: Localize;
@@ -49,7 +49,7 @@ class GUIgarage_Garage
 			h = 0.04 * safezoneH;
 			action = "[2] spawn WolvGarage_fnc_switchDisplay;";
 		};
-		class GUI_Garage_ButtonNavInvAce: RscButton_WolvGUIgarage
+		class GUI_Garage_ButtonNavInvAce: RscButton
 		{
 			idc = 1602;
 			text = "Inventaire Ace"; //--- ToDo: Localize;
@@ -60,7 +60,7 @@ class GUIgarage_Garage
 			action = "[3] spawn WolvGarage_fnc_switchDisplay;";
 		};
 
-		class GUI_Garage_ListBoxVlProx: RscListbox_WolvGUIgarage
+		class GUI_Garage_ListBoxVlProx: RscListbox
 		{
 			idc = 1500;
 			x = 0.2375 * safezoneW + safezoneX;
@@ -68,7 +68,7 @@ class GUIgarage_Garage
 			w = 0.1625 * safezoneW;
 			h = 0.44 * safezoneH;
 		};
-		class GUI_Garage_ListBoxUsine: RscListbox_WolvGUIgarage
+		class GUI_Garage_ListBoxUsine: RscListbox
 		{
 			idc = 1501;
 			x = 0.6 * safezoneW + safezoneX;
@@ -77,7 +77,7 @@ class GUIgarage_Garage
 			h = 0.44 * safezoneH;
 		};
 
-		class GUI_Garage_ButtonSpawn: RscButton_WolvGUIgarage
+		class GUI_Garage_ButtonSpawn: RscButton
 		{
 			idc = 1603;
 			text = "Créer"; //--- ToDo: Localize;
@@ -87,7 +87,7 @@ class GUIgarage_Garage
 			h = 0.08 * safezoneH;
 			action = "[] spawn WolvGarage_fnc_garSpawnVl";
 		};
-		class GUI_Garage_ButtonParadrop: RscButton_WolvGUIgarage
+		class GUI_Garage_ButtonParadrop: RscButton
 		{
 			idc = 1604;
 			text = "Parrachuter"; //--- ToDo: Localize;
@@ -97,7 +97,7 @@ class GUIgarage_Garage
 			h = 0.08 * safezoneH;
 			action = "[] spawn WolvGarage_fnc_garParradropVl";
 		};
-		class GUI_Garage_ButtonDelete: RscButton_WolvGUIgarage
+		class GUI_Garage_ButtonDelete: RscButton
 		{
 			idc = 1605;
 			text = "Supprimer"; //--- ToDo: Localize;
