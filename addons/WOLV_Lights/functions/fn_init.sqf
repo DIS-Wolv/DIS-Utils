@@ -155,6 +155,11 @@ private _gen = nearestObjects [_center, WolvLights_var_genType, worldSize]; //re
 		params ["_target","_caller","_actionId","_posMarkerG"]; [_target, _caller, _actionId, _posMarkerG, 0] spawn WolvLights_fnc_generators;
 	},_posMarkerG,1.5,True,True,"","True",5]; // turn OFF
 	
+	_x addEventHandler ["Killed", { 
+		params ["_unit", "_killer", "_instigator", "_useEffects"];
+		[_unit, _killer, -7, (position _unit), 0] spawn WolvLights_fnc_generators;
+	}];
+
 }forEach _gen; //pour chaque générateur
 
 private _LightHouse = nearestObjects [_center, WolvLights_var_lightHouseType, worldSize]; //recupère les générateur de la carte dans un rayon de 15 km autour du centre de la carte
