@@ -61,7 +61,7 @@ if (_reference == "-1") then {
 // variable pour le code
 _cible setVariable ["DISGUI_code_var_Code", _code, True];
 _cible setVariable ["DISGUI_code_var_CodeTentative", 0, True];
-_cible setVariable ["DISGUI_code_var_Title", False, True];
+_cible setVariable ["DISGUI_code_var_Title", _titre, True];
 _cible setVariable ["DISGUI_code_var_reference", _reference, True];
 _cible setVariable ["DISGUI_code_var_CodeOuvert", False, True];
 _cible setVariable ["DISGUI_code_var_CurrentCode", [-1,-1,-1,-1], True];
