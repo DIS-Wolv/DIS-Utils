@@ -36,6 +36,8 @@ if (_isOpen) then {
 		[_cible] spawn compile _action;
 		_cible setVariable ["DISGUI_code_var_CodeOuvert", False, True];
 		[format["%1 a fermé %2", name player, _doorRef]] call _msgToZeus;
+
+		playSound3D ["z\DISUtils\addons\Common\GUI\data\success.wav", _cible , False, _cible, 2.2];
 	};
 } else {
 	// bouton validé ou effacé
@@ -51,6 +53,8 @@ if (_isOpen) then {
 				private _action = _cible getVariable ["DISGUI_code_var_ActionGood", "systemChat 'Ouverture';"];
 				[_cible] spawn compile _action;
 
+				playSound3D ["z\DISUtils\addons\Common\GUI\data\success.wav", _cible , False, _cible, 2.2];
+
 				[format["%1 a ouvert %2", name player, _doorRef]] call _msgToZeus;
 			}
 			else {
@@ -59,15 +63,19 @@ if (_isOpen) then {
 				private _action = _cible getVariable ["DISGUI_code_var_ActionErr", "systemChat 'Code Mauvais';"];
 				[_cible] spawn compile _action;
 
+				playSound3D ["z\DISUtils\addons\Common\GUI\data\error.wav", _cible , False, _cible, 1.5];
+
 				[format["%1 a essayé d'ouvrir %2", name player, _doorRef]] call _msgToZeus;
 			};
 
 		} else {
+			playSound3D ["z\DISUtils\addons\Common\GUI\data\beep.wav", _cible , False, _cible, 2];
 			// efface le code
 			_cible setVariable ["DISGUI_code_var_CurrentCode", [-1,-1,-1,-1]];
 		};
 	}
 	else {
+		playSound3D ["z\DISUtils\addons\Common\GUI\data\beep.wav", _cible , False, _cible, 2];
 		// ajoute la valeur a la fin du code
 		if (_current select 0 == -1) then {
 			_current set [0, _bouton];
