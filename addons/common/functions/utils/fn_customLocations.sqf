@@ -138,6 +138,10 @@ switch (worldName) do {
 
 		private _IAMATIKOU = createLocation ["NameLocal", [22351,18411], 200, 200];
 		_IAMATIKOU setText "Iamatikou";
+
+		private _vikosMilitary = createLocation ["NameLocal", [12287,8888], 200, 200];
+		_vikosMilitary setText "Vikos military";
+
 	};
 	case "Malden": {
 		private _lavit = createLocation ["NameLocal", [4970.18,10294.8], 50, 50];
