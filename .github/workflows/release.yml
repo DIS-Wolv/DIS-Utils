@@ -49,6 +49,8 @@ jobs:
       - name: Debug Wine
         run: |
           wine --version
+          winecfg
+          ls -la /github/
 
       - name: download A3Tools
         env:
@@ -64,7 +66,6 @@ jobs:
 
       - name: Debug A3Tools
         run: |
-          ls -la /github/
           find .
           ls -la /arma3/Publisher
           
