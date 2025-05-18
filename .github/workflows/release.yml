@@ -50,7 +50,8 @@ jobs:
           "+quit"
       - name: Download Wine
         run: |
-          apt-get install apt
+          apt update && apt upgrade -y
+          apt install apt
           wget https://dl.winehq.org/wine-builds/winehq.key
           apt-key add winehq.key
           apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
