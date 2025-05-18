@@ -50,6 +50,7 @@ jobs:
         run: |
           apt install -y xvfb
           Xvfb :0 -screen 0 1024x768x16 &
+          export DISPLAY=:0
           
       - name: Debug Wine
         run: |
@@ -80,7 +81,7 @@ jobs:
         env:
           WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
         run: |
-          DISPLAY=:0 wine /arma3/Publisher/PublisherCmd.exe update /id:${WORKSHOP_ID} /path:"$(pwd)/@DIS-Utils" /nologo /nogui
+          wine /arma3/Publisher/PublisherCmd.exe update /id:${WORKSHOP_ID} /path:"$(pwd)/@DIS-Utils" /nologo /nogui
 
 
 
