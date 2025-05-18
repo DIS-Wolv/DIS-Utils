@@ -41,7 +41,7 @@ jobs:
       - name: Download Wine
         run: |
           apt update
-          apt install -y wget
+          apt install -y wget gnupg gnupg2 gnupg1
           wget https://dl.winehq.org/wine-builds/winehq.key
           apt-key add winehq.key
           apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
