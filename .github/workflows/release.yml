@@ -39,7 +39,7 @@ jobs:
           path: "@DIS-Utils"
 
       - name: download A3Tools
-        run: |
+        run: >
           steamcmd 
           "+login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }}"
           "+force_install_dir /arma3 +app_update 233800"
