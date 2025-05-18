@@ -37,9 +37,6 @@ jobs:
         with:
           name: "@DIS-Utils"
           path: "@DIS-Utils"
-      - name: Debug Whoami
-        run: |
-          whoami
 
       - name: Download Wine
         run: |
@@ -49,7 +46,7 @@ jobs:
       - name: install xvfb
         run: |
           apt install -y xvfb
-          Xvfb :0 -screen 0 1024x768x16 &
+          xvfb :0 -screen 0 1024x768x16 &
           export DISPLAY=:0.0
           
       - name: Debug Wine
