@@ -59,6 +59,7 @@ jobs:
           "+quit"
       - name: Debug
         run: |
+          pwd
           find .
           ls -la /arma3
           ls -la /arma3/Publisher
