@@ -15,7 +15,7 @@ class GUICode_Interface
 			h = 0.484 * safezoneH;
 			colorBackground[] = {0,0,0,0.4};
 			// style = ST_PICTURE;
-			// text = "z\DISUtils\addons\Common\GUI\data\dis.paa";
+			// text = "z\DISUtils\addons\Common\GUI\data\digicode.paa";
 		};
 		class GUICode_Title: RscStructuredText
 		{
@@ -39,8 +39,7 @@ class GUICode_Interface
 			y = 0.357 * safezoneH + safezoneY;
 			w = 0.0309375 * safezoneW;
 			h = 0.055 * safezoneH;
-			colorBackground[] = {0,0,0,0.4};
-
+			colorBackground[] = {0,0,0,0.4};	//{0,0,0,0.4}
 		};
 		class GUICode_C2: RscStructuredText
 		{
