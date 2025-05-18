@@ -44,7 +44,7 @@ jobs:
       - name: Download Wine
         run: |
           apt update
-          apt install -y wine64
+          apt install -y wine64 wine-mono
 
       - name: install xvfb
         run: |
