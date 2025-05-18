@@ -40,7 +40,7 @@ jobs:
 
       - name: download A3Tools
         run: |
-          steamcmd.sh +login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }}
+          steamcmd +login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }}
           +force_install_dir /arma3 +app_update 233800 
           +quit
 
