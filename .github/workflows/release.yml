@@ -61,6 +61,7 @@ jobs:
         run: |
           pwd
           find .
+          ls -la /
           ls -la /arma3
           ls -la /arma3/Publisher
           
