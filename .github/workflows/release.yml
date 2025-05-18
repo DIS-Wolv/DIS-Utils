@@ -28,8 +28,8 @@ jobs:
           retention-days: 7
 
   release:
-    runs-on: windows-latest
-    container: dahlgren/arma3tools:latest
+    runs-on: debian:stable-slim
+    container: steamcmd/steamcmd:windows
     needs: build
     steps:
       - name: Download built mod artifact
@@ -37,6 +37,13 @@ jobs:
         with:
           name: "@DIS-Utils"
           path: "@DIS-Utils"
+
+      - name: download A3Tools
+        run: |
+          steamcmd +login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }}
+          +force_install_dir /arma3 +app_update 233800 
+          +quit
+
       - name: uploading
         run: |
           PublisherCmd update /id:${{ secrets.WORKSHOP_ID }} /path:"$(pwd)/@DIS-Utils"
