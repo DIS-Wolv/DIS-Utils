@@ -64,6 +64,7 @@ jobs:
 
       - name: Debug A3Tools
         run: |
+          pwd
           find .
           ls -la /arma3
           ls -la /arma3/Publisher
