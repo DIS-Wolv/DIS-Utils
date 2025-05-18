@@ -55,7 +55,8 @@ jobs:
           steamcmd 
           "+force_install_dir /arma3"
           "+login ${STEAM_USERNAME} ${STEAM_PASSWORD}"
-          "+@sSteamCmdForcePlatformType windows +app_update 233800"
+          "+@sSteamCmdForcePlatformType windows"
+          "+app_update 233800"
           "+quit"
       - name: Debug
         run: |
