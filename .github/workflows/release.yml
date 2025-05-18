@@ -47,6 +47,11 @@ jobs:
           apt-key add winehq.key
           apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
           aptitude install winehq-stable -y
+
+      - name: Debug Wine
+        run: |
+          wine --version
+
       - name: download A3Tools
         env:
           STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
@@ -58,18 +63,18 @@ jobs:
           "+@sSteamCmdForcePlatformType windows"
           "+app_update 233800"
           "+quit"
-      - name: Debug
+          
+      - name: Debug A3Tools
         run: |
-          pwd
           find .
-          ls -la /
           ls -la /arma3
           ls -la /arma3/Publisher
           
-
       - name: uploading
+        env:
+          WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
         run: |
-          wine start /arma3/Publisher/PublisherCmd.exe update /id:${{ secrets.WORKSHOP_ID }} /path:"$(pwd)/@DIS-Utils"
+          wine /arma3/Publisher/PublisherCmd.exe update /id:${WORKSHOP_ID} /path:"$(pwd)/@DIS-Utils"
 
 
 # apt install -y --install-recommends winehq-stable
