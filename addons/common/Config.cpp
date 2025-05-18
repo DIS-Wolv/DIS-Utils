@@ -13,7 +13,7 @@ class CfgPatches
 		units[] = {"DISCommon_InitHalo", "DISCommon_InitRecoDrone", "DISCommon_AttachMarkerToObject", "DISCommon_CustomDISLocation", "DISCommon_CustomLocation"};
 		weapons[] = {};
 		requiredVersion = 1.0;
-		requiredAddons[] = {"A3_Modules_F"};
+		requiredAddons[] = {"A3_Modules_F", "A3_Ui_F"};
 	};
 };
 
