@@ -49,6 +49,7 @@ jobs:
       - name: Debug Wine
         run: |
           wine --version
+          chown -R $(whoami):$(whoami) /github/home
           winecfg
           ls -la /github/
 
