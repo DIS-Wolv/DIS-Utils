@@ -45,7 +45,7 @@ jobs:
           wget https://dl.winehq.org/wine-builds/winehq.key
           apt-key add winehq.key
           apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
-          apt install -y --install-recommends winehq-staging
+          apt install -y --install-recommends winehq-stable
       - name: download A3Tools
         env:
           STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
