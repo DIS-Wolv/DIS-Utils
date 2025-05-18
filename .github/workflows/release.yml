@@ -46,7 +46,7 @@ jobs:
           wget https://dl.winehq.org/wine-builds/winehq.key
           apt-key add winehq.key
           apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
-          apt install -y --install-recommends winehq-stable
+          aptitude install winehq-stable
       - name: download A3Tools
         env:
           STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
@@ -68,7 +68,7 @@ jobs:
           wine start /arma3/PublisherCmd.exe update /id:${{ secrets.WORKSHOP_ID }} /path:"$(pwd)/@DIS-Utils"
 
 
-
+# apt install -y --install-recommends winehq-stable
 #   release:
 #     runs-on: ubuntu-latest
 #     container: steamcmd/steamcmd:alpine-3
