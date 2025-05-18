@@ -40,13 +40,8 @@ jobs:
 
       - name: Download Wine
         run: |
-          dpkg --add-architecture i386
           apt update
-          apt install -y wget gnupg gnupg2 gnupg1 software-properties-common aptitude
-          wget https://dl.winehq.org/wine-builds/winehq.key
-          apt-key add winehq.key
-          apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
-          aptitude install winehq-stable -y
+          apt install wine64
 
       - name: Debug Wine
         run: |
@@ -63,7 +58,7 @@ jobs:
           "+@sSteamCmdForcePlatformType windows"
           "+app_update 233800"
           "+quit"
-          
+
       - name: Debug A3Tools
         run: |
           find .
@@ -76,6 +71,15 @@ jobs:
         run: |
           wine /arma3/Publisher/PublisherCmd.exe update /id:${WORKSHOP_ID} /path:"$(pwd)/@DIS-Utils"
 
+
+
+# dpkg --add-architecture i386
+# apt update
+# apt install -y wget gnupg gnupg2 gnupg1 software-properties-common aptitude
+# wget https://dl.winehq.org/wine-builds/winehq.key
+# apt-key add winehq.key
+# apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
+# aptitude install winehq-stable -y
 
 # apt install -y --install-recommends winehq-stable
 #   release:
