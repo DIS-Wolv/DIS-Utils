@@ -77,7 +77,8 @@ jobs:
         env:
           WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
         run: |
-          wine /arma3/Publisher/PublisherCmd.exe update /id:${WORKSHOP_ID} /path:"$(pwd)/@DIS-Utils" /nologo /nosummary
+          "wine cmd"
+          "/arma3/Publisher/PublisherCmd.exe update /id:${WORKSHOP_ID} /path:'$(pwd)/@DIS-Utils' /nologo /nosummary"
 
 
 
