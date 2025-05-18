@@ -48,7 +48,7 @@ jobs:
 
       - name: install xvfb
         run: |
-          apt install install xvfb
+          apt install xvfb
           Xvfb :0 -screen 0 1024x768x16 &
           
       - name: Debug Wine
