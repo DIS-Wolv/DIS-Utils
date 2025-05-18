@@ -29,7 +29,7 @@ jobs:
 
   release:
     runs-on: ubuntu-latest
-    container: steamcmd/steamcmd:windows
+    container: steamcmd/steamcmd:alpine-3
     needs: build
     steps:
       - name: Download built mod artifact
@@ -40,7 +40,7 @@ jobs:
 
       - name: download A3Tools
         run: |
-          steamcmd +login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }}
+          steamcmd.sh +login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }}
           +force_install_dir /arma3 +app_update 233800 
           +quit
 
