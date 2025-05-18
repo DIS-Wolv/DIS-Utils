@@ -1,4 +1,4 @@
-#include "z\DISUtils\addons\Common\GUI\includeMaster.hpp"
+#include "GUI\includeMaster.hpp"
 
 class CfgFunctions
 {
