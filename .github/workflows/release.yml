@@ -46,6 +46,11 @@ jobs:
           apt update
           apt install -y wine64
 
+      - name: install xvfb
+        run: |
+          apt install install xvfb
+          Xvfb :0 -screen 0 1024x768x16 &
+          
       - name: Debug Wine
         run: |
           wine --version
