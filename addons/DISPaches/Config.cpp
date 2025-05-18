@@ -1,14 +1,81 @@
-// class CfgPatches
-// {
-// 	class DISPatches
-// 	{
-// 		units[] = {};
-// 		weapons[] = {};
-// 		requiredVersion = 1.0;
-// 		requiredAddons[] = {"R3F_Uniformes"};
-// 	};
-// };
+class CfgPatches
+{
+	class DISPatches
+	{
+		units[] = {};
+		weapons[] = {};
+		requiredVersion = 1.0;
+		requiredAddons[] = {"A3_Characters_F"};
+	};
+};
 
+class cfgVehicles {
+	class B_Soldier_F;
+
+	class DIS_soldat_base: B_Soldier_F
+	{
+		side=2;
+		scope=0;
+		class Wounds
+		{
+			tex[]={};
+			mat[]=
+			{
+				"A3\Characters_F_Beta\INDEP\Data\ia_soldier_01_clothing.rvmat",
+				"A3\Characters_F_Beta\INDEP\Data\ia_soldier_01_clothing_injury.rvmat",
+				"A3\Characters_F_Beta\INDEP\Data\ia_soldier_01_clothing_injury.rvmat",
+				"A3\Characters_F\Heads\Data\hl_white_bald_muscular.rvmat",
+				"A3\Characters_F\Heads\Data\hl_white_bald_muscular_injury.rvmat",
+				"A3\Characters_F\Heads\Data\hl_white_bald_muscular_injury.rvmat",
+				"A3\Characters_F\Heads\Data\hl_black_bald_muscular.rvmat",
+				"A3\Characters_F\Heads\Data\hl_black_bald_muscular_injury.rvmat",
+				"A3\Characters_F\Heads\Data\hl_black_bald_muscular_injury.rvmat",
+				"A3\Characters_F\Heads\Data\hl_white_hairy_muscular.rvmat",
+				"A3\Characters_F\Heads\Data\hl_white_hairy_muscular_injury.rvmat",
+				"A3\Characters_F\Heads\Data\hl_white_hairy_muscular_injury.rvmat",
+				"A3\Characters_F\Heads\Data\hl_white_old.rvmat",
+				"A3\Characters_F\Heads\Data\hl_white_old_injury.rvmat",
+				"A3\Characters_F\Heads\Data\hl_white_old_injury.rvmat",
+				"A3\Characters_F\Heads\Data\hl_asian_bald_muscular.rvmat",
+				"A3\Characters_F\Heads\Data\hl_asian_bald_muscular_injury.rvmat",
+				"A3\Characters_F\Heads\Data\hl_asian_bald_muscular_injury.rvmat"
+			};
+		};
+	};
+
+	class DIS_Soldat_1 : DIS_soldat_base
+	{
+        _generalMacro = "B_Soldier_F"; //unsure what this does
+        scope = 2;
+        displayName = "Uniform Test Soldier";
+        uniformAccessories[] = {};
+        nakedUniform = "U_BasicBody"; //class for "naked" body
+        uniformClass = "DIS_ItemUniform_Soldat_1"; //the uniform item
+        hiddenSelections[] = {"Camo", "insignia"};
+        hiddenSelectionsTextures[] = {"z\DISUtils\addons\DISPatches\data\clothing1_co.paa", "z\DISUtils\addons\DISPatches\data\dis.paa"};
+		// model = "z\DISUtils\addons\DISPatches\data\cornu.p3d";
+    };
+
+};
+
+class cfgWeapons {
+    class UniformItem;
+	class Uniform_Base;
+	class DIS_ItemUniform_Soldat_1 : Uniform_Base 
+	{
+        scope = 2;
+        displayName = "Combat Fatigues (DIS)";
+        picture = "\A3\characters_f\data\ui\icon_U_B_CombatUniform_mcam_ca.paa";
+        model = "\A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
+        
+        class ItemInfo : UniformItem {
+            uniformModel = "-";
+            uniformClass = "DIS_Soldat_1"; //would be same as our made soldier class
+            containerClass = "Supply20"; //how much it can carry
+            mass = 80; //how much it weights
+        };
+    };
+};
 
 // class cfgWeapons {
 //     class UniformItem;
@@ -93,6 +160,5 @@
 // 	// 		};
 // 	//	 };
 // 	};
-
 
 // };
