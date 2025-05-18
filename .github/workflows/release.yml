@@ -42,7 +42,7 @@ jobs:
         run: |
           dpkg --add-architecture i386
           apt update
-          apt install -y wget gnupg gnupg2 gnupg1 software-properties-common
+          apt install -y wget gnupg gnupg2 gnupg1 software-properties-common aptitude
           wget https://dl.winehq.org/wine-builds/winehq.key
           apt-key add winehq.key
           apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
