@@ -51,12 +51,12 @@ jobs:
       - name: Debug
         run: |
           find .
-          ls -la /arma3
+          ls -la /arma3/Publisher
           
 
       - name: uploading
         run: |
-          PublisherCmd update /id:${{ secrets.WORKSHOP_ID }} /path:"$(pwd)/@DIS-Utils"
+          /arma3/PublisherCmd.exe update /id:${{ secrets.WORKSHOP_ID }} /path:"$(pwd)/@DIS-Utils"
 
 
 
