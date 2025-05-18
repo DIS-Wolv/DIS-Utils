@@ -41,7 +41,7 @@ jobs:
       - name: Download Wine
         run: |
           apt update
-          apt install wine64
+          apt install -y wine64
 
       - name: Debug Wine
         run: |
