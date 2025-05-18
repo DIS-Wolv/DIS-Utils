@@ -44,7 +44,7 @@ jobs:
       - name: Download Wine
         run: |
           apt update
-          apt install -y wine64 wine-mono
+          apt install -y wine64
 
       - name: install xvfb
         run: |
@@ -57,6 +57,7 @@ jobs:
           chown -R $(whoami):$(whoami) /github/home
           winecfg
           ls -la /github/
+          apt search wine-mono
 
       - name: download A3Tools
         env:
