@@ -55,6 +55,7 @@ jobs:
         run: |
           wine --version
           chown -R $(whoami):$(whoami) /github/home
+          DISPLAY=:0.0 winecfg
           winecfg
           ls -la /github/
 
