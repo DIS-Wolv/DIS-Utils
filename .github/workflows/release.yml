@@ -40,6 +40,7 @@ jobs:
 
       - name: Download Wine
         run: |
+          apt install -y wget
           wget https://dl.winehq.org/wine-builds/winehq.key
           apt-key add winehq.key
           apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
