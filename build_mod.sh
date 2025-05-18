@@ -25,9 +25,9 @@ done
 
 for folder in $(ls -1 addons); do
     if [ -d "./addons/$folder" ]; then
-        # armake2 build "./addons/$folder" -k "$KEY_PATH" "@DIS-Utils/addons/$folder.pbo"
-        armake2 pack -f "./addons/$folder" "@DIS-Utils/addons/$folder.pbo"
-        armake2 sign "$KEY_PATH" "@DIS-Utils/addons/$folder.pbo"
+        armake2 build "./addons/$folder" -k "$KEY_PATH" "@DIS-Utils/addons/$folder.pbo"
+        # armake2 pack -f "./addons/$folder" "@DIS-Utils/addons/$folder.pbo"
+        # armake2 sign "$KEY_PATH" "@DIS-Utils/addons/$folder.pbo"
     fi
 done
 
