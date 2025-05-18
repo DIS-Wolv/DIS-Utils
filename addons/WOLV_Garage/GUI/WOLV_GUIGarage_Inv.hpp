@@ -6,7 +6,7 @@ class GUIgarage_Inv
 	
 	class controlsBackground
 	{
-		class GUI_Garage_Background: RscText
+		class GUI_Garage_Background: WolvGUIgarage_RscText
 		{
 			idc = 1000;
 			x = 0.2 * safezoneW + safezoneX;
@@ -15,7 +15,7 @@ class GUIgarage_Inv
 			h = 0.68 * safezoneH;
 			colorBackground[] = {0.16,0.196,0.098,0.9};
 		};
-		class GUI_Garage_Title: RscStructuredText
+		class GUI_Garage_Title: WolvGUIgarage_RscStructuredText
 		{
 			idc = 1100;
 			text = "<t size='3' align='center'>Garage DIS<t/>"; //--- ToDo: Localize;
@@ -28,7 +28,7 @@ class GUIgarage_Inv
 
 	class controls 
 	{
-		class GUI_Garage_ButtonNavGarage: RscButton
+		class GUI_Garage_ButtonNavGarage: WolvGUIgarage_RscButton
 		{
 			idc = 1600;
 			text = "Garage"; //--- ToDo: Localize;
@@ -38,7 +38,7 @@ class GUIgarage_Inv
 			h = 0.04 * safezoneH;
 			action = "[1] spawn WolvGarage_fnc_switchDisplay;";
 		};
-		class GUI_Garage_ButtonNavInv: RscButton
+		class GUI_Garage_ButtonNavInv: WolvGUIgarage_RscButton
 		{
 			idc = 1601;
 			text = "Inventaire"; //--- ToDo: Localize;
@@ -49,7 +49,7 @@ class GUIgarage_Inv
 			//action = "[2] spawn WolvGarage_fnc_switchDisplay;";
 			colorBackground[] = {0,0,0,1};
 		};
-		class GUI_Garage_ButtonNavInvAce: RscButton
+		class GUI_Garage_ButtonNavInvAce: WolvGUIgarage_RscButton
 		{
 			idc = 1602;
 			text = "Inventaire Ace"; //--- ToDo: Localize;
@@ -60,7 +60,7 @@ class GUIgarage_Inv
 			action = "[3] spawn WolvGarage_fnc_switchDisplay;";
 		};
 
-		class GUI_Garage_ComboChoixVl: RscCombo
+		class GUI_Garage_ComboChoixVl: WolvGUIgarage_RscCombo
 		{
 			idc = 2100;
 			x = 0.4125 * safezoneW + safezoneX;
@@ -69,7 +69,7 @@ class GUIgarage_Inv
 			h = 0.04 * safezoneH;
 		};
 
-		class GUI_Garage_ListBoxInv: RscListbox
+		class GUI_Garage_ListBoxInv: WolvGUIgarage_RscListBox
 		{
 			idc = 1500;
 			x = 0.2375 * safezoneW + safezoneX;
@@ -77,7 +77,7 @@ class GUIgarage_Inv
 			w = 0.1625 * safezoneW;
 			h = 0.4 * safezoneH;
 		};
-		class GUI_Garage_ListBoxItems: RscListbox
+		class GUI_Garage_ListBoxItems: WolvGUIgarage_RscListBox
 		{
 			idc = 1501;
 			x = 0.6 * safezoneW + safezoneX;
@@ -86,7 +86,7 @@ class GUIgarage_Inv
 			h = 0.4 * safezoneH;
 		};
 
-		class GUI_Garage_ButtonPlus1: RscButton
+		class GUI_Garage_ButtonPlus1: WolvGUIgarage_RscButton
 		{
 			idc = 1603;
 			text = "+ 1"; //--- ToDo: Localize;
@@ -96,7 +96,7 @@ class GUIgarage_Inv
 			h = 0.04 * safezoneH;
 			action = "[1] spawn WolvGarage_fnc_invAddItem;";
 		};
-		class GUI_Garage_ButtonPlus5: RscButton
+		class GUI_Garage_ButtonPlus5: WolvGUIgarage_RscButton
 		{
 			idc = 1604;
 			text = "+ 5"; //--- ToDo: Localize;
@@ -106,7 +106,7 @@ class GUIgarage_Inv
 			h = 0.04 * safezoneH;
 			action = "[5] spawn WolvGarage_fnc_invAddItem;";
 		};
-		class GUI_Garage_ButtonPlus10: RscButton
+		class GUI_Garage_ButtonPlus10: WolvGUIgarage_RscButton
 		{
 			idc = 1605;
 			text = "+ 10"; //--- ToDo: Localize;
@@ -117,7 +117,7 @@ class GUIgarage_Inv
 			action = "[10] spawn WolvGarage_fnc_invAddItem;";
 		};
 		
-		class GUI_Garage_ButtonMoins1: RscButton
+		class GUI_Garage_ButtonMoins1: WolvGUIgarage_RscButton
 		{
 			idc = 1606;
 			text = "- 1"; //--- ToDo: Localize;
@@ -127,7 +127,7 @@ class GUIgarage_Inv
 			h = 0.04 * safezoneH;
 			action = "[1] spawn WolvGarage_fnc_invRemoveItem;";
 		};
-		class GUI_Garage_ButtonMoins5: RscButton
+		class GUI_Garage_ButtonMoins5: WolvGUIgarage_RscButton
 		{
 			idc = 1607;
 			text = "- 5"; //--- ToDo: Localize;
@@ -137,7 +137,7 @@ class GUIgarage_Inv
 			h = 0.04 * safezoneH;
 			action = "[5] spawn WolvGarage_fnc_invRemoveItem;";
 		};
-		class GUI_Garage_ButtonMoins10: RscButton
+		class GUI_Garage_ButtonMoins10: WolvGUIgarage_RscButton
 		{
 			idc = 1608;
 			text = "- 10"; //--- ToDo: Localize;
@@ -148,7 +148,7 @@ class GUIgarage_Inv
 			action = "[10] spawn WolvGarage_fnc_invRemoveItem;";
 		};
 
-		class GUI_Garage_ProgressBarInv: RscProgressBar_WolvGUIgarage
+		class GUI_Garage_ProgressBarInv: WolvGUIgarage_RscProgressBar
 		{
 			idc = 1900;
 			x = 0.2375 * safezoneW + safezoneX;
