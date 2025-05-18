@@ -58,7 +58,6 @@ jobs:
           chown -R $(whoami):$(whoami) /github/home
           winecfg
           ls -la /github/
-          apt search wine-mono
 
       - name: download A3Tools
         env:
@@ -81,7 +80,7 @@ jobs:
         env:
           WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
         run: |
-          wine /arma3/Publisher/PublisherCmd.exe update /id:${WORKSHOP_ID} /path:"$(pwd)/@DIS-Utils" /nologo /nogui
+          wine /arma3/Publisher/PublisherCmd.exe update /id:${WORKSHOP_ID} /path:"$(pwd)/@DIS-Utils" /nologo /nosummary
 
 
 
