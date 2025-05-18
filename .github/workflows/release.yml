@@ -51,10 +51,10 @@ jobs:
       - name: Download Wine
         run: |
           wget https://dl.winehq.org/wine-builds/winehq.key
-          sudo apt-key add winehq.key
-          sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
-          sudo apt update
-          sudo apt install -y --install-recommends winehq-staging
+          apt-key add winehq.key
+          apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
+          apt update
+          apt install -y --install-recommends winehq-staging
       - name: Debug
         run: |
           find .
