@@ -37,6 +37,9 @@ jobs:
         with:
           name: "@DIS-Utils"
           path: "@DIS-Utils"
+      - name: Debug Whoami
+        run: |
+          whoami
 
       - name: Download Wine
         run: |
