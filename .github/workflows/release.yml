@@ -64,9 +64,8 @@ jobs:
 
       - name: Debug A3Tools
         run: |
-          pwd
+          ls -la /github/
           find .
-          ls -la /arma3
           ls -la /arma3/Publisher
           
       - name: uploading
