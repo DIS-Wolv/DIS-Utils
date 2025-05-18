@@ -60,12 +60,13 @@ jobs:
       - name: Debug
         run: |
           find .
+          ls -la /arma3
           ls -la /arma3/Publisher
           
 
       - name: uploading
         run: |
-          wine start /arma3/PublisherCmd.exe update /id:${{ secrets.WORKSHOP_ID }} /path:"$(pwd)/@DIS-Utils"
+          wine start /arma3/Publisher/PublisherCmd.exe update /id:${{ secrets.WORKSHOP_ID }} /path:"$(pwd)/@DIS-Utils"
 
 
 # apt install -y --install-recommends winehq-stable
