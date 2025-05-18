@@ -41,8 +41,9 @@ jobs:
       - name: download A3Tools
         run: >
           steamcmd 
+          "+force_install_dir /arma3"
           "+login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }}"
-          "+@sSteamCmdForcePlatformType windows +force_install_dir /arma3 +app_update 233800"
+          "+@sSteamCmdForcePlatformType windows +app_update 233800"
           "+quit"
 
       - name: uploading
