@@ -38,6 +38,11 @@ jobs:
           name: "@DIS-Utils"
           path: "@DIS-Utils"
 
+      - name: Just Checking
+        run: |
+          find .
+          ls -la 
+
       - name: Download Wine
         run: |
           apt update
