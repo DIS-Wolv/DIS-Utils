@@ -42,6 +42,7 @@ jobs:
           curl.exe https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip -o steamcmd.zip
           mkdir C:\steamcmd
           tar -xf steamcmd.zip -C C:\steamcmd
+          dir C:\steamcmd
 
       - name: download A3Tools
         env:
