@@ -55,6 +55,7 @@ jobs:
           "+login ${STEAM_USERNAME} ${STEAM_PASSWORD}"
           "+app_update 233800"
           "+quit"
+          cat C:\steamcmd\logs\stderr.txt
 
       - name: Debug A3Tools
         run: |
