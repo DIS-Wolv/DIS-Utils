@@ -50,7 +50,7 @@ jobs:
           STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
           STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
         run: >
-          C:\steamcmd\steamcmd.exe 
+          C:\steamcmd\steamcmd.exe
           "+force_install_dir C:\arma3"
           "+login ${STEAM_USERNAME} ${STEAM_PASSWORD}"
           "+app_update 233800"
@@ -60,6 +60,13 @@ jobs:
         run: |
           dir C:\arma3\Publisher
       
+#      - name: uploading
+#        env:
+#          WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
+#        run: |
+#          C:\arma3\Publisher\PublisherCmd.exe update /id:${WORKSHOP_ID} /path:'$(pwd)/@DIS-Utils' /nologo /nosummary
+
+
 #    runs-on: ubuntu-latest
 #    container: steamcmd/steamcmd:ubuntu
 #    needs: build
@@ -98,11 +105,7 @@ jobs:
 #          find .
 #          ls -la /arma3/Publisher
 #          
-#      - name: uploading
-#        env:
-#          WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
-#        run: |
-#          wine "/arma3/Publisher/PublisherCmd.exe update /id:${WORKSHOP_ID} /path:'$(pwd)/@DIS-Utils' /nologo /nosummary"
+
 
 
 #          "+@sSteamCmdForcePlatformType windows"
