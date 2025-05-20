@@ -42,7 +42,7 @@ jobs:
           [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
           $progressPreference = 'silentlyContinue'
           Write-Host "Installing WinGet PowerShell module from PSGallery..."
-          Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force
+          Install-PackageProvider -Name 'NuGet' -Source 'PSGallery' -Scope 'CurrentUser' -Verbose
           Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
           Write-Host "Using Repair-WinGetPackageManager cmdlet to bootstrap WinGet..."
           Repair-WinGetPackageManager
