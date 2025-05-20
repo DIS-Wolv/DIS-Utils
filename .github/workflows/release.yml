@@ -43,6 +43,7 @@ jobs:
           mkdir C:\steamcmd
           tar -xf steamcmd.zip -C C:\steamcmd
           dir C:\steamcmd
+          mkdir C:\arma3
 
       - name: download A3Tools
         env:
@@ -50,14 +51,14 @@ jobs:
           STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
         run: >
           C:\steamcmd\steamcmd.exe 
-          "+force_install_dir /arma3"
+          "+force_install_dir C:\arma3"
           "+login ${STEAM_USERNAME} ${STEAM_PASSWORD}"
           "+app_update 233800"
           "+quit"
 
       - name: Debug A3Tools
         run: |
-          dir /arma3/Publisher
+          dir C:\arma3\Publisher
       
 #    runs-on: ubuntu-latest
 #    container: steamcmd/steamcmd:ubuntu
