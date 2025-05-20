@@ -37,20 +37,11 @@ jobs:
           name: "@DIS-Utils"
           path: "@DIS-Utils"
 
-      - name: Install Winget
-        run: |
-          [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-          $progressPreference = 'silentlyContinue'
-          Write-Host "Installing WinGet PowerShell module from PSGallery..."
-          Find-PackageProvider -Name "NuGet" | Install-PackageProvider -Force
-          Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
-          Write-Host "Using Repair-WinGetPackageManager cmdlet to bootstrap WinGet..."
-          Repair-WinGetPackageManager
-          Write-Host "Done."
-
       - name: install SteamCMD
         run: |
-          winget install -e --id Valve.SteamCmd
+          curl.exe https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip -o steamcmd.zip
+          mkdir C:\steamcmd
+          tar -xf steamcmd.zip -C C:\steamcmd
 
       - name: download A3Tools
         env:
