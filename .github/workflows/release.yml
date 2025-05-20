@@ -43,22 +43,22 @@ jobs:
           find .
           ls -la 
 
-      - name: Download Wine
-        run: |
-          apt update
-          apt install -y wine64
-
-      - name: install xvfb
-        run: |
-          apt install -y xvfb
-          xvfb :0 -screen 0 1024x768x16 &
-          export DISPLAY=:0.0
-          
-      - name: Debug Wine
-        run: |
-          wine --version
-          chown -R $(whoami):$(whoami) /github/home
-          ls -la /github/
+#      - name: Download Wine
+#        run: |
+#          apt update
+#          apt install -y wine64
+#
+#      - name: install xvfb
+#        run: |
+#          apt install -y xvfb
+#          xvfb :0 -screen 0 1024x768x16 &
+#          export DISPLAY=:0.0
+#          
+#      - name: Debug Wine
+#        run: |
+#          wine --version
+#          chown -R $(whoami):$(whoami) /github/home
+#          ls -la /github/
 
       - name: download A3Tools
         env:
@@ -68,7 +68,6 @@ jobs:
           steamcmd 
           "+force_install_dir /arma3"
           "+login ${STEAM_USERNAME} ${STEAM_PASSWORD}"
-          "+@sSteamCmdForcePlatformType windows"
           "+app_update 233800"
           "+quit"
 
@@ -84,7 +83,7 @@ jobs:
           wine "/arma3/Publisher/PublisherCmd.exe update /id:${WORKSHOP_ID} /path:'$(pwd)/@DIS-Utils' /nologo /nosummary"
 
 
-
+#          "+@sSteamCmdForcePlatformType windows"
 # dpkg --add-architecture i386
 # apt update
 # apt install -y wget gnupg gnupg2 gnupg1 software-properties-common aptitude
