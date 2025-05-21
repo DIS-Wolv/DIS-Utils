@@ -67,7 +67,7 @@ jobs:
         env:
           WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
         run: |
-          start \b C:\steamcmd\steamcmd.exe +login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }}
+          start \b "C:\steamcmd\steamcmd.exe +login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }} "
           C:\arma3\Publisher\PublisherCmd.exe update /changeNote:"TEST" /id:${{ secrets.WORKSHOP_ID }} /path:'D:\a\DIS-Utils\DIS-Utils\@DIS-Utils' /nologo /nosummary
 
 
