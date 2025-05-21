@@ -41,7 +41,10 @@ jobs:
           dir @DIS-Utils
       - name: Install Steam
         run: |
-          winget install --id Valve.Steam --exact --silent --accept-package-agreements --accept-source-agreements
+          choco install -y steam
+          dir C:\Program Files (x86)\Steam
+          dir C:\Program Files\Steam
+          dir C:\ProgramData\chocolatey\lib\steam
 
       - name: install SteamCMD
         run: |
