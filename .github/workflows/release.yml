@@ -54,7 +54,7 @@ jobs:
           +force_install_dir c:\arma3 
           +login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }} 
           +app_update 233800 
-          +quit
+          +exit
 # steamcmd +force_install_dir c:\KFServer\ +login <username> <password> +app_update 233800 +quit
       - name: Debug A3Tools
         run: |
