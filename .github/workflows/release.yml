@@ -67,7 +67,7 @@ jobs:
         env:
           WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
         run: |
-          C:\arma3\Publisher\PublisherCmd.exe update /changeNote:"TEST" /id:${{ secrets.WORKSHOP_ID }} /path:'$(pwd)/@DIS-Utils' /nologo /nosummary
+          C:\arma3\Publisher\PublisherCmd.exe update /changeNote:"TEST" /id:${{ secrets.WORKSHOP_ID }} /path:'D:\a\DIS-Utils\DIS-Utils\@DIS-Utils' /nologo /nosummary
 
 
 #    runs-on: ubuntu-latest
