@@ -52,11 +52,12 @@ jobs:
         run: >
           C:\steamcmd\steamcmd.exe
           "+force_install_dir C:\arma3"
-          +login ${STEAM_USERNAME} ${STEAM_PASSWORD}
+          "+login anonymous"
+          
           "+app_update 233800"
           "+quit"
           cat C:\steamcmd\logs\stderr.txt
-
+# +login ${STEAM_USERNAME} ${STEAM_PASSWORD}
       - name: Debug A3Tools
         run: |
           dir C:\arma3\Publisher
