@@ -39,7 +39,6 @@ jobs:
       - name: Just Checking
         run: |
           dir @DIS-Utils
-          ls -la @DIS-Utils
 
       - name: install SteamCMD
         run: |
