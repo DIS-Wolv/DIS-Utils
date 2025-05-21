@@ -39,6 +39,9 @@ jobs:
       - name: Just Checking
         run: |
           dir @DIS-Utils
+      - name: Install Steam
+        run: |
+          winget install --id Valve.Steam --exact --silent --accept-package-agreements --accept-source-agreements
 
       - name: install SteamCMD
         run: |
