@@ -27,18 +27,29 @@ jobs:
           path: "@DIS-Utils/"
           retention-days: 7
 
-#  release:
-#    runs-on: windows-latest
-#    needs: build
-#    steps:
-#      - name: Download built mod artifact
-#        uses: actions/download-artifact@v4
-#        with:
-#          name: "@DIS-Utils"
-#          path: "@DIS-Utils"
-#      - name: Just Checking
-#        run: |
-#          dir @DIS-Utils
+  release:
+    runs-on: windows-latest
+    needs: build
+    steps:
+      - name: Download built mod artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: "@DIS-Utils"
+          path: "@DIS-Utils"
+      - name: Just Checking
+        run: |
+          dir @DIS-Utils
+
+      - name: Install Arma 3 Tools
+        run: |
+          choco install -y arma3tools
+          
+      - name: Upload with PublisherCmd
+        env:
+          WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
+        run: |
+          "C:\Program Files (x86)\Steam\steam.exe" &
+          "C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\Publisher\PublisherCmd.exe" update /changeNote:"Auto update" /id:%WORKSHOP_ID% /path:"@DIS-Utils" /nologo /nosummary
 #      - name: Install Steam
 #        run: |
 #          choco install -y steam
@@ -126,47 +137,41 @@ jobs:
 # aptitude install winehq-stable -y
 # apt install -y --install-recommends winehq-stable
 
-  release:
-    runs-on: ubuntu-latest
-    container: steamcmd/steamcmd:ubuntu
-    needs: build
-    steps:
-      - name: Download built mod artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: "@DIS-Utils"
-          path: "@DIS-Utils"
-#      - name: Compress mod folder
+#  release:
+#    runs-on: ubuntu-latest
+#    container: steamcmd/steamcmd:ubuntu
+#    needs: build
+#    steps:
+#      - name: Download built mod artifact
+#        uses: actions/download-artifact@v4
+#        with:
+#          name: "@DIS-Utils"
+#          path: "@DIS-Utils"
+#      - name: Fix permissions
+#        run: chmod -R 755 @DIS-Utils
+#      - name: Create VDF file
+#        env:
+#          WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
 #        run: |
-#          apk update
-#          apk add zip
-#          cd @DIS-Utils
-#          zip -r ../DIS-Utils.zip *
-      - name: Fix permissions
-        run: chmod -R 755 @DIS-Utils
-      - name: Create VDF file
-        env:
-          WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
-        run: |
-          cat <<EOF > update.vdf
-          "workshopitem"
-          {
-          "appid" "107410"
-          "publishedfileid" "${WORKSHOP_ID}"
-          "contentfolder" "/github/workspace/@DIS-Utils"
-          }
-          EOF
-      - name: Debug
-        run: |
-          cat update.vdf
-          find .
-      - name: Upload to Steam
-        env:
-          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
-          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
-        run: >
-          steamcmd
-          "+login ${STEAM_USERNAME} ${STEAM_PASSWORD}"
-          "+workshop_build_item $(pwd)/update.vdf"
-          "+exit"
- 
+#          cat <<EOF > update.vdf
+#          "workshopitem"
+#          {
+#          "appid" "107410"
+#          "publishedfileid" "${WORKSHOP_ID}"
+#          "contentfolder" "/github/workspace/@DIS-Utils"
+#          }
+#          EOF
+#      - name: Debug
+#        run: |
+#          cat update.vdf
+#          find .
+#      - name: Upload to Steam
+#        env:
+#          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+#          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
+#        run: >
+#          steamcmd
+#          "+login ${STEAM_USERNAME} ${STEAM_PASSWORD}"
+#          "+workshop_build_item $(pwd)/update.vdf"
+#          "+exit"
+# 
