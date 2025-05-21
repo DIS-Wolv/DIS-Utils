@@ -60,7 +60,7 @@ jobs:
         env:
           WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
         run: |
-          "C:\arma3tools\Publisher\PublisherCmd.exe" update /changeNote:"Auto update" /id:%WORKSHOP_ID% /path:"@DIS-Utils" /nologo /nosummary
+          C:\arma3tools\Publisher\PublisherCmd.exe update /changeNote:"Auto update" /id:%WORKSHOP_ID% /path:"@DIS-Utils" /nologo /nosummary
 #      - name: Install Steam
 #        run: |
 #          choco install -y steam
