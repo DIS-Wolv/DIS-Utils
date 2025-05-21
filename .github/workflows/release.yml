@@ -50,7 +50,7 @@ jobs:
         run: >
           C:\ProgramData\chocolatey\lib\steamcmd\tools\steamcmd.exe 
           +force_install_dir c:\arma3 
-          +login %STEAM_USERNAME% %STEAM_PASSWORD% 
+          +login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }} 
           +app_update 233800
           +validate
           +exit
