@@ -38,8 +38,7 @@ jobs:
           path: "@DIS-Utils"
       - name: Just Checking
         run: |
-          dir c:\@DIS-Utils
-
+          dir @DIS-Utils
       - name: Install SteamCMD
         run: choco install -y steamcmd
 
