@@ -43,8 +43,6 @@ jobs:
         run: |
           choco install -y steam
           dir 'C:\Program Files (x86)\Steam'
-          dir 'C:\Program Files\Steam'
-          dir 'C:\ProgramData\chocolatey\lib\steam'
 
       - name: install SteamCMD
         run: |
