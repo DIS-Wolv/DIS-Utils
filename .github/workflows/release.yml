@@ -53,7 +53,8 @@ jobs:
           +login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }} 
           +app_update 233800
           +validate
-          +exit || exit 0
+          +exit
+        continue-on-error: true
 
       - name: Upload with PublisherCmd
         env:
