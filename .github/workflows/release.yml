@@ -51,7 +51,7 @@ jobs:
           STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
         run: |
           C:\steamcmd\steamcmd.exe
-          +force_install_dir C:\arma3
+          +force_install_dir "C:\arma3"
           +login ${STEAM_USERNAME} ${STEAM_PASSWORD}
           +app_update 233800
           +quit
