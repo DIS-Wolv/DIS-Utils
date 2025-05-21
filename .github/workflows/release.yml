@@ -36,9 +36,11 @@ jobs:
         with:
           name: "@DIS-Utils"
           path: "@DIS-Utils"
+          
       - name: Just Checking
         run: |
           dir @DIS-Utils
+
       - name: Install SteamCMD
         run: choco install -y steamcmd
 
@@ -54,6 +56,19 @@ jobs:
           +validate
           +exit
         continue-on-error: true
+
+      - name: Install Steam
+        run: choco install -y steam
+
+      - name: Start Steam (background)
+        env:
+          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
+        run: |
+          Start-Process -FilePath "C:\Program Files (x86)\Steam\steam.exe" -ArgumentList "-login $env:STEAM_USERNAME $env:STEAM_PASSWORD" -NoNewWindow
+
+      - name: Wait for Steam to start
+        run: Start-Sleep -Seconds 20
 
       - name: Upload with PublisherCmd
         env:
