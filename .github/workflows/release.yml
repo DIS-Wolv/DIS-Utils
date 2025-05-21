@@ -27,52 +27,52 @@ jobs:
           path: "@DIS-Utils/"
           retention-days: 7
 
-  release:
-    runs-on: windows-latest
-    needs: build
-    steps:
-      - name: Download built mod artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: "@DIS-Utils"
-          path: "@DIS-Utils"
-      - name: Just Checking
-        run: |
-          dir @DIS-Utils
-      - name: Install Steam
-        run: |
-          choco install -y steam
-          dir 'C:\Program Files (x86)\Steam'
-
-      - name: install SteamCMD
-        run: |
-          curl.exe https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip -o steamcmd.zip
-          mkdir C:\steamcmd
-          tar -xf steamcmd.zip -C C:\steamcmd
-          dir C:\steamcmd
-          mkdir C:\arma3
-
-      - name: download A3Tools
-        env:
-          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
-          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
-        run: >
-          C:\steamcmd\steamcmd.exe 
-          +force_install_dir c:\arma3 
-          +login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }} 
-          +app_update 233800 
-          +exit | grep -Eo "[0-9]"
-
-      - name: Debug A3Tools
-        run: |
-          dir C:\arma3\Publisher
-      
-      - name: uploading
-        env:
-          WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
-        run: |
-          "C:\Program Files (x86)\Steam\steam.exe" &
-          C:\arma3\Publisher\PublisherCmd.exe update /changeNote:"TEST" /id:${{ secrets.WORKSHOP_ID }} /path:'D:\a\DIS-Utils\DIS-Utils\@DIS-Utils' /nologo /nosummary
+#  release:
+#    runs-on: windows-latest
+#    needs: build
+#    steps:
+#      - name: Download built mod artifact
+#        uses: actions/download-artifact@v4
+#        with:
+#          name: "@DIS-Utils"
+#          path: "@DIS-Utils"
+#      - name: Just Checking
+#        run: |
+#          dir @DIS-Utils
+#      - name: Install Steam
+#        run: |
+#          choco install -y steam
+#          dir 'C:\Program Files (x86)\Steam'
+#
+#      - name: install SteamCMD
+#        run: |
+#          curl.exe https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip -o steamcmd.zip
+#          mkdir C:\steamcmd
+#          tar -xf steamcmd.zip -C C:\steamcmd
+#          dir C:\steamcmd
+#          mkdir C:\arma3
+#
+#      - name: download A3Tools
+#        env:
+#          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+#          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
+#        run: >
+#          C:\steamcmd\steamcmd.exe 
+#          +force_install_dir c:\arma3 
+#          +login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }} 
+#          +app_update 233800 
+#          +exit | grep -Eo "[0-9]"
+#
+#      - name: Debug A3Tools
+#        run: |
+#          dir C:\arma3\Publisher
+#      
+#      - name: uploading
+#        env:
+#          WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
+#        run: |
+#          "C:\Program Files (x86)\Steam\steam.exe" &
+#          C:\arma3\Publisher\PublisherCmd.exe update /changeNote:"TEST" /id:${{ secrets.WORKSHOP_ID }} /path:'D:\a\DIS-Utils\DIS-Utils\@DIS-Utils' /nologo /nosummary
 
 
 #    runs-on: ubuntu-latest
@@ -124,40 +124,45 @@ jobs:
 # apt-key add winehq.key
 # apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
 # aptitude install winehq-stable -y
-
 # apt install -y --install-recommends winehq-stable
-#   release:
-#     runs-on: ubuntu-latest
-#     container: steamcmd/steamcmd:alpine-3
-#     needs: build
-#     steps:
-#       - name: Download built mod artifact
-#         uses: actions/download-artifact@v4
-#         with:
-#           name: "@DIS-Utils"
-#           path: "@DIS-Utils"
-#       - name: Create VDF file
-#         env:
-#           WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
-#         run: |
-#           cat <<EOF > update.vdf
-#           "workshopitem"
-#           {
-#           "appid" "107410"
-#           "publishedfileid" "${WORKSHOP_ID}"
-#           "contentfolder" "$(pwd)/@DIS-Utils"
-#           }
-#           EOF
-#       - name: Debug
-#         run: |
-#           cat update.vdf
-#           find .
-#       - name: Upload to Steam
-#         env:
-#           STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
-#           STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
-#         run: >
-#           steamcmd
-#           "+login ${STEAM_USERNAME} ${STEAM_PASSWORD}"
-#           "+workshop_build_item $(pwd)/update.vdf"
-#           "+exit"
+
+  release:
+    runs-on: ubuntu-latest
+    container: steamcmd/steamcmd:alpine-3
+    needs: build
+    steps:
+      - name: Download built mod artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: "@DIS-Utils"
+          path: "@DIS-Utils"
+      - name: Compress mod folder
+        run: |
+          cd @DIS-Utils
+          zip -r ../DIS-Utils.zip *
+      - name: Create VDF file
+        env:
+          WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
+        run: |
+          cat <<EOF > update.vdf
+          "workshopitem"
+          {
+          "appid" "107410"
+          "publishedfileid" "${WORKSHOP_ID}"
+          "contentfolder" "$(pwd)/@DIS-Utils.zip"
+          }
+          EOF
+      - name: Debug
+        run: |
+          cat update.vdf
+          find .
+      - name: Upload to Steam
+        env:
+          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
+        run: >
+          steamcmd
+          "+login ${STEAM_USERNAME} ${STEAM_PASSWORD}"
+          "+workshop_build_item $(pwd)/update.vdf"
+          "+exit"
+ 
