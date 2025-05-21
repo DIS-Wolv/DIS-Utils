@@ -55,6 +55,8 @@ jobs:
           +login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }} 
           +app_update 233800 
           +exit
+          | grep -Eo "[0-9]+[.][0-9]+[.][0-9]+"
+
 # steamcmd +force_install_dir c:\KFServer\ +login <username> <password> +app_update 233800 +quit
       - name: Debug A3Tools
         run: |
