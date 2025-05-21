@@ -36,6 +36,10 @@ jobs:
         with:
           name: "@DIS-Utils"
           path: "@DIS-Utils"
+      - name: Just Checking
+        run: |
+          dir @DIS-Utils
+          ls -la @DIS-Utils
 
       - name: install SteamCMD
         run: |
@@ -56,17 +60,15 @@ jobs:
           +app_update 233800 
           +exit | grep -Eo "[0-9]"
 
-
-# steamcmd +force_install_dir c:\KFServer\ +login <username> <password> +app_update 233800 +quit
       - name: Debug A3Tools
         run: |
           dir C:\arma3\Publisher
       
-#      - name: uploading
-#        env:
-#          WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
-#        run: |
-#          C:\arma3\Publisher\PublisherCmd.exe update /id:${WORKSHOP_ID} /path:'$(pwd)/@DIS-Utils' /nologo /nosummary
+      - name: uploading
+        env:
+          WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
+        run: |
+          C:\arma3\Publisher\PublisherCmd.exe update /id:${{ secrets.WORKSHOP_ID }} /path:'$(pwd)/@DIS-Utils' /nologo /nosummary
 
 
 #    runs-on: ubuntu-latest
