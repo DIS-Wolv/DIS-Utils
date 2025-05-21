@@ -136,12 +136,12 @@ jobs:
         with:
           name: "@DIS-Utils"
           path: "@DIS-Utils"
-      - name: Compress mod folder
-        run: |
-          apk update
-          apk add zip
-          cd @DIS-Utils
-          zip -r ../DIS-Utils.zip *
+#      - name: Compress mod folder
+#        run: |
+#          apk update
+#          apk add zip
+#          cd @DIS-Utils
+#          zip -r ../DIS-Utils.zip *
       - name: Create VDF file
         env:
           WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
@@ -151,7 +151,7 @@ jobs:
           {
           "appid" "107410"
           "publishedfileid" "${WORKSHOP_ID}"
-          "contentfolder" "$(pwd)/@DIS-Utils.zip"
+          "contentfolder" "$(pwd)/@DIS-Utils"
           }
           EOF
       - name: Debug
