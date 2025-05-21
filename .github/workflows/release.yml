@@ -138,8 +138,8 @@ jobs:
           path: "@DIS-Utils"
       - name: Compress mod folder
         run: |
-          apt update
-          apt install zip
+          apk update
+          apk add zip
           cd @DIS-Utils
           zip -r ../DIS-Utils.zip *
       - name: Create VDF file
