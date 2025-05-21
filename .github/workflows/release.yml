@@ -43,17 +43,17 @@ jobs:
       - name: Install SteamCMD
         run: choco install -y steamcmd
 
-      - name: Install Arma 3 Tools via SteamCMD
+      - name: download A3Tools
         env:
           STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
           STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
-        run: |
-          mkdir C:\arma3tools
-          "C:\ProgramData\chocolatey\lib\steamcmd\tools\steamcmd.exe" ^
-            +force_install_dir C:\arma3tools ^
-            +login %STEAM_USERNAME% %STEAM_PASSWORD% ^
-            +app_update 233800 validate ^
-            +quit
+        run: >
+          C:\steamcmd\steamcmd.exe 
+          +force_install_dir c:\arma3 
+          +login %STEAM_USERNAME% %STEAM_PASSWORD% 
+          +app_update 233800
+          +validate
+          +exit
 
       - name: Upload with PublisherCmd
         env:
@@ -81,7 +81,7 @@ jobs:
 #        run: >
 #          C:\steamcmd\steamcmd.exe 
 #          +force_install_dir c:\arma3 
-#          +login ${{ secrets.STEAM_USERNAME }} ${{ secrets.STEAM_PASSWORD }} 
+#          +login %STEAM_USERNAME% %STEAM_PASSWORD% 
 #          +app_update 233800 
 #          +exit | grep -Eo "[0-9]"
 #
