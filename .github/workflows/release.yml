@@ -38,7 +38,7 @@ jobs:
           path: "@DIS-Utils"
       - name: Just Checking
         run: |
-          dir @DIS-Utils
+          dir c:\@DIS-Utils
 
       - name: Install SteamCMD
         run: choco install -y steamcmd
@@ -60,7 +60,7 @@ jobs:
         env:
           WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
         run: |
-          C:\arma3tools\Publisher\PublisherCmd.exe update /changeNote:"Auto update" /id:%WORKSHOP_ID% /path:"@DIS-Utils" /nologo /nosummary
+          C:\arma3tools\Publisher\PublisherCmd.exe update /id:${{ secrets.WORKSHOP_ID }} /changeNote:"Auto update" /path:"D:\a\DIS-Utils\DIS-Utils\@DIS-Utils"
 #      - name: Install Steam
 #        run: |
 #          choco install -y steam
