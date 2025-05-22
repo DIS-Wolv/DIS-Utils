@@ -34,5 +34,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: "@DIS-Utils"
+          path: "@DIS-Utils"
       - name: Debug
         run: dir
