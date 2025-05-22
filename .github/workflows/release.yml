@@ -38,7 +38,9 @@ jobs:
           path: "@DIS-Utils"
 
       - name: Debug
-        run: dir @DIS-Utils
+        run: |
+          dir @DIS-Utils
+          echo %PWD%
       
       - name: UploadMod
         env:
