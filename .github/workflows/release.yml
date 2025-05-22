@@ -40,7 +40,7 @@ jobs:
       - name: Debug
         run: |
           dir @DIS-Utils
-          echo %PWD%
+          echo $pwd
       
       - name: UploadMod
         env:
