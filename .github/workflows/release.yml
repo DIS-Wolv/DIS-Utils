@@ -36,5 +36,13 @@ jobs:
         with:
           name: "@DIS-Utils"
           path: "@DIS-Utils"
+
       - name: Debug
-        run: dir
+        run: dir @DIS-Utils
+      
+      - name: UploadMod
+        env:
+          WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
+        run: |
+          C:\arma3tools\Publisher\PublisherCmd.exe update /id:${{ secrets.WORKSHOP_ID }} /changeNote:"Auto update" /path:"D:\a\DIS-Utils\DIS-Utils\@DIS-Utils"
+
