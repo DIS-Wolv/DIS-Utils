@@ -46,6 +46,5 @@ jobs:
         env:
           WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
         run: >
-          'C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\Publisher\PublisherCmd.exe'
-          update /id:${{ secrets.WORKSHOP_ID }} /changeNote:"Auto update" /path:"$pwd\@DIS-Utils"
+          & 'C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\Publisher\PublisherCmd.exe' update /id:3440967811 /changeNote:"Auto update" /path:"$pwd\@DIS-Utils"
 
