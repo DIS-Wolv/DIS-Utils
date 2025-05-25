@@ -41,6 +41,7 @@ jobs:
         run: |
           dir @DIS-Utils
           echo $pwd
+          whoami
       
       - name: UploadMod
         env:
