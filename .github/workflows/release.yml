@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build the mod folder
-        run: ./build_mod.ps1
+        run: runas /user:"SteamCMD" ./build_mod.ps1
 
       - name: Debug
         run: |
