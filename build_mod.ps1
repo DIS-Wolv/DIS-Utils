@@ -9,8 +9,13 @@ $fileToAdd = @(
 $KeyFolder = "C:\Users\SteamCMD\Documents\Arma3Keys"
 $AddonBuilderPath = "C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\AddonBuilder\AddonBuilder.exe"
 
-Remove-Item -Path $ModName -Force -Recurse
+# check if the mod directory already exists
+if (Test-Path -Path $ModName) {
+	Write-Output "Removing existing mod directory: $ModName"
+	Remove-Item -Path $ModName -Force -Recurse
+}
 
+# create the mod directory structure
 New-Item -Path $ModName -ItemType Directory
 New-Item -Path "$ModName\addons" -ItemType Directory
 New-Item -Path "$ModName\keys" -ItemType Directory
