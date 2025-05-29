@@ -6,8 +6,11 @@ $fileToAdd = @(
 	"dis.paa",
 	"mod.cpp"
 )
+
+# Define paths for the mod and tools
 $KeyFolder = "C:\Users\SteamCMD\Documents\Arma3Keys"
-$AddonBuilderPath = "C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\AddonBuilder\AddonBuilder.exe"
+$A3ToolsPath = "C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools"
+$AddonBuilderPath = "$A3ToolsPath\AddonBuilder\AddonBuilder.exe"
 
 # check if the mod directory already exists
 if (Test-Path -Path $ModName) {
@@ -29,18 +32,12 @@ ForEach ($file in $fileToAdd) {
 	Write-Output "Adding $file to $ModName"
 }
 
-# Define paths for the tools used in the build process
-$BinarizePath = "-binarize='C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\Binarize\binarize.exe'"
-$FilebankPath = "-filebank='C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FileBank\FileBank.exe'"
-$CfgConvertPath = "-cfgconvert='C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\CfgConvert\CfgConvert.exe'"
-$DsSignFile = "dssignfile='C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\DSSignFile\DSSignFile.exe'"
-
 # Process each directory in the addons folder
 $destinationDir = "$(Get-Location)\$ModName\addons\"
 ForEach ($dir in (Get-ChildItem -Path ".\addons" -Directory)) {
 	write-Output "Processing directory: $($dir.name)"
 	$sourcePath = "$(Get-Location)\addons\$($dir.name)"
-	& $AddonBuilderPath $sourcePath $destinationDir -packonly -sign="$KeyFolder\dis.biprivatekey" $BinarizePath $FilebankPath $CfgConvertPath $DsSignFile
+	& $AddonBuilderPath $sourcePath $destinationDir -packonly -sign="$KeyFolder\dis.biprivatekey" -toolsDirectory="$A3ToolsPath"
 }
 
 # create the key file
