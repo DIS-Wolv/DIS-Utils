@@ -1,0 +1,37 @@
+
+$ModName = "@DIS-Utils"
+$fileToAdd = @(
+	"dis.jpg",
+	"disMoto.jpg",
+	"dis.paa",
+	"mod.cpp"
+)
+$KeyFolder = "C:\Users\SteamCMD\Documents\Arma3Keys"
+$AddonBuilderPath = "C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\AddonBuilder\AddonBuilder.exe"
+
+Remove-Item -Path $ModName -Force -Recurse
+
+New-Item -Path $ModName -ItemType Directory
+New-Item -Path "$ModName\addons" -ItemType Directory
+New-Item -Path "$ModName\keys" -ItemType Directory
+
+# Copy files to the mod directory
+ForEach ($file in $fileToAdd) {
+	$sourcePath = ".\$file"
+	$destinationPath = "$ModName\$file"
+	
+	Copy-Item -Path $sourcePath -Destination $destinationPath -Force
+	Write-Output "Adding $file to $ModName"
+}
+
+# Process each directory in the addons folder
+$destinationDir = "$(Get-Location)\$ModName\addons\"
+ForEach ($dir in (Get-ChildItem -Path ".\addons" -Directory)) {
+	write-Output "Processing directory: $($dir.name)"
+	$sourcePath = "$(Get-Location)\addons\$($dir.name)"
+	& $AddonBuilderPath $sourcePath $destinationDir -packonly -sign="$KeyFolder\dis.biprivatekey"
+}
+
+# create the key file
+$pubKeyFilePath = "$KeyFolder\dis.bikey"
+Copy-Item -Path $pubKeyFilePath -Destination "$ModName\keys\dis.bikey" -Force
