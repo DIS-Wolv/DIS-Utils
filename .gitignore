@@ -1,4 +1,5 @@
 ._*
 *.pbo
 *.pbo.bak
-@DIS-Utils
+@*
+*.bisign
