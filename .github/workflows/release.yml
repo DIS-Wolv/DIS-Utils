@@ -43,9 +43,10 @@ jobs:
           echo $pwd
           whoami
       
-      - name: UploadMod
+      - name: Mark to Upload
         env:
           WORKSHOP_ID: ${{ secrets.WORKSHOP_ID }}
-        run: >
-          & 'C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\Publisher\PublisherCmd.exe' update /id:3440967811 /changeNote:"Auto update" /path:"$pwd\@DIS-Utils"
+        run: |
+          echo "$pwd\@DIS-Utils|$WORKSHOP_ID" >> 'C:\Users\SteamCMD\Desktop\AutoUpdate\update.txt'
+        #   & 'C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\Publisher\PublisherCmd.exe' update /id:3440967811 /changeNote:"Auto update" /path:"$pwd\@DIS-Utils"
 
