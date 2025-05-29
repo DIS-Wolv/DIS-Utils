@@ -30,10 +30,10 @@ ForEach ($file in $fileToAdd) {
 }
 
 # Define paths for the tools used in the build process
-$BinarizePath = "-binarize=C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\Binarize\Binarize.exe"
-$FilebankPath = "-filebank=C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FileBank\FileBank.exe"
-$CfgConvertPath = "-cfgconvert=C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\CfgConvert\CfgConvert.exe"
-$DsSignFile = "-dsignfile=C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\DSignFile\DSignFile.exe"
+$BinarizePath = "-binarize='C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\Binarize\Binarize.exe'"
+$FilebankPath = "-filebank='C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FileBank\FileBank.exe'"
+$CfgConvertPath = "-cfgconvert='C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\CfgConvert\CfgConvert.exe'"
+$DsSignFile = "-dsignfile='C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\DSignFile\DSignFile.exe'"
 
 # Process each directory in the addons folder
 $destinationDir = "$(Get-Location)\$ModName\addons\"
