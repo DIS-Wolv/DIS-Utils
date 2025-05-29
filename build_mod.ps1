@@ -29,12 +29,18 @@ ForEach ($file in $fileToAdd) {
 	Write-Output "Adding $file to $ModName"
 }
 
+# Define paths for the tools used in the build process
+$BinarizePath = "-binarize=C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\Binarize\Binarize.exe"
+$FilebankPath = "-filebank=C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FileBank\FileBank.exe"
+$CfgConvertPath = "-cfgconvert=C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\CfgConvert\CfgConvert.exe"
+$DsSignFile = "-dsignfile=C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\DSignFile\DSignFile.exe"
+
 # Process each directory in the addons folder
 $destinationDir = "$(Get-Location)\$ModName\addons\"
 ForEach ($dir in (Get-ChildItem -Path ".\addons" -Directory)) {
 	write-Output "Processing directory: $($dir.name)"
 	$sourcePath = "$(Get-Location)\addons\$($dir.name)"
-	& $AddonBuilderPath $sourcePath $destinationDir -packonly -sign="$KeyFolder\dis.biprivatekey"
+	& $AddonBuilderPath $sourcePath $destinationDir -packonly -sign="$KeyFolder\dis.biprivatekey" $BinarizePath $FilebankPath $CfgConvertPath $DsSignFile
 }
 
 # create the key file
