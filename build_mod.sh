@@ -13,6 +13,7 @@ KEY_PATH="$1"
 FILES_TO_ADD=(
     "dis.jpg"
     "disMoto.jpg"
+	"dis.paa"
     "mod.cpp"
 )
 

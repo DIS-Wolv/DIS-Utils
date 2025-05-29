@@ -1,5 +1,5 @@
 name			= "DIS-Utils";				// Name of your mod
-author			= "Wolv";					// Affects Arma 3 Launcher, when the mod are loaded as local
+author			= "Wolv & DIS";					// Affects Arma 3 Launcher, when the mod are loaded as local
 logo			= "DIS.paa";			// Logo displayed in the main menu
 logoOver		= "DIS.paa";	// When the mouse is over, in the main menu
 tooltip			= "Mod DIS";				// Tool tip displayed when the mouse is over, in the main menu
