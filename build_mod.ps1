@@ -29,7 +29,6 @@ ForEach ($file in $fileToAdd) {
 	$destinationPath = "$ModName\$file"
 	
 	Copy-Item -Path $sourcePath -Destination $destinationPath -Force
-	Write-Output "Adding $file to $ModName"
 }
 
 # Process each directory in the addons folder
