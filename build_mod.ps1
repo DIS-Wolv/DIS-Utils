@@ -40,7 +40,8 @@ ForEach ($dir in (Get-ChildItem -Path ".\addons" -Directory)) {
 	$sourcePath = "$(Get-Location)\addons\$($dir.name)"
 	if (Test-Path -Path (".\addons\$($dir.name)\"+'$PREFIX$')) {
 		$prefix = Get-Content -Path (".\addons\$($dir.name)\"+'$PREFIX$') -First 1
-		& $AddonBuilderPath $sourcePath $destinationDir -packonly -sign="$KeyFolder\dis.biprivatekey" -toolsDirectory="$A3ToolsPath" -prefix=$prefix
+		write-Output "Using prefix: $prefix"
+		& $AddonBuilderPath $sourcePath $destinationDir -packonly -sign="$KeyFolder\dis.biprivatekey" -toolsDirectory="$A3ToolsPath" -prefix="$prefix"
 	}
 	else {
 		write-Output "No prefix file found in $($dir.name), using default settings."
