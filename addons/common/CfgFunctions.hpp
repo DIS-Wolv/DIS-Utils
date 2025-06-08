@@ -6,6 +6,7 @@ class DIS_Common {
 		class PosFob {};
 		class configRadio {};
 		class arsenal{};
+		class rDate {};
 	};
 
 	class Halo {
