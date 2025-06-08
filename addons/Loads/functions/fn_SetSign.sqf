@@ -9,9 +9,9 @@
 */
 params ["_module","_link"];
 
-private _loadType = _module getVariable ["LoadName", ""];
+private _loadType = _module getVariable ["SignName", "Infanterie"];
 
-if (isNull _loadType) exitWith {False;};
+if (_loadType == "") exitWith {False;};
 
 {
     switch (_loadType) do {
@@ -43,6 +43,9 @@ if (isNull _loadType) exitWith {False;};
         case "Pilote": {
             _x addAction ["Hélicoptère",{[DISLoad_var_piloteHelo, _this select 1] call DISLoad_fnc_SetLoad;},[],1.5,True,True,"","",5];
             _x addAction ["Chasseur",{[DISLoad_var_piloteAvions, _this select 1] call DISLoad_fnc_SetLoad;},[],1.5,True,True,"","",5];
+        };
+        default {
+            // Do nothing for unrecognized load types
         };
     };
 } forEach _link;
