@@ -14,11 +14,14 @@
 params ["_Module", "_Link"];
 
 if (!(isClass(configFile >> "CfgPatches" >> "ace_arsenal"))) exitWith {systemChat "Erreur : Ace Arsenal n'est pas charger"};
-
+if (isNil "DISLoadMc_var_Zeus") then {[] call DISLoad_fnc_varLoads;};
 
 private _loadDIS = _Module getVariable ["LoadDIS", false];
-if (isNil "DISLoad_var_piloteAvions" and _loadDIS) then {
-    [] call DISLoad_fnc_Varloads;
+if (_loadDIS) then {
+    if (isNil "DISLoad_var_piloteAvions") then {
+        // on charge les loads
+        [] call DISLoad_fnc_Varloads;
+    };
 
     if (isClass(configFile >> "CfgPatches" >> "ace_arsenal")) then {
         //ajout de tout les loads dans l'arsenal
@@ -64,7 +67,7 @@ if (isNil "DISLoad_var_AllCrate") then {
 };
 
 private _customItem = _Module getVariable ["CustomItem", []];
-if (typeName _customItem == "STRING") then {
+if ((typeName _customItem == "STRING")) then {
 	_customItem = parseSimpleArray _customItem;
 };
 
@@ -77,7 +80,7 @@ if (_DIScrate) then {
     // récup tout les items des caisses
     private _caisse = 'B_supplyCrate_F' createVehicle [0,0,0];
     // Caisse Armes
-    [_caisse] call DISLoadCrate_fnc_armes;
+    [_caisse, DISCrate_var_Armes] call DISLoad_fnc_setCrate;
     sleep 1;
     _caisseItems pushBack ((getItemCargo _caisse) select 0);
     _caisseItems pushBack ((getWeaponCargo _caisse) select 0);
@@ -85,7 +88,7 @@ if (_DIScrate) then {
     _caisseItems pushBack ((getBackpackCargo _caisse) select 0);
 
     // caisse Tube
-    [_caisse] call DISLoadCrate_fnc_lanceurs;
+    [_caisse, DISCrate_var_Lanceurs] call DISLoad_fnc_setCrate;
     sleep 1;
     _caisseItems pushBack ((getItemCargo _caisse) select 0);
     _caisseItems pushBack ((getWeaponCargo _caisse) select 0);
@@ -93,7 +96,7 @@ if (_DIScrate) then {
     _caisseItems pushBack ((getBackpackCargo _caisse) select 0);
 
     // caisse Medical
-    [_caisse] call DISLoadCrate_fnc_medical;
+    [_caisse, DISCrate_var_medical] call DISLoad_fnc_setCrate;
     sleep 1;
     _caisseItems pushBack ((getItemCargo _caisse) select 0);
     _caisseItems pushBack ((getWeaponCargo _caisse) select 0);
@@ -101,7 +104,7 @@ if (_DIScrate) then {
     _caisseItems pushBack ((getBackpackCargo _caisse) select 0);
 
     // caisse Items
-    [_caisse] call DISLoadCrate_fnc_items;
+    [_caisse, DISCrate_var_Items] call DISLoad_fnc_setCrate;
     sleep 0.1;
     _caisseItems pushBack ((getItemCargo _caisse) select 0);
     _caisseItems pushBack ((getWeaponCargo _caisse) select 0);
@@ -109,7 +112,7 @@ if (_DIScrate) then {
     _caisseItems pushBack ((getBackpackCargo _caisse) select 0);
 
     // caisse para
-    [_caisse] call DISLoadCrate_fnc_para;
+    [_caisse, DISCrate_var_Para] call DISLoad_fnc_setCrate;
     sleep 0.1;
     _caisseItems pushBack ((getItemCargo _caisse) select 0);
     _caisseItems pushBack ((getWeaponCargo _caisse) select 0);
