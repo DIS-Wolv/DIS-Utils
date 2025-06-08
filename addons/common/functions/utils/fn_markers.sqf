@@ -11,13 +11,14 @@
 * nil
 *
 * Exemple:
-* ["DIS_mrk_FOB_0"] call DISCommon_fnc_markerOnFob;
+* ["DIS_mrk_FOB_0"] call DISCommon_fnc_markers;
 *
 */
-params [["_logic", objNull], ["_link", []]];
+params ["_logic", "_link"];
 // ["_marker", "marker_1"], ["_redo", True]
 //params [["_marker", "marker_1"], ["_fob", fob], ["_redo", True]];
 
+if (typeName _logic != "OBJECT") exitWith {};
 private _marker = _logic getVariable ["MarkerName", objNull];
 private _redo = _logic getVariable ["Redo", objNull];
 
@@ -27,5 +28,5 @@ _obj = _link select 0;
 _marker setMarkerPos (getPos _obj);
 if (_redo) then {
 	sleep 150;
-	[_logic] spawn DISCommon_fnc_markers;
+	[_logic, [_obj]] spawn DISCommon_fnc_markers;
 };
