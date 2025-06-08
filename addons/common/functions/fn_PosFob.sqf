@@ -58,4 +58,4 @@ lanceursFob setDir (_dir + 330);
 } forEach _man;
 
 
-["marker_1", FOB, False] call DISCommon_fnc_markers;
+// ["marker_1", FOB, False] call DISCommon_fnc_markers;
