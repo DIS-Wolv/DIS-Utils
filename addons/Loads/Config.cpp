@@ -482,7 +482,7 @@ class CfgVehicles
 	class DISLoad_DisLoadSign : Module_F
 	{
 		scope = 2;
-		displayName = "DIS Crates";
+		displayName = "DIS Sign";
 		icon = "z\DISUtils\addons\Loads\data\Helmet.paa";
 		category = "DIS_Preset";
 
