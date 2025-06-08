@@ -29,7 +29,7 @@ private _allLoad = [_isZeus, _isCdS, _isCdG, _isMedic, _isCdE, _isGv, _isCdBr, _
     if (typeName _x == "STRING") then {
         _x = parseSimpleArray _x;
     };
-} forEAch _allLoad;
+} forEach _allLoad;
 
 
 DISLoad_var_IsZeus = _isZeus;
