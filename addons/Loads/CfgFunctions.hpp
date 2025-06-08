@@ -4,14 +4,15 @@ class DIS_Loads {
 	class Loads {
 		file = "z\DISUtils\addons\Loads\functions";
 
-		class varLoads {};
-		class setLoad {};
-		class StandardScope {};
 		class ArsenalAce {};
 		class customLoad {};
-		class EquipInit {};
-		class Equip {};
 		class disLoad {};
+		class Equip {};
+		class EquipInit {};
+		class SetLoad {};
+		class SetSign {};
+		class StandardScope {};
+		class varLoads {};
 	};
 };
 class DIS_Loads_Crate {

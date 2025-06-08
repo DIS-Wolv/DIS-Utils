@@ -479,5 +479,50 @@ class CfgVehicles
 		};
 	};
 
-	
+	class DISLoad_DisLoadSign : Module_F
+	{
+		scope = 2;
+		displayName = "DIS Crates";
+		icon = "z\DISUtils\addons\Loads\data\Helmet.paa";
+		category = "DIS_Preset";
+
+		function = "DISLoad_fnc_SetSign";
+		functionPriority = 1;
+		isGlobal = 1;
+		isTriggerActivated = 0;
+		isDisposable = 0;
+		is3DEN = 0;
+		curatorCanAttach = 0;
+
+		canSetArea = 0;
+
+		class Attributes : AttributesBase
+		{
+			class SignName : Combo
+			{
+				property = "DISLoad_Module_DisLoadSign_SignName";
+				displayName = "Type of load";
+				tooltip = "The type of load to setup";
+				typeName = "STRING";
+				defaultValue = """Infanterie""";
+
+				// Listbox items
+				class Values
+				{
+					class 1		{ value = "Infanterie";	name = "Infanterie"; };
+					class 2		{ value = "Cavalerie";	name = "Cavalerie"; };
+					class 3		{ value = "Plongeur";	name = "Plongeur"; };
+					class 4		{ value = "Pilote";		name = "Pilote"; };
+				};
+			};
+
+			// Attributes definition
+			class ModuleDescription : ModuleDescription {}; // Module description should be shown last
+		};
+
+		class ModuleDescription: ModuleDescription
+		{
+			description= "This module will initialise the crate on sync object and share the object in the arsenal.";
+		};
+	};
 };
