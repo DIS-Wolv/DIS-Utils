@@ -313,7 +313,7 @@ class CfgVehicles
 	{
 		// Standard object definitions:
 		scope = 2;										// Editor visibility; 2 will show it in the menu, 1 will hide it.
-		displayName = "Boat spaw point";				// Name displayed in the menu
+		displayName = "Boat spawn point";				// Name displayed in the menu
 		icon = "z\DISUtils\addons\Common\data\boat.paa";							// Map icon. Delete this entry to use the default icon.
 		category = "DIS_Public";
 		author = "Wolv";
