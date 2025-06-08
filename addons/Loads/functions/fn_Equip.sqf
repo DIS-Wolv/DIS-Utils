@@ -5,7 +5,7 @@ params ["_unit"];
 
 if (isNil "_unit") exitWith {};
 if (isNil "DISLoadMc_var_Zeus") then {[] call DISLoad_fnc_varLoads;};
-
+if (isNil "DISLoad_var_EquipDefaultGV") then {DISLoad_var_EquipDefaultGV = false;};
 
 
 switch (true) do {
