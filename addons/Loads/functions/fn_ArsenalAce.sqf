@@ -76,7 +76,7 @@ private _DIScrate = _Module getVariable ["CrateDIS", false];
 
 private _caisseItems = [];
 if (_DIScrate) then {
-    systemChat "DIScrate";
+    // systemChat "DIScrate";
     // récup tout les items des caisses
     private _caisse = 'B_supplyCrate_F' createVehicle [0,0,0];
     // Caisse Armes
