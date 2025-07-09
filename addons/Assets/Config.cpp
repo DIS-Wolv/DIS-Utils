@@ -353,7 +353,7 @@ class CfgVehicles
 		class TransportBackpacks {};
 		class EventHandlers
 		{
-			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_Para], 1.5, True, True, """", """", 5];";
+			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_Para], 1.5, True, True, """", """", 5]; if(local (_this select 0)) then {[(_this select 0), DISCrate_var_Para] call DISLoad_fnc_setCrate;};";
 		};
 	};
 	class DISAsset_Box_Items : Box_NATO_Equip_F 
@@ -369,7 +369,7 @@ class CfgVehicles
 		class TransportBackpacks {};
 		class EventHandlers
 		{
-			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_Items], 1.5, True, True, """", """", 5];";
+			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_Items], 1.5, True, True, """", """", 5]; if(local (_this select 0)) then {[(_this select 0), DISCrate_var_Items] call DISLoad_fnc_setCrate;};";
 		};
 	};
 
@@ -386,7 +386,7 @@ class CfgVehicles
 		class TransportBackpacks {};
 		class EventHandlers
 		{
-			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_Armes], 1.5, True, True, """", """", 5];";
+			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_Armes], 1.5, True, True, """", """", 5]; if(local (_this select 0)) then {[(_this select 0), DISCrate_var_Armes] call DISLoad_fnc_setCrate;};";
 		};
 	};
 	
@@ -403,7 +403,7 @@ class CfgVehicles
 		class TransportBackpacks {};
 		class EventHandlers
 		{
-			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_Lanceurs], 1.5, True, True, """", """", 5];";
+			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_Lanceurs], 1.5, True, True, """", """", 5]; if(local (_this select 0)) then {[(_this select 0), DISCrate_var_Lanceurs] call DISLoad_fnc_setCrate;};";
 		};
 	};
 
@@ -420,7 +420,7 @@ class CfgVehicles
 		class TransportBackpacks {};
 		class EventHandlers
 		{
-			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_dump], 1.5, True, True, """", """", 5];";
+			init = "if (isNil ""DISCrate_var_dump"") then {[] call DISLoad_fnc_VarLoads;}; (_this select 0) addAction [""Recharger la caisse"", {params [""_t"", ""_c"", ""_i"", ""_arguments""]; [_t, (_arguments select 0)] call DISLoad_fnc_SetCrate;}, [DISCrate_var_dump], 1.5, True, True, """", """", 5]; if(local (_this select 0)) then {[(_this select 0), DISCrate_var_dump] call DISLoad_fnc_setCrate;};";
 		};
 	};
 };
