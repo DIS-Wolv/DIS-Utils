@@ -55,6 +55,18 @@ class cfgVehicles {
         hiddenSelectionsTextures[] = {"z\DISUtils\addons\DISPatches\data\clothing1_co.paa", "z\DISUtils\addons\DISPatches\data\dis.paa"};
 		// model = "z\DISUtils\addons\DISPatches\data\cornu.p3d";
     };
+	class DIS_Soldat_2 : DIS_soldat_base
+	{
+        _generalMacro = "B_Soldier_F"; //unsure what this does
+        scope = 2;
+        displayName = "Uniform Test Soldier";
+        uniformAccessories[] = {};
+        nakedUniform = "U_BasicBody"; //class for "naked" body
+        uniformClass = "DIS_ItemUniform_Soldat_2"; //the uniform item
+        hiddenSelections[] = {"Camo", "insignia"};
+        hiddenSelectionsTextures[] = {"z\DISUtils\addons\DISPatches\data\clothing2_co.paa", "z\DISUtils\addons\DISPatches\data\dis.paa"};
+		// model = "z\DISUtils\addons\DISPatches\data\cornu.p3d";
+    };
 
 };
 
@@ -64,13 +76,27 @@ class cfgWeapons {
 	class DIS_ItemUniform_Soldat_1 : Uniform_Base 
 	{
         scope = 2;
-        displayName = "Combat Fatigues (DIS)";
+        displayName = "Combat Fatigues 1(DIS)";
         picture = "\A3\characters_f\data\ui\icon_U_B_CombatUniform_mcam_ca.paa";
         model = "\A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
         
         class ItemInfo : UniformItem {
             uniformModel = "-";
             uniformClass = "DIS_Soldat_1"; //would be same as our made soldier class
+            containerClass = "Supply20"; //how much it can carry
+            mass = 80; //how much it weights
+        };
+    };
+	class DIS_ItemUniform_Soldat_2 : Uniform_Base 
+	{
+        scope = 2;
+        displayName = "Combat Fatigues 2(DIS)";
+        picture = "\A3\characters_f\data\ui\icon_U_B_CombatUniform_mcam_ca.paa";
+        model = "\A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
+        
+        class ItemInfo : UniformItem {
+            uniformModel = "-";
+            uniformClass = "DIS_Soldat_2"; //would be same as our made soldier class
             containerClass = "Supply20"; //how much it can carry
             mass = 80; //how much it weights
         };
