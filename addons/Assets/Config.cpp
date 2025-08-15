@@ -31,6 +31,17 @@ class CfgFactionClasses
 	};
 };
 
+class CfgUnitInsignia
+{
+	class DIS_Logo
+	{
+		displayName = "DIS";
+		author = "Wolv";
+		texture = "z\DISUtils\addons\Assets\data\DISLogo.paa";
+		textureVehicle = "";
+	};
+};
+
 class CfgEditorCategories
 {
 	class NO_CATEGORY;
