@@ -142,7 +142,7 @@ private _var = _Preset select 1;
 
 
 {
-	_unit setVariable [_x select 0, _x select 1];
+	_unit setVariable [_x select 0, _x select 1, true];
 } forEach _var;
 
 //_unit setVariable ["ace_hasearplugsin",true];
