@@ -485,6 +485,7 @@ class CfgVehicles
 		displayName = "DIS Sign";
 		icon = "z\DISUtils\addons\Loads\data\Helmet.paa";
 		category = "DIS_Preset";
+		author = "Wolv";
 
 		function = "DISLoad_fnc_SetSign";
 		functionPriority = 1;
