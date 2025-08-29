@@ -16,8 +16,7 @@ if (_loadType == "") exitWith {False;};
 {
     switch (_loadType) do {
         case "Infanterie": {
-            _x addAction ["GV",{[DISLoadMc_var_GV,_this select 1] call DISLoad_fnc_SetLoad;},[],1.5,True,True,"","",5];
-            _x addAction ["Gv Sac",{[DISLoadMc_var_GvBck,_this select 1] call DISLoad_fnc_SetLoad;},[],1.5,True,True,"","",5];
+            _x addAction ["Gv",{[DISLoadMc_var_GvBck,_this select 1] call DISLoad_fnc_SetLoad;},[],1.5,True,True,"","",5];
             _x addAction ["Grenadier",{[DISLoadMc_var_Grenadier,_this select 1] call DISLoad_fnc_SetLoad;},[],1.5,True,True,"","",5];
             _x addAction ["Minimi 5.56",{[DISLoadMc_var_Minimi5,_this select 1] call DISLoad_fnc_SetLoad;},[],1.5,True,True,"","",5];
             _x addAction ["Minimi 7.62",{[DISLoadMc_var_Minimi7,_this select 1] call DISLoad_fnc_SetLoad;},[],1.5,True,True,"","",5];
@@ -27,6 +26,7 @@ if (_loadType == "") exitWith {False;};
             _x addAction ["Medecin",{[DISLoadMc_var_Medecin,_this select 1] call DISLoad_fnc_SetLoad;},[],1.5,True,True,"","",5];
             _x addAction ["EOD",{[DISLoadMc_var_EOD,_this select 1] call DISLoad_fnc_SetLoad;},[],1.5,True,True,"","",5];
             _x addAction ["EOD Light",{[DISLoadMc_var_EOD_Light,_this select 1] call DISLoad_fnc_SetLoad;},[],1.5,True,True,"","",5];
+            _x addAction ["GV sans sac",{[DISLoadMc_var_GV,_this select 1] call DISLoad_fnc_SetLoad;},[],1.5,True,True,"","",5];
         };
         case "Cavalerie": {
             _x addAction ["Chef de Bord (médecin)",{[DISLoadMc_var_CDB, _this select 1] call DISLoad_fnc_SetLoad;},[],1.5,True,True,"","",5];
