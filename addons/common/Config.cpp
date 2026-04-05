@@ -197,6 +197,15 @@ class CfgVehicles
 				defaultValue = "TRUE";
 			};
 
+			class Delay : Edit
+			{
+				property = "DISCommon_Module_Init_Delay";
+				displayName = "Delay";
+				tooltip = "Delay between marker updates";
+				typeName = "NUMBER";
+				defaultValue = "60";
+			};
+
 			class ModuleDescription : ModuleDescription {}; // Module description should be shown last
 		};
 

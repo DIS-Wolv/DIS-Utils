@@ -21,12 +21,15 @@ params ["_logic", "_link"];
 if (typeName _logic != "OBJECT") exitWith {};
 private _marker = _logic getVariable ["MarkerName", objNull];
 private _redo = _logic getVariable ["Redo", objNull];
+private _delay = _logic getVariable ["Delay", 60];
 
 if (count _link == 0) exitWith {};
 _obj = _link select 0;
 
 _marker setMarkerPos (getPos _obj);
 if (_redo) then {
-	sleep 150;
+	if(canSuspend) then {
+		sleep _delay;
+	};
 	[_logic, [_obj]] spawn DISCommon_fnc_markers;
 };
