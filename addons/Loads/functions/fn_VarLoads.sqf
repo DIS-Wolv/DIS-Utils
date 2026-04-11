@@ -5,7 +5,7 @@
 * Arguments :
 *
 * Exemple:
-* [] call DISLoad_fnc_Varload;
+* [] call DISLoad_fnc_Varloads;
 *
 * Variable publique :
 * - DISLoad_var_piloteAvions
@@ -80,6 +80,6 @@ DISCrate_var_ItemsDa = [["rhsusf_acc_nt4_black", 20],["rhsusf_acc_omega9k", 20],
 if (isNil "DISLoad_var_AllLoad") then {
 	DISLoad_var_AllLoad = [];
 };
-DISLoad_var_AllLoad = DISLoad_var_AllLoad + [DISLoadMc_var_CdG, DISLoadMc_var_Medecin, DISLoadMc_var_CdGM, DISLoadMc_var_CdE, DISLoadMc_var_EOD, DISLoadMc_var_EOD_Light, DISLoadMc_var_Grenadier, DISLoadMc_var_GvBck, DISLoadMc_var_GV, DISLoadMc_var_Minimi5, DISLoadMc_var_Minimi7, DISLoadMc_var_TP, DISLoadMC_var_TE, DISLoadMC_var_Spotter, DISLoadMc_var_Zeus, DISLoadPL_var_CDG, DISLoadPL_var_CDE, DISLoadPL_var_GV, DISLoadPL_var_Medecin, DISLoadPL_var_Minimi5];
+DISLoad_var_AllLoad = DISLoad_var_AllLoad + [DISLoad_var_piloteHelo, DISLoad_var_piloteAvions, DISLoadMc_var_CDB, DISLoadMc_var_CDBR, DISLoadMc_var_Equipier, DISLoadMc_var_CdS, DISLoadMc_var_CdG, DISLoadMc_var_Medecin, DISLoadMc_var_CdGM, DISLoadMc_var_CdE, DISLoadMc_var_EOD, DISLoadMc_var_EOD_Light, DISLoadMc_var_Grenadier, DISLoadMc_var_GvBck, DISLoadMc_var_GV, DISLoadMc_var_Minimi5, DISLoadMc_var_Minimi7, DISLoadMc_var_TP, DISLoadMC_var_TE, DISLoadMC_var_Spotter, DISLoadMc_var_Zeus, DISLoadPL_var_CDG, DISLoadPL_var_CDE, DISLoadPL_var_GV, DISLoadPL_var_Medecin, DISLoadPL_var_Minimi5, DISCrate_var_dump, DISCrate_var_Para, DISCrate_var_medical, DISCrate_var_Armes, DISCrate_var_Lanceurs, DISCrate_var_Items, DISCrate_var_ItemsCe, DISCrate_var_ItemsDa];
 
 
