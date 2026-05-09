@@ -7,7 +7,7 @@
 *
 */
 
-_listVL = nearestObjects [WolvGarage_var_pos, ["car", "tank", "plane", "ship", "helicopter", "ReammoBox_F", "StaticWeapon"], WolvGarage_var_Range];
-_listVL = _listVL - WolvGarage_var_BlacklistedVL;
+_listVL = nearestObjects [WOLVGARAGE_var_pos, ["car", "tank", "plane", "ship", "helicopter", "ReammoBox_F", "StaticWeapon"], WOLVGARAGE_var_Range];
+_listVL = _listVL - WOLVGARAGE_var_BlacklistedVL;
 _listVL;
 

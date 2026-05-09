@@ -10,15 +10,15 @@
 *
 */
 params [["_Nb", 1]];
-_indexVL = lbCurSel WolvGarage_var_IdcChoixVl;
+_indexVL = lbCurSel WOLVGARAGE_var_IdcChoixVl;
 // Récupère l'index du véhicule 
 
 if (_indexVL != -1) then {
 // Si un véhicule est selectionner 
-	_vl = WolvGarage_var_ListSpawn select _indexVL;		
+	_vl = WOLVGARAGE_var_ListSpawn select _indexVL;		
 	// Récupère le véhicule 
 	
-	_indexObj = lbCurSel WolvGarage_var_IdcListInv;	
+	_indexObj = lbCurSel WOLVGARAGE_var_IdcListInv;	
 	// Récupère l'index de l'objet
 	
 	if (_indexObj != -1) then {		// Si un objet est selectionné
@@ -84,5 +84,5 @@ if (_indexVL != -1) then {
 	};
 };
 
-[] remoteExec ["WolvGarage_fnc_invUpdate", 0];
+[] remoteExec ["WOLVGARAGE_fnc_invUpdate", 0];
 // Met à jour la liste des inventaires

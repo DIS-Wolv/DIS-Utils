@@ -8,11 +8,11 @@
 */
 params [["_mod", 10]];
 
-_index = lbCurSel WolvGarage_var_IdcChoixVl;						// Récupère l'index du véhicule
+_index = lbCurSel WOLVGARAGE_var_IdcChoixVl;						// Récupère l'index du véhicule
 
-if ((_index != -1) and (count(WolvGarage_var_ListSpawn) > 0)) then {  	// Si un élément est séléctioné
-	_vl = WolvGarage_var_ListSpawn select _index;
-	_maxLoad = call WolvGarage_fnc_aceInvSize;
+if ((_index != -1) and (count(WOLVGARAGE_var_ListSpawn) > 0)) then {  	// Si un élément est séléctioné
+	_vl = WOLVGARAGE_var_ListSpawn select _index;
+	_maxLoad = call WOLVGARAGE_fnc_aceInvSize;
 
 
 	if (_maxLoad >= 0) then {
@@ -27,4 +27,4 @@ if ((_index != -1) and (count(WolvGarage_var_ListSpawn) > 0)) then {  	// Si un 
 
 };
 
-[] remoteExec ["WolvGarage_fnc_aceInvUpdate", 0];
+[] remoteExec ["WOLVGARAGE_fnc_aceInvUpdate", 0];

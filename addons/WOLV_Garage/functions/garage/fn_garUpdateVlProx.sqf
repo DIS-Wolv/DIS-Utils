@@ -7,18 +7,18 @@
 *
 */
 
-if (!isNull(findDisplay WolvGarage_var_IddDisplayGarage)) then {
+if (!isNull(findDisplay WOLVGARAGE_var_IddDisplayGarage)) then {
 
-lbClear WolvGarage_var_IdcListVlProx;
+lbClear WOLVGARAGE_var_IdcListVlProx;
 
-WolvGarage_var_ListVL = call WolvGarage_fnc_garVlProx;
+WOLVGARAGE_var_ListVL = call WOLVGARAGE_fnc_garVlProx;
 
 {
-	lbAdd [WolvGarage_var_IdcListVlProx, getText (configFile >> "CfgVehicles" >> (typeOf _x) >> "displayName")];
+	lbAdd [WOLVGARAGE_var_IdcListVlProx, getText (configFile >> "CfgVehicles" >> (typeOf _x) >> "displayName")];
 	if (getText (configFile >> "CfgVehicles" >> (typeOf _x) >> "picture") != "pictureThing") then 
 	{
-		lbSetPicture [WolvGarage_var_IdcListVlProx, _forEachindex, getText (configFile >> "CfgVehicles" >> (typeOf _x) >> "picture")];
+		lbSetPicture [WOLVGARAGE_var_IdcListVlProx, _forEachindex, getText (configFile >> "CfgVehicles" >> (typeOf _x) >> "picture")];
 	}
-} forEach WolvGarage_var_ListVL;
+} forEach WOLVGARAGE_var_ListVL;
 
 };

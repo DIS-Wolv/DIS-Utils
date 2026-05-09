@@ -1,8 +1,8 @@
 
 
-_index = lbCurSel WolvGarage_var_IdcListVlProx;
+_index = lbCurSel WOLVGARAGE_var_IdcListVlProx;
 if (_index != -1) then {
-	_vl = WolvGarage_var_ListVL select _index;
+	_vl = WOLVGARAGE_var_ListVL select _index;
 
 	private _coord2D = [0,0,0];
 	private _coordZ = [0,0,0];
@@ -45,14 +45,14 @@ if (_index != -1) then {
 			waitUntil {
 				sleep 59;
 				_timeNow = date;
-				((((_timeNow select 3) == _dropTimeH) && ((_timeNow select 4) == _dropTimeM)) or ((_vl distance2D WolvGarage_var_OBJ) >= 150))
+				((((_timeNow select 3) == _dropTimeH) && ((_timeNow select 4) == _dropTimeM)) or ((_vl distance2D WOLVGARAGE_var_OBJ) >= 150))
 			};
 		};
-		if ((_vl distance2D WolvGarage_var_OBJ) < 150) then {
+		if ((_vl distance2D WOLVGARAGE_var_OBJ) < 150) then {
 			_vl setPos _posHalo; 
 
 			sleep 0.1;
-			call WolvGarage_fnc_garUpdateVlProx;
+			call WOLVGARAGE_fnc_garUpdateVlProx;
 			
 			waitUntil{
 				sleep 1; 

@@ -57,7 +57,7 @@ class CfgVehicles
 		category = "DIS_Public";
 		author = "Wolv";
 
-		function = "WolvGarage_fnc_init";	// Name of function triggered once conditions are met
+		function = "WOLVGARAGE_fnc_init";	// Name of function triggered once conditions are met
 		functionPriority = 1;				// Execution priority, modules with lower number are executed first. 0 is used when the attribute is undefined
 		isGlobal = 1;						// 0 for server only execution, 1 for global execution, 2 for persistent global execution
 		isTriggerActivated = 0;				// 1 for module waiting until all synced triggers are activated
@@ -75,7 +75,7 @@ class CfgVehicles
 			// Module-specific arguments:
 			class Range : Edit
 			{
-				property = "WolvGarage_Module_Init_Range";		// Unique property (use "<tag>_<moduleClass>_<attributeClass>" format to ensure that the name is unique)
+				property = "WOLVGARAGE_Module_Init_Range";		// Unique property (use "<tag>_<moduleClass>_<attributeClass>" format to ensure that the name is unique)
 				displayName = "Range detection";				// Argument label
 				tooltip = "Define the range of the garage";		// Tooltip description
 				typeName = "NUMBER";								// Value type, can be "NUMBER", "STRING" or "BOOL"
@@ -84,7 +84,7 @@ class CfgVehicles
 
 			class AvalaibleVehicle : Edit
 			{
-				property = "WolvGarage_Module_Init_AvalaibleVehicle";		// Unique property (use "<tag>_<moduleClass>_<attributeClass>" format to ensure that the name is unique)
+				property = "WOLVGARAGE_Module_Init_AvalaibleVehicle";		// Unique property (use "<tag>_<moduleClass>_<attributeClass>" format to ensure that the name is unique)
 				displayName = "Avalaible vehicle";				// Argument label
 				tooltip = "Define the list of Vehicle that the garage can spawn ([""classname1"",""classname2"",...])";		// Tooltip description
 				typeName = "STRING";								// Value type, can be "NUMBER", "STRING" or "BOOL"
@@ -93,7 +93,7 @@ class CfgVehicles
 
 			class DefaultLoad : Edit
 			{
-				property = "WolvGarage_Module_Init_DefaultLoad";		// Unique property (use "<tag>_<moduleClass>_<attributeClass>" format to ensure that the name is unique)
+				property = "WOLVGARAGE_Module_Init_DefaultLoad";		// Unique property (use "<tag>_<moduleClass>_<attributeClass>" format to ensure that the name is unique)
 				displayName = "Default Load";				// Argument label
 				tooltip = "Define the list of object who are place in the vehicle when spawn ([[""classname1"",Number],[""classname2"",Number],...])";		// Tooltip description
 				typeName = "STRING";								// Value type, can be "NUMBER", "STRING" or "BOOL"
@@ -102,7 +102,7 @@ class CfgVehicles
 
 			class InventoryItem : Edit
 			{
-				property = "WolvGarage_Module_Init_InventoryItem";
+				property = "WOLVGARAGE_Module_Init_InventoryItem";
 				displayName = "Inventory";
 				tooltip = "Define the list of object that can be place in the vehicle ([""classname1"",""classname2"",...])";
 				typeName = "STRING";
@@ -111,7 +111,7 @@ class CfgVehicles
 
 			class AceEnable : Checkbox
 			{
-				property = "WolvGarage_Module_Init_AceEnable";
+				property = "WOLVGARAGE_Module_Init_AceEnable";
 				displayName = "Enable Ace";
 				tooltip = "Define if you are using Ace";
 				typeName = "BOOL";
@@ -120,7 +120,7 @@ class CfgVehicles
 
 			class AceItem : Edit
 			{
-				property = "WolvGarage_Module_Init_AceItem";		// Unique property (use "<tag>_<moduleClass>_<attributeClass>" format to ensure that the name is unique)
+				property = "WOLVGARAGE_Module_Init_AceItem";		// Unique property (use "<tag>_<moduleClass>_<attributeClass>" format to ensure that the name is unique)
 				displayName = "Ace Inventory";				// Argument label
 				tooltip = "Define the list of object that can be place in the vehicle ([""classname1"",""classname2"",...])";		// Tooltip description
 				typeName = "STRING";								// Value type, can be "NUMBER", "STRING" or "BOOL"

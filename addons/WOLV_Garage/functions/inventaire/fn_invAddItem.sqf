@@ -11,42 +11,42 @@
 */
 params [["_Nb", 1]];
 
-_indexVL = lbCurSel WolvGarage_var_IdcChoixVl;
+_indexVL = lbCurSel WOLVGARAGE_var_IdcChoixVl;
 // Récupère l'index du véhicule
 
 if (_indexVL != -1) then {	
 	// Si un véhicule est séléctioné
-	_vl = WolvGarage_var_ListVL select _indexVL;	
+	_vl = WOLVGARAGE_var_ListVL select _indexVL;	
 	// Récupère le véhicule 
 
-	_indexObj = lbCurSel WolvGarage_var_IdcListArsenal;	
+	_indexObj = lbCurSel WOLVGARAGE_var_IdcListArsenal;	
 	// Récupère l'index de l'objet
 
 	// Si un objet est séléctioné 
 	if (_indexObj != -1) then {
-		_isBackpack = lbData [WolvGarage_var_IdcListArsenal, _indexObj];
+		_isBackpack = lbData [WOLVGARAGE_var_IdcListArsenal, _indexObj];
 
 		// Si c'est un sac à dos
 		if (_isBackpack != "") then {
 			// Ajoute le sac à dos au véhicule
-			if((maxLoad _vl - loadAbs _vl) >= (getNumber (configFile >> "CfgVehicles" >>  WolvGarage_var_ListArsenal select _indexObj >> "mass") * _Nb)) then { 
+			if((maxLoad _vl - loadAbs _vl) >= (getNumber (configFile >> "CfgVehicles" >>  WOLVGARAGE_var_ListArsenal select _indexObj >> "mass") * _Nb)) then { 
 			// Vérifie s'il y a la place
 				// Ajoute l'arme au véhicule
-				_vl addBackpackCargoGlobal [WolvGarage_var_ListArsenal select _indexObj, _nb];
+				_vl addBackpackCargoGlobal [WOLVGARAGE_var_ListArsenal select _indexObj, _nb];
 			};
 		} else {
-			if (isClass (configFile >> "CfgWeapons" >> WolvGarage_var_ListArsenal select _indexObj)) then {
+			if (isClass (configFile >> "CfgWeapons" >> WOLVGARAGE_var_ListArsenal select _indexObj)) then {
 			// Si c'est une arme
-				if((maxLoad _vl - loadAbs _vl) >= (getNumber (configFile >> "CfgWeapons" >>  WolvGarage_var_ListArsenal select _indexObj >> "WeaponSlotsInfo" >> "mass") * _Nb)) then { 
+				if((maxLoad _vl - loadAbs _vl) >= (getNumber (configFile >> "CfgWeapons" >>  WOLVGARAGE_var_ListArsenal select _indexObj >> "WeaponSlotsInfo" >> "mass") * _Nb)) then { 
 				// Vérifie s'il y a la place
 					// Ajoute l'arme au véhicule
-					_vl addItemCargoGlobal [ WolvGarage_var_ListArsenal select _indexObj, _nb];	
+					_vl addItemCargoGlobal [ WOLVGARAGE_var_ListArsenal select _indexObj, _nb];	
 				};
 			} else {
 			// Si c'est un chargeur
-				if((maxLoad _vl - loadAbs _vl) >= (getNumber (configFile >> "CfgMagazines" >>  WolvGarage_var_ListArsenal select _indexObj >> "mass") * _Nb)) then { 
+				if((maxLoad _vl - loadAbs _vl) >= (getNumber (configFile >> "CfgMagazines" >>  WOLVGARAGE_var_ListArsenal select _indexObj >> "mass") * _Nb)) then { 
 				// Vérifie s'il y a la place
-					_vl addItemCargoGlobal [ WolvGarage_var_ListArsenal select _indexObj, _nb]; 
+					_vl addItemCargoGlobal [ WOLVGARAGE_var_ListArsenal select _indexObj, _nb]; 
 					// Ajoute le chargeur au véhicule 
 				};
 			};
@@ -54,5 +54,5 @@ if (_indexVL != -1) then {
 	};
 };
 
-[] remoteExec ["WolvGarage_fnc_invUpdate", 0];
+[] remoteExec ["WOLVGARAGE_fnc_invUpdate", 0];
 // Met à jour la liste des inventaires

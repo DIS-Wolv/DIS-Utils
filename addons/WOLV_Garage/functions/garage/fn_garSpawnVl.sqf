@@ -1,18 +1,18 @@
 
 
-_index = lbCurSel WolvGarage_var_IdcListVlUsine;
+_index = lbCurSel WOLVGARAGE_var_IdcListVlUsine;
 if (_index != -1) then { 
-	_vlType = (WolvGarage_var_ListUsine select _index);
-	_pos = WolvGarage_var_pos findEmptyPosition [5, 100, _vlType];
+	_vlType = (WOLVGARAGE_var_ListUsine select _index);
+	_pos = WOLVGARAGE_var_pos findEmptyPosition [5, 100, _vlType];
 
 	if ((count _pos) != 0) then {
 		// Crée le véhicule
 		_vl = _vlType createVehicle _pos;
 
 		// Ajoute le véhicule à la liste des véhicules
-		(owner player) publicVariableClient "WolvGarage_var_AllVl";
-		WolvGarage_var_AllVl pushBack _vl;
-		publicVariableServer "WolvGarage_var_AllVl";
+		(owner player) publicVariableClient "WOLVGARAGE_var_AllVl";
+		WOLVGARAGE_var_AllVl pushBack _vl;
+		publicVariableServer "WOLVGARAGE_var_AllVl";
 
 		//vide le véhicule
 		clearWeaponCargoGlobal _vl;
@@ -23,7 +23,7 @@ if (_index != -1) then {
 		
 		{
 			_vl addItemCargoGlobal [(_x select 0), (_x select 1)];
-		}forEach WolvGarage_var_VlLoad;
+		}forEach WOLVGARAGE_var_VlLoad;
 
 		// Set de la plaque d'immatriculation
 		_plate = ["DIS-"];
@@ -34,7 +34,7 @@ if (_index != -1) then {
 		_plate pushBack (toUpper ((((groupId (group player)) splitString "") select [0,3]) joinString ''));
 		_vl setPlateNumber ( _plate joinString "");
 		
-		if (WolvGarage_var_AceEnable) then {
+		if (WOLVGARAGE_var_AceEnable) then {
 
 			[_vl, 30] call ace_cargo_fnc_setSpace; //force la taille du cargo a 30
 
@@ -57,5 +57,5 @@ if (_index != -1) then {
 	};
 };
 
-[] remoteExec ["WolvGarage_fnc_garUpdateVlProx", 0];
+[] remoteExec ["WOLVGARAGE_fnc_garUpdateVlProx", 0];
 

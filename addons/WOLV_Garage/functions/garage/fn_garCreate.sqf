@@ -1,31 +1,34 @@
+params ["_usine"];
 
-
-WolvGarage_var_pos = getPos WolvGarage_var_OBJ;
-WolvGarage_var_IdcListVlProx = 1500;
-WolvGarage_var_IdcListVlUsine = 1501;
-WolvGarage_var_IdcButtonSpawn = 1603;
-WolvGarage_var_IdcButtonParadrop = 1604;
-WolvGarage_var_IdcButtonDelete = 1605;
+WOLVGARAGE_var_pos = getPos _usine;
+WOLVGARAGE_var_IdcListVlProx = 1500;
+WOLVGARAGE_var_IdcListVlUsine = 1501;
+WOLVGARAGE_var_IdcButtonSpawn = 1603;
+WOLVGARAGE_var_IdcButtonParadrop = 1604;
+WOLVGARAGE_var_IdcButtonDelete = 1605;
 
 private _isCreate = False;
 
 _isCreate = createDialog "GUIgarage_Garage";
 
+private _var_ListUsine = _usine getVariable ["WOLVGARAGE_var_ListUsine", []];
+
+
 if (_isCreate) then {
 	{
-		lbAdd [WolvGarage_var_IdcListVlUsine, getText (configFile >> "CfgVehicles" >> _x >> "displayName")];
+		lbAdd [WOLVGARAGE_var_IdcListVlUsine, getText (configFile >> "CfgVehicles" >> _x >> "displayName")];
 		if (getText (configFile >> "CfgVehicles" >> _x >> "picture") != "pictureThing") then 
 		{
-			lbSetPicture [WolvGarage_var_IdcListVlUsine, _forEachindex, getText (configFile >> "CfgVehicles" >> _x >> "picture")];
+			lbSetPicture [WOLVGARAGE_var_IdcListVlUsine, _forEachindex, getText (configFile >> "CfgVehicles" >> _x >> "picture")];
 		}
-	} forEach WolvGarage_var_ListUsine;
+	} forEach _var_ListUsine;
 
-	call WolvGarage_fnc_garUpdateVlProx;
+	call WOLVGARAGE_fnc_garUpdateVlProx;
 
 };
 
 
-((findDisplay WolvGarage_var_IddDisplayGarage) displayCtrl WolvGarage_var_IdcListVlUsine) ctrlAddEventHandler ["LBDblClick", "call WolvGarage_fnc_garSpawnVl"];
+((findDisplay WOLVGARAGE_var_IddDisplayGarage) displayCtrl WOLVGARAGE_var_IdcListVlUsine) ctrlAddEventHandler ["LBDblClick", "call WOLVGARAGE_fnc_garSpawnVl"];
 // Double clic pour créer le véhicule
 
 

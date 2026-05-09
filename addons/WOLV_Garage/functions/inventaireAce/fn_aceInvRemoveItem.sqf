@@ -8,13 +8,13 @@
 */
 params [["_nb", 1]];
 
-_index = lbCurSel WolvGarage_var_IdcChoixVl;						// Récupère l'index du véhicule
+_index = lbCurSel WOLVGARAGE_var_IdcChoixVl;						// Récupère l'index du véhicule
 
-if ((_index != -1) and (count(WolvGarage_var_ListSpawn) > 0)) then {  	// Si un élément est séléctioné
-	_vl = WolvGarage_var_ListSpawn select _index;
+if ((_index != -1) and (count(WOLVGARAGE_var_ListSpawn) > 0)) then {  	// Si un élément est séléctioné
+	_vl = WOLVGARAGE_var_ListSpawn select _index;
 
 	_inv = _vl getVariable "ace_cargo_loaded";
-	_indexObj = lbCurSel WolvGarage_var_IdcListInvAce;	
+	_indexObj = lbCurSel WOLVGARAGE_var_IdcListInvAce;	
 	// Récupère l'index de l'objet
 	if ((_indexObj != -1) and (_indexObj < count(_inv))) then {
 		_obj = _inv select _indexObj;
@@ -27,4 +27,4 @@ if ((_index != -1) and (count(WolvGarage_var_ListSpawn) > 0)) then {  	// Si un 
 	};
 };
 
-[] remoteExec ["WolvGarage_fnc_aceInvUpdate", 0];
+[] remoteExec ["WOLVGARAGE_fnc_aceInvUpdate", 0];

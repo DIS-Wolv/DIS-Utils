@@ -1,5 +1,5 @@
 class WOLV_Garage {
-	tag = "WolvGarage";
+	tag = "WOLVGARAGE";
 
 	class Initialize {
 		file = "z\DISUtils\addons\Garage\functions\initialize";

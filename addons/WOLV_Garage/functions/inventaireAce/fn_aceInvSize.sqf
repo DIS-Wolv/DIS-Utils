@@ -9,13 +9,13 @@
 
 private _maxLoad = -1;
 
-if (!isNull(findDisplay WolvGarage_var_IddDisplayInvAce)) then {
-_index = lbCurSel WolvGarage_var_IdcChoixVl;						// Récupère l'index du véhicule
+if (!isNull(findDisplay WOLVGARAGE_var_IddDisplayInvAce)) then {
+_index = lbCurSel WOLVGARAGE_var_IdcChoixVl;						// Récupère l'index du véhicule
 
 _maxLoad = -1;
 
-if ((_index != -1) and (count(WolvGarage_var_ListSpawn) > 0)) then {  	// Si un élément est séléctioné
-	_vl = WolvGarage_var_ListSpawn select _index; 						// Récupère le véhicule 
+if ((_index != -1) and (count(WOLVGARAGE_var_ListSpawn) > 0)) then {  	// Si un élément est séléctioné
+	_vl = WOLVGARAGE_var_ListSpawn select _index; 						// Récupère le véhicule 
 
 	_inv = _vl getVariable "ace_cargo_loaded";
 	_weight = 0;

@@ -36,7 +36,7 @@ class GUIgarage_InvAce
 			y = 0.24 * safezoneH + safezoneY;
 			w = 0.175 * safezoneW;
 			h = 0.04 * safezoneH;
-			action = "[1] spawn WolvGarage_fnc_switchDisplay;";
+			action = "[1] spawn WOLVGARAGE_fnc_switchDisplay;";
 		};
 		class GUI_Garage_ButtonNavInv: WolvGUIgarage_RscButton
 		{
@@ -46,7 +46,7 @@ class GUIgarage_InvAce
 			y = 0.24 * safezoneH + safezoneY;
 			w = 0.175 * safezoneW;
 			h = 0.04 * safezoneH;
-			action = "[2] spawn WolvGarage_fnc_switchDisplay;";
+			action = "[2] spawn WOLVGARAGE_fnc_switchDisplay;";
 		};
 		class GUI_Garage_ButtonNavInvAce: WolvGUIgarage_RscButton
 		{
@@ -56,7 +56,7 @@ class GUIgarage_InvAce
 			y = 0.24 * safezoneH + safezoneY;
 			w = 0.175 * safezoneW;
 			h = 0.04 * safezoneH;
-			//action = "[3] spawn WolvGarage_fnc_switchDisplay;";
+			//action = "[3] spawn WOLVGARAGE_fnc_switchDisplay;";
 			colorBackground[] = {0,0,0,1};
 		};
 
@@ -105,7 +105,7 @@ class GUIgarage_InvAce
 			y = 0.4 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
-			action = "[1] spawn WolvGarage_fnc_aceInvAddItem;";
+			action = "[1] spawn WOLVGARAGE_fnc_aceInvAddItem;";
 		};
 		class GUI_Garage_ButtonPlus5: WolvGUIgarage_RscButton
 		{
@@ -115,7 +115,7 @@ class GUIgarage_InvAce
 			y = 0.5 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
-			action = "[5] spawn WolvGarage_fnc_aceInvAddItem;";
+			action = "[5] spawn WOLVGARAGE_fnc_aceInvAddItem;";
 		};
 		
 		class GUI_Garage_ButtonMoins1: WolvGUIgarage_RscButton
@@ -126,7 +126,7 @@ class GUIgarage_InvAce
 			y = 0.4 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
-			action = "[1] spawn WolvGarage_fnc_aceInvRemoveItem;";
+			action = "[1] spawn WOLVGARAGE_fnc_aceInvRemoveItem;";
 		};
 		class GUI_Garage_ButtonMoins5: WolvGUIgarage_RscButton
 		{
@@ -136,7 +136,7 @@ class GUIgarage_InvAce
 			y = 0.5 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
-			action = "[5] spawn WolvGarage_fnc_aceInvRemoveItem;";
+			action = "[5] spawn WOLVGARAGE_fnc_aceInvRemoveItem;";
 		};
 
 		class GUI_Garage_ButtonPlus10: WolvGUIgarage_RscButton
@@ -147,7 +147,7 @@ class GUIgarage_InvAce
 			y = 0.66 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
-			action = "[10] spawn WolvGarage_fnc_aceInvSetSize;";
+			action = "[10] spawn WOLVGARAGE_fnc_aceInvSetSize;";
 		};
 		class GUI_Garage_ButtonMoins10: WolvGUIgarage_RscButton
 		{
@@ -157,7 +157,7 @@ class GUIgarage_InvAce
 			y = 0.66 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
-			action = "[-10] spawn WolvGarage_fnc_aceInvSetSize;";
+			action = "[-10] spawn WOLVGARAGE_fnc_aceInvSetSize;";
 		};
 
 		class GUI_Garage_ProgressBarInv: WolvGUIgarage_RscProgressBar
