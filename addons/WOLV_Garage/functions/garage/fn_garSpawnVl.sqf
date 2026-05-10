@@ -1,9 +1,16 @@
 
+private _usine = (findDisplay WOLVGARAGE_var_IddDisplayGarage) getVariable ['WOLVGARAGE_var_Usine', objNull];
 
 _index = lbCurSel WOLVGARAGE_var_IdcListVlUsine;
+
+private _var_ListUsine = _usine getVariable ["WOLVGARAGE_var_ListUsine", []];
+private _posGarage = getPos _usine;
+private _var_VlLoad = _usine getVariable ["WOLVGARAGE_var_VlLoad", []];
+private _var_AceEnable = _usine getVariable ["WOLVGARAGE_var_AceEnable", False];
+
 if (_index != -1) then { 
-	_vlType = (WOLVGARAGE_var_ListUsine select _index);
-	_pos = WOLVGARAGE_var_pos findEmptyPosition [5, 100, _vlType];
+	_vlType = (_var_ListUsine select _index);
+	_pos = _posGarage findEmptyPosition [5, 100, _vlType];
 
 	if ((count _pos) != 0) then {
 		// Crée le véhicule
@@ -23,7 +30,7 @@ if (_index != -1) then {
 		
 		{
 			_vl addItemCargoGlobal [(_x select 0), (_x select 1)];
-		}forEach WOLVGARAGE_var_VlLoad;
+		}forEach _var_VlLoad;
 
 		// Set de la plaque d'immatriculation
 		_plate = ["DIS-"];
@@ -34,7 +41,7 @@ if (_index != -1) then {
 		_plate pushBack (toUpper ((((groupId (group player)) splitString "") select [0,3]) joinString ''));
 		_vl setPlateNumber ( _plate joinString "");
 		
-		if (WOLVGARAGE_var_AceEnable) then {
+		if (_var_AceEnable) then {
 
 			[_vl, 30] call ace_cargo_fnc_setSpace; //force la taille du cargo a 30
 

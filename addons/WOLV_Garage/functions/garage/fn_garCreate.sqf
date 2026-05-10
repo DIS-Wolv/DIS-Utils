@@ -15,6 +15,11 @@ private _var_ListUsine = _usine getVariable ["WOLVGARAGE_var_ListUsine", []];
 
 
 if (_isCreate) then {
+	if (!isNull(findDisplay WOLVGARAGE_var_IddDisplayGarage)) then {
+		_display = findDisplay WOLVGARAGE_var_IddDisplayGarage;
+		_display setVariable ["WOLVGARAGE_var_Usine", _usine];
+	};
+
 	{
 		lbAdd [WOLVGARAGE_var_IdcListVlUsine, getText (configFile >> "CfgVehicles" >> _x >> "displayName")];
 		if (getText (configFile >> "CfgVehicles" >> _x >> "picture") != "pictureThing") then 
@@ -23,7 +28,7 @@ if (_isCreate) then {
 		}
 	} forEach _var_ListUsine;
 
-	call WOLVGARAGE_fnc_garUpdateVlProx;
+	[_usine] call WOLVGARAGE_fnc_garUpdateVlProx;
 
 };
 

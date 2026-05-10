@@ -2,15 +2,20 @@
 
 params["_dest"];
 
-_display = 0;
+private _display = 0;
+
+private _usine = objNull;
 
 if (!isNull(findDisplay WOLVGARAGE_var_IddDisplayGarage)) then {
+	_usine = (findDisplay WOLVGARAGE_var_IddDisplayGarage) getVariable ["WOLVGARAGE_var_Usine", objNull];
 	_display = findDisplay WOLVGARAGE_var_IddDisplayGarage;
 };
 if (!isNull(findDisplay WOLVGARAGE_var_IddDisplayInv)) then {
+	_usine = (findDisplay WOLVGARAGE_var_IddDisplayInv) getVariable ["WOLVGARAGE_var_Usine", objNull];
 	_display = findDisplay WOLVGARAGE_var_IddDisplayInv;
 };
 if (!isNull(findDisplay WOLVGARAGE_var_IddDisplayInvAce)) then {
+	_usine = (findDisplay WOLVGARAGE_var_IddDisplayInvAce) getVariable ["WOLVGARAGE_var_Usine", objNull];
 	_display = findDisplay WOLVGARAGE_var_IddDisplayInvAce;
 };
 
@@ -20,14 +25,14 @@ sleep 0.001;
 
 switch (_dest) do {
 	case 3: {
-		call WOLVGARAGE_fnc_aceInvCreate;
+		[_usine] call WOLVGARAGE_fnc_aceInvCreate;
 	};
 	case 2: {
-		call WOLVGARAGE_fnc_invCreate;
+		[_usine] call WOLVGARAGE_fnc_invCreate;
 	};
 	case 1;
 	default {
-		call WOLVGARAGE_fnc_garCreate;
+		[_usine] call WOLVGARAGE_fnc_garCreate;
 	};
 };
 

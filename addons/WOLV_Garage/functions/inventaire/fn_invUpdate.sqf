@@ -9,14 +9,19 @@
 
 if (!isNull(findDisplay WOLVGARAGE_var_IddDisplayInv)) then {
 
+private _usine = (findDisplay WOLVGARAGE_var_IddDisplayInv) getVariable ['WOLVGARAGE_var_Usine', objNull];
+
 lbClear WOLVGARAGE_var_IdcListInv;								// Nettoie la liste inventaire 
 _index = lbCurSel WOLVGARAGE_var_IdcChoixVl;					// Récupère l'index du véhicule
 _display = findDisplay WOLVGARAGE_var_IddDisplayInv;			// Récupère le GUI
 _ctrlBar = _display displayCtrl WOLVGARAGE_var_BarreInv;		// Récupère la barre de charge du véhicule
 _ctrlBar progressSetPosition 0;									// Met la progression de la barre a 0
 
-if ((_index != -1) and (count(WOLVGARAGE_var_ListSpawn) > 0)) then {  // Si un élément est séléctioné
-	_vl = WOLVGARAGE_var_ListSpawn select _index; 	// Récupère le véhicule 
+[_usine] call WOLVGARAGE_fnc_garVlProx;
+private _var_ListUsine = _usine getVariable ["WOLVGARAGE_var_ListVL", []];
+
+if ((_index != -1) and (count(_var_ListUsine) > 0)) then {  // Si un élément est séléctioné
+	_vl = _var_ListUsine select _index; 	// Récupère le véhicule 
 
 	_ListInvWeap = getWeaponCargo _vl;
 	{

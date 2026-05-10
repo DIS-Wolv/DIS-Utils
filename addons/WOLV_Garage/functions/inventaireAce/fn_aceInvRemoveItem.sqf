@@ -8,13 +8,16 @@
 */
 params [["_nb", 1]];
 
+private _usine = (findDisplay WOLVGARAGE_var_IddDisplayInvAce) getVariable ['WOLVGARAGE_var_Usine', objNull];
+private _var_ListSpawn = _usine getVariable ["WOLVGARAGE_var_ListVL", []];
+
 _index = lbCurSel WOLVGARAGE_var_IdcChoixVl;						// Récupère l'index du véhicule
 
-if ((_index != -1) and (count(WOLVGARAGE_var_ListSpawn) > 0)) then {  	// Si un élément est séléctioné
-	_vl = WOLVGARAGE_var_ListSpawn select _index;
+if ((_index != -1) and (count(_var_ListSpawn) > 0)) then {  	// Si un élément est séléctioné
+	_vl = _var_ListSpawn select _index;
 
 	_inv = _vl getVariable "ace_cargo_loaded";
-	_indexObj = lbCurSel WOLVGARAGE_var_IdcListInvAce;	
+	_indexObj = lbCurSel WOLVGARAGE_var_IdcListInvAce;
 	// Récupère l'index de l'objet
 	if ((_indexObj != -1) and (_indexObj < count(_inv))) then {
 		_obj = _inv select _indexObj;

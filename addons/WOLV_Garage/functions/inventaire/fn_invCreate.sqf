@@ -1,5 +1,5 @@
 
-
+params ["_usine"];
 
 WOLVGARAGE_var_IdcListInv = 1500;
 WOLVGARAGE_var_IdcListArsenal = 1501;
@@ -10,13 +10,19 @@ private _isCreate = False;
 
 _isCreate = createDialog "GUIgarage_Inv";
 
-WOLVGARAGE_var_ListSpawn = call WOLVGARAGE_fnc_garVlProx;
+private _var_ListArsenal = _usine getVariable ["WOLVGARAGE_var_ListArsenal", []];
+private _var_ListVL = [_usine] call WOLVGARAGE_fnc_garVlProx;
 
 if (_isCreate) then {
+	if (!isNull(findDisplay WOLVGARAGE_var_IddDisplayInv)) then {
+		_display = findDisplay WOLVGARAGE_var_IddDisplayInv;
+		_display setVariable ["WOLVGARAGE_var_Usine", _usine];
+	};
+
 	{
-		lbAdd [WOLVGARAGE_var_IdcChoixVl, getText (configFile >> "CfgVehicles" >> (typeOf _x) >> "displayName")];
-		lbSetPicture [WOLVGARAGE_var_IdcChoixVl, _forEachindex, getText (configFile >> "CfgVehicles" >> (typeOf _x) >> "picture")]
-	} forEach WOLVGARAGE_var_ListVL;
+		lbAdd [WOLVGARAGE_var_IdcChoixVl, format ["%1 - %2", getText (configOf _x >> "displayName"), getPlateNumber _x]];
+		lbSetPicture [WOLVGARAGE_var_IdcChoixVl, _forEachindex, getText (configOf _x >> "picture")]
+	} forEach _var_ListVL;
 
 	{
 		if (getNumber (configFile >> "CfgVehicles" >> _x >> "isBackpack") > 0) then {
@@ -30,9 +36,9 @@ if (_isCreate) then {
 				lbAdd [WOLVGARAGE_var_IdcListArsenal, getText (configFile >> "CfgMagazines" >> _x >> "displayName")];
 			};
 		};
-	} forEach WOLVGARAGE_var_ListArsenal;
+	} forEach _var_ListArsenal;
 };
 
-((findDisplay WOLVGARAGE_var_IddDisplayInv) displayCtrl WOLVGARAGE_var_IdcChoixVl) ctrlAddEventHandler ["LBSelChanged", "call WOLVGARAGE_fnc_invUpdate"];
+((findDisplay WOLVGARAGE_var_IddDisplayInv) displayCtrl WOLVGARAGE_var_IdcChoixVl) ctrlAddEventHandler ["LBSelChanged", "[] call WOLVGARAGE_fnc_invUpdate"];
 ((findDisplay WOLVGARAGE_var_IddDisplayInv) displayCtrl WOLVGARAGE_var_IdcListArsenal) ctrlAddEventHandler ["LBDblClick", "[1] call WOLVGARAGE_fnc_invAddItem"];
 // Double clic pour créer le véhicule

@@ -6,19 +6,24 @@
 * nil
 *
 */
+params [["_usine", objNull]];
 
 if (!isNull(findDisplay WOLVGARAGE_var_IddDisplayGarage)) then {
+	if (isNull _usine) then {
+		_usine = (findDisplay WOLVGARAGE_var_IddDisplayGarage) getVariable ["WOLVGARAGE_var_Usine", objNull];
+	};
 
-lbClear WOLVGARAGE_var_IdcListVlProx;
+	lbClear WOLVGARAGE_var_IdcListVlProx;
 
-WOLVGARAGE_var_ListVL = call WOLVGARAGE_fnc_garVlProx;
+	_var_ListVL = [_usine] call WOLVGARAGE_fnc_garVlProx;
 
-{
-	lbAdd [WOLVGARAGE_var_IdcListVlProx, getText (configFile >> "CfgVehicles" >> (typeOf _x) >> "displayName")];
-	if (getText (configFile >> "CfgVehicles" >> (typeOf _x) >> "picture") != "pictureThing") then 
 	{
-		lbSetPicture [WOLVGARAGE_var_IdcListVlProx, _forEachindex, getText (configFile >> "CfgVehicles" >> (typeOf _x) >> "picture")];
-	}
-} forEach WOLVGARAGE_var_ListVL;
+		lbAdd [WOLVGARAGE_var_IdcListVlProx, format["%1 - %2", getText (configOf _x >> "displayName"), getPlateNumber _x]];
+		if (getText (configOf _x >> "picture") != "pictureThing") then 
+		{
+			lbSetPicture [WOLVGARAGE_var_IdcListVlProx, _forEachindex, getText (configOf _x >> "picture")];
+		}
+	} forEach _var_ListVL;
 
 };
+

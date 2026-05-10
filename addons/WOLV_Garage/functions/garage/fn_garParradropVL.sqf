@@ -1,8 +1,12 @@
 
+private _usine = (findDisplay WOLVGARAGE_var_IddDisplayGarage) getVariable ['WOLVGARAGE_var_Usine', objNull];
+
+private _var_UsinePos = getPos _usine;
+private _var_ListUsine = _usine getVariable ["WOLVGARAGE_var_ListVL", []];
 
 _index = lbCurSel WOLVGARAGE_var_IdcListVlProx;
 if (_index != -1) then {
-	_vl = WOLVGARAGE_var_ListVL select _index;
+	_vl = _var_ListUsine select _index;
 
 	private _coord2D = [0,0,0];
 	private _coordZ = [0,0,0];
@@ -45,14 +49,14 @@ if (_index != -1) then {
 			waitUntil {
 				sleep 59;
 				_timeNow = date;
-				((((_timeNow select 3) == _dropTimeH) && ((_timeNow select 4) == _dropTimeM)) or ((_vl distance2D WOLVGARAGE_var_OBJ) >= 150))
+				((((_timeNow select 3) == _dropTimeH) && ((_timeNow select 4) == _dropTimeM)) or ((_vl distance2D _var_UsinePos) >= 150))
 			};
 		};
-		if ((_vl distance2D WOLVGARAGE_var_OBJ) < 150) then {
-			_vl setPos _posHalo; 
+		if ((_var_UsinePos distance2D _vl) < 150) then {
+			_vl setPos _posHalo;
 
 			sleep 0.1;
-			call WOLVGARAGE_fnc_garUpdateVlProx;
+			[_usine] call WOLVGARAGE_fnc_garUpdateVlProx;
 			
 			waitUntil{
 				sleep 1; 
@@ -65,11 +69,17 @@ if (_index != -1) then {
 
 			waitUntil{
 				sleep 1; 
-				(((getPosATL _vl) select 2) <= 10)
+				(((getPosATL _vl) select 2) <= 20)
 			};
 
 			_smoke = "SmokeShellGreen" createVehicle _posChute;
 			_smoke attachTo [_vl,[1,1,0]];
+
+			waitUntil{
+				sleep 1; 
+				(((getPosATL _vl) select 2) <= 5)
+			};
+			deleteVehicle _chute;
 		};
 	};
 };
