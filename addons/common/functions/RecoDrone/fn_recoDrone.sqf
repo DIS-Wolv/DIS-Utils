@@ -96,7 +96,7 @@ private _fnc_groupName = {
 } forEach allMapMarkers;
 
 // si aucun marqueur de drone de reconnaissance n'est trouvé, on arrête
-if (count _markerDrone == 0) exitWith {systemChat "Aucun marqueur de drone de reconnaissance trouvé";};
+if (_markerDrone isEqualTo []) exitWith {systemChat "Aucun marqueur de drone de reconnaissance trouvé";};
 
 {
 	// récupération des données du marqueur
