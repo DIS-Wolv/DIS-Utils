@@ -28,7 +28,7 @@ if ((_index != -1) and (count(_var_ListSpawn) > 0)) then {  	// Si un élément 
 			_weight = _weight + getNumber (configFile >> "CfgVehicles" >> _x >> "ace_cargo_size");
 		}
 		else {
-			_weight = _weight + getNumber (configFile >> "CfgVehicles" >> (typeOf _x) >> "ace_cargo_size");
+			_weight = _weight + getNumber (configOf _x >> "ace_cargo_size");
 		};
 	} forEach _inv;
 
