@@ -9,7 +9,7 @@ class CfgPatches
 {
 	class WOLV_Garage
 	{
-		units[] = {"WOLV_Lights_Init"};
+		units[] = {"WOLV_Garage_Init"};
 		weapons[] = {};
 		requiredVersion = 1.0;
 		requiredAddons[] = {"A3_Modules_F", "A3_Ui_F"};
