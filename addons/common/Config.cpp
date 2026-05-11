@@ -10,9 +10,9 @@ class CfgPatches
 {
 	class DISCommon
 	{
-		units[] = {"DISCommon_InitHalo", "DISCommon_InitRecoDrone", "DISCommon_AttachMarkerToObject", "DISCommon_CustomDISLocation", "DISCommon_CustomLocation"};
+		units[] = {"DISCommon_InitHalo", "DISCommon_InitRecoDrone", "DISCommon_AttachMarkerToObject", "DISCommon_CustomDISLocation", "DISCommon_AddCustomLocation", "DISCommon_BoatSpawner", "DISCommon_Teleporter", "DISCommon_CutBushes", "DISGui_Code"};
 		weapons[] = {};
-		requiredVersion = 1.0;
+		requiredVersion = 2.12;
 		requiredAddons[] = {"A3_Modules_F", "A3_Ui_F"};
 	};
 };
