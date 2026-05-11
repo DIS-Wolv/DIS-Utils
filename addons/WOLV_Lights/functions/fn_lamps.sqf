@@ -29,7 +29,7 @@ if (_state <= 1) then {
 		private _lamps = _l2 - _l1;
 		//private _lamps = nearestObjects[_center, WolvLights_var_lampsType, _r, True];
 		//systemChat format["%1 lamps", _lamps];
-		if ((count _lamps) != 0) then 
+		if (_lamps isNotEqualTo []) then 
 		{
 			{
 				[_x, _switch] remoteExecCall["BIS_fnc_switchLamp", 0, True];
